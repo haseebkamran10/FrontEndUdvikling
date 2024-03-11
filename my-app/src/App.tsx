@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
-import './App.css';
+import PaymentPage from './pages/PaymentPage/PaymentPage';
+// Ensure your CSS and any other necessary imports are included
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/basket" element={<CheckoutPage />} />
-        {/* Other routes here */}
+        <Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </Router>
   );

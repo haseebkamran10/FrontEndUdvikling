@@ -1,13 +1,13 @@
-// src/components/CartSummary/CartSummary.tsx
 import React from 'react';
-import { CartItem } from '../../types/types'; // Adjust the import path as needed
+import { CartItem } from '../../types/types';
 import './CartSummary.css';
 
 type CartSummaryProps = {
   cartItems: CartItem[];
+  goToPayment: () => void; // Add this prop for the goToPayment function
 };
 
-const CartSummary: React.FC<CartSummaryProps> = ({ cartItems }) => {
+const CartSummary: React.FC<CartSummaryProps> = ({ cartItems, goToPayment }) => {
   // Calculate the total price of the items in the cart
   const totalPrice = cartItems.reduce((total, item) => {
     return total + item.quantity * item.product.price;
@@ -34,8 +34,9 @@ const CartSummary: React.FC<CartSummaryProps> = ({ cartItems }) => {
         <span className="summary-text">Total</span>
         <span className="summary-price">{finalPrice.toFixed(2)} DKK</span>
       </div>
-      {/* Implement additional discount logic and display here */}
-      <button className="checkout-button">Gå til kassen</button>
+      <button className="checkout-button" onClick={goToPayment}>
+  Gå til kassen
+</button>
       {/* Payment method icons here */}
     </div>
   );

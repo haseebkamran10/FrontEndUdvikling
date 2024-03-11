@@ -41,7 +41,7 @@
   color: #888;
 }
 
+/* Add this to your global styles (e.g., App.css) */
 body {
-  margin: 0;
-  background-color: white; /* Or any preferred color */
+  background-color: #fff; /* Set the background to white */
 }
