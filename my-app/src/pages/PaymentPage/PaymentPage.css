@@ -1,0 +1,17 @@
+/* PaymentPage.css */
+
+.submit-button {
+    background-color: #090909; /* Black background */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+  }
+  
+  .submit-button:hover {
+    background-color: #e0e0e0; /* Lighter grey on hover */
+    color: #000000; /* Black text on hover */
+  }
+  
