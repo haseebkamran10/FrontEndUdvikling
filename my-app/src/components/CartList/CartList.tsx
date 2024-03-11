@@ -1,14 +1,16 @@
 // src/components/CartList/CartList.tsx
+
 import React from 'react';
-import { CartItem as CartItemType } from '../../types/types'; // Ensure the path is correct
-import emptyCartIcon from '../../empty-cart.svg'; // Ensure the path is correct
+import { CartItem as CartItemType } from '../../types/types';
+import emptyCartIcon from '../../empty-cart.svg';
 import './CartList.css';
 
 type CartListProps = {
   items: CartItemType[];
+  onQuantityChange: (id: number, delta: number) => void;
 };
 
-const CartList: React.FC<CartListProps> = ({ items }) => {
+const CartList: React.FC<CartListProps> = ({ items, onQuantityChange }) => {
   return (
     <div className="cart-list">
       {items.length === 0 ? (
@@ -25,8 +27,14 @@ const CartList: React.FC<CartListProps> = ({ items }) => {
             <img src={item.product.pictureUrl} alt={item.product.name} className="cart-item-image" />
             <div className="cart-item-details">
               <span className="cart-item-name">{item.product.name}</span>
-              <span className="cart-item-quantity">Quantity: {item.quantity}</span>
-              <span className="cart-item-price">{item.product.price} DKK</span>
+              <div className="cart-item-pricing">
+                <span className="cart-item-price">{(item.product.price * item.quantity).toFixed(2)} DKK</span>
+                <div className="cart-item-quantity-control">
+                  <button onClick={() => onQuantityChange(item.product.id, -1)}>-</button>
+                  <span className="cart-item-quantity">{item.quantity}</span>
+                  <button onClick={() => onQuantityChange(item.product.id, 1)}>+</button>
+                </div>
+              </div>
             </div>
           </div>
         ))
