@@ -23,7 +23,7 @@ const PaymentPage: React.FC = () => {
 
   const handleZipCodeChange = async (zipCode: string) => {
     if (zipCode.length === 4) {
-      // Call the API to validate the ZIP code and get the city name
+      // Calling the API to validate the ZIP code and get the city name
       try {
         const response = await fetch(`https://api.dataforsyningen.dk/postnumre/${zipCode}`);
         if (!response.ok) throw new Error('Invalid ZIP code');
@@ -35,7 +35,7 @@ const PaymentPage: React.FC = () => {
     }
   };
 
-  // Watch zip code changes
+  // Watching zip code changes
   const zipCodeValue = watch('zipCode');
   React.useEffect(() => {
     handleZipCodeChange(zipCodeValue);
@@ -54,7 +54,7 @@ const PaymentPage: React.FC = () => {
 
       <select {...register('country')} defaultValue="Denmark">
         <option value="Denmark">Denmark</option>
-        {/* Add more countries if needed */}
+        {/* Sweden and Norway would be added later */}
       </select>
 
       <input {...register('zipCode', { required: true, pattern: /^\d{4}$/ })} placeholder="Zip Code" />
