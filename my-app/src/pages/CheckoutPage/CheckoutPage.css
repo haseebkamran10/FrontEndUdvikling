@@ -1,0 +1,24 @@
+/* CheckoutPage.css */
+
+.checkout-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* This should align children to the left */
+  justify-content: flex-start; /* Align content to the start on the main-axis (horizontally) */
+  padding-left: 0px; /* Add padding to the left of the container */
+  width: 100%; /* Ensure the container takes full width */
+}
+
+.checkout-heading {
+  color: black;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 48px; /* Adjust line height for better readability */
+  word-wrap: break-word;
+  text-align: left;
+  margin-left: 20px; /* Aligns with the start of the cart items */
+  margin-bottom: 20px; /* Space between the heading and cart list */
+}
+
+

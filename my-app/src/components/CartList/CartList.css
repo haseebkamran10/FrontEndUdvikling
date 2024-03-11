@@ -1,0 +1,82 @@
+/* src/components/CartList/CartList.css */
+
+.cart-list {
+  width: 500px; /* Set a specific width for the cart list */
+  /* Remove the max-width if you're setting a width */
+  padding: 20px;
+  margin-bottom: 20px; /* Space between cart items */
+  /* No need for a large margin-right if the parent is using flex-start */
+}
+
+.cart-list-empty {
+  text-align: center;
+  padding: 50px;
+  margin-left: 20px; /* Ensures consistency in alignment */
+}
+
+.empty-cart-header {
+  color: black;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 26px;
+  word-wrap: break-word;
+}
+
+.empty-cart-icon {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space below the icon */
+}
+
+.empty-cart-message {
+  color: black;
+  font-size: 23px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 35px;
+  word-wrap: break-word;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-bottom: 20px; /* Space between cart items */
+  padding: 20px; /* Adjust the padding to give more space inside the rectangle */
+}
+
+.cart-item-image {
+  flex: 0 0 auto; /* Do not grow or shrink, and base size on content */
+  width: 120px; /* Fixed width */
+  height: auto;
+  margin-right: 20px; /* Space after image */
+}
+
+.cart-item-details {
+  display: flex;
+  flex-grow: 1; /* Take up the remaining space */
+  justify-content: space-between; /* Space out the name, quantity, and price */
+  align-items: center;
+  padding: 0 20px; /* Add padding on both sides */
+}
+
+.cart-item-name {
+  color: black;
+  flex: 1; /* Allow the name to take up space */
+  margin-right: 10px; /* Add some space after the name */
+  white-space: nowrap; /* Prevents the name from wrapping */
+}
+
+.cart-item-quantity {
+  color: black;
+  flex: 0 0 auto; /* Do not grow or shrink, and base size on content */
+  margin-right: 10px; /* Add some space after the quantity */
+}
+
+.cart-item-price {
+  color: black;
+  flex: 0 0 auto; /* Do not grow or shrink, and base size on content */
+  white-space: nowrap; /* Prevents the price from wrapping */
+}
