@@ -1,0 +1,77 @@
+/* src/components/CartSummary/CartSummary.css */
+
+.cart-summary {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFFFFF;
+    padding: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 100%;
+  }
+  
+  .summary-title,
+  .summary-total,
+  .summary-row {
+    display: grid;
+    grid-template-columns: auto minmax(100px, auto); /* Label column auto width, price column at least 100px */
+    align-items: center;
+    gap: 16px; /* Space between columns */
+    margin-bottom: 20px;
+  }
+  
+  .summary-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  
+  .summary-text {
+    font-size: 25px;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  .summary-price {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    text-align: right;
+  }
+  
+  .summary-total {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+    border-top: 2px solid #000;
+    padding-top: 5px;
+  }
+  
+  .checkout-button {
+    background-color: #090909; /* Do not change */
+    color: white; /* Ensure button text is visible */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 4px;
+  }
+  
+  .checkout-button:hover {
+    background-color: #e0e0e0; /* Do not change */
+  }
+  
+  .payment-methods {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
