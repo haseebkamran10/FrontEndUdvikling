@@ -1,0 +1,70 @@
+.login-page-cont{
+    color: black;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    margin-top: 10vh;
+}
+
+.login-page-cont .left-cont{
+    height: 75vh !important;
+       width: 50%;
+    background-color: gray;
+    margin-top: 30px;
+    padding-top: 50px;
+}
+.login-page-cont .left-cont button {
+    padding: 20px;
+    font-size: 2rem;
+    color: black;
+    background-color: gray;
+}
+.login-page-cont .left-cont img{
+    
+    width: 100%;
+    margin-top: 20px;
+}
+.login-page-cont .right-cont{
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+}
+
+.login-page-cont .right-cont form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.login-page-cont .right-cont form input{
+    padding: 25px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background-color: rgba(128, 128, 128, 0.349);
+    border: none;
+    border-radius: 10px;
+}
+.login-page-cont .right-cont .btns-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.login-page-cont .right-cont .btns-cont button{
+    width: 25% ;
+    color: white;
+    padding: 20px;
+    font-size: 1.1rem;
+    border-radius: 22px;
+}
+.login-page-cont .right-cont .btns-cont .btn1{
+    background-color: rgba(128, 128, 128, 0.939);
+}
+
+
+.login-page-cont .right-cont .btns-cont .btn2{
+    background-color: rgb(96, 91, 91);
+}
