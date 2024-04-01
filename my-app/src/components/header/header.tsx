@@ -24,8 +24,9 @@ const Header: React.FC = () => {
           <img src={SearchIcon} alt="Search" className="search-icon" />
           <input type="text" placeholder="Hvad leder du efter" className="search-input" />
         </div>
+        <Link to = '/basket'>
         <img src={ShoppingCartIcon} alt="Shopping Cart" className="shopping-cart-icon" />
-        
+        </Link>
         <Link to = '/login'>
          <img src={UserIcon} alt="User" className="user-icon" />
         </Link>
