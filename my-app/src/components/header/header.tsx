@@ -5,6 +5,7 @@ import Logo from '../../logo.svg';
 import SearchIcon from '../../search-icon.svg';
 import UserIcon from '../../user-icon.svg';
 import ShoppingCartIcon from '../../shopping-cart-icon.svg';
+import { Link } from'react-router-dom';
 
 const Header: React.FC = () => {
   return (
@@ -23,8 +24,12 @@ const Header: React.FC = () => {
           <img src={SearchIcon} alt="Search" className="search-icon" />
           <input type="text" placeholder="Hvad leder du efter" className="search-input" />
         </div>
+        <Link to="/basket" className="basket-link">
         <img src={ShoppingCartIcon} alt="Shopping Cart" className="shopping-cart-icon" />
+        </Link>
+        <Link to="/login" className="login-link">
         <img src={UserIcon} alt="User" className="user-icon" />
+        </Link>
       </div>
     </div>
   );
