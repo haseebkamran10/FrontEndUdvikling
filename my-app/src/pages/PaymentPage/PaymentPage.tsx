@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import './PaymentPage.css'
 
 type FormData = {
   name: string;
@@ -42,38 +43,46 @@ const PaymentPage: React.FC = () => {
   }, [zipCodeValue]);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('name', { required: true })} placeholder="Name" />
-      {errors.name && <p>Name is required.</p>}
 
-      <input {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })} placeholder="Email" />
-      {errors.email && <p>Email is required.</p>}
+    <div className='form-container-parent'>
 
-      <input {...register('phone', { required: true, pattern: /^\d{8}$/ })} placeholder="Phone" />
-      {errors.phone && <p>Phone is required.</p>}
+      <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
 
-      <select {...register('country')} defaultValue="Denmark">
-        <option value="Denmark">Denmark</option>
-        {/* Sweden and Norway would be added later */}
-      </select>
+        <input {...register('name', { required: true })} placeholder="Name" />
+        {errors.name && <p>Name is required.</p>}
 
-      <input {...register('zipCode', { required: true, pattern: /^\d{4}$/ })} placeholder="Zip Code" />
-      {errors.zipCode && <p>ZIP code is required.</p>}
+        <input {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })} placeholder="Email" />
+        {errors.email && <p>Email is required.</p>}
 
-      <input {...register('city')} placeholder="City" readOnly />
+        <input {...register('phone', { required: true, pattern: /^\d{8}$/ })} placeholder="Phone" />
+        {errors.phone && <p>Phone is required.</p>}
 
-      <input {...register('addressLine1', { required: true })} placeholder="Address Line 1" />
-      {errors.addressLine1 && <p>Address Line 1 is required.</p>}
+        <select {...register('country')} defaultValue="Denmark">
+          <option value="Denmark">Denmark</option>
+          {/* Sweden and Norway would be added later */}
+        </select>
 
-      <input {...register('addressLine2')} placeholder="Address Line 2" />
+        <input {...register('zipCode', { required: true, pattern: /^\d{4}$/ })} placeholder="Zip Code" />
+        {errors.zipCode && <p>ZIP code is required.</p>}
 
-      <input {...register('companyName')} placeholder="Company Name (Optional)" />
+        <input {...register('city')} placeholder="City" readOnly />
 
-      <input {...register('companyVat', { pattern: /^\d{8}$/ })} placeholder="Company VAT Number (Optional)" />
-      {errors.companyVat && <p>Invalid VAT number.</p>}
+        <input {...register('addressLine1', { required: true })} placeholder="Address Line 1" />
+        {errors.addressLine1 && <p>Address Line 1 is required.</p>}
 
-      <button type="submit" className="checkout-button">Complete Purchase</button>
-    </form>
+        <input {...register('addressLine2')} placeholder="Address Line 2" />
+
+        <input {...register('companyName')} placeholder="Company Name (Optional)" />
+
+        <input {...register('companyVat', { pattern: /^\d{8}$/ })} placeholder="Company VAT Number (Optional)" />
+        {errors.companyVat && <p>Invalid VAT number.</p>}
+
+        <button type="submit" className="checkout-button">Complete Purchase</button>
+
+      </form>
+
+    </div>
+
   );
 };
 
