@@ -13,7 +13,7 @@ function App() {
         <Route path="/basket" element={<CheckoutPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         // ... other routes
-        <Route path="/login" element={<LoginPage />} />
+         
       </Routes>
     </Router>
   );
