@@ -2,31 +2,38 @@
     color: black;
     width: 100vw;
     height: 75vh;
-    display: flex; /* Use 'flex' to enable flexbox */
+    display: flex; 
     justify-content: flex-end; /* Align children (the .right-cont) to the right */
     margin-top: 2vh;
-    /* If you want .right-cont to be vertically centered as well, add this: */
     align-items: center;
   }
   
   .login-page-cont .right-cont {
     width: 30%;
-    max-width: 600px; /* Optional: To prevent it from becoming too wide on large screens */
+    max-width: 600px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     background-color: white;
-    right: -600px; /* Start off-screen */
-  top: 2vh; /* Adjusted to your .login-page-cont margin-top */
-  transition: right 0.5s ease; /* Smooth transition for the 'right' property */
-    /* Add 'background-color: yellow;' if needed, or any other background color */
-    /* If you want some margin from the right edge of the viewport, you can add 'margin-right: someValue;' */
-  }
-  
-  .login-page-cont .right-cont.show {
-    right: 0; /* Slide in to be fully visible */
-  }
+    right: -600px; 
+  top: 2vh; 
+  overflow: hidden;
+  transition: transform 1.0s ease;
+  z-index: 100;
+}
+
+.login-page-cont .right-cont .right-cont-inner {
+  transform: translateX(100%);
+}
+
+.login-page-cont .right-cont.show {
+  transform: translateX(0); /* Slide container in */
+}
+
+.login-page-cont .right-cont.show .right-cont-inner {
+  transform: translateX(0); /* Slide content along with container */
+}
 
 .login-page-cont .right-cont form{
     display: flex;
@@ -50,15 +57,15 @@
 }
 
 .login-page-cont .right-cont .btns-cont button {
-    width: auto; /* Adjust width as needed, or keep it as 'auto' for content-width */
+    width: auto; 
     color: white;
-    padding: 15px; /* Reduced padding */
-    font-size: 0.9rem; /* Reduced font size */
+    padding: 15px; 
+    font-size: 0.9rem; 
     border-radius: 22px;
     border: none;
-    margin-right: 10px; /* Add some margin between buttons */
-    cursor: pointer; /* Hand cursor on hover */
-    background-color: rgba(128, 128, 128, 0.939); /* Default button background */
+    margin-right: 10px; 
+    cursor: pointer; 
+    background-color: rgba(128, 128, 128, 0.939); 
 }
 .login-page-cont .right-cont .btns-cont .btn1{
     background-color: rgba(128, 128, 128, 0.939);
