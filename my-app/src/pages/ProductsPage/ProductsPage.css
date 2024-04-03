@@ -10,6 +10,8 @@
   .card-items{
     margin-right:20px;
     margin-bottom: 300px;
+    scale: 0.88;
+   
     
 
     
@@ -17,13 +19,15 @@
   
   .cricket-bat-image {
     width: min-content;
-    height: 1000px;
+    height: 500px;
     margin-right: 20px; 
     margin-top: -120px;
-    
+    object-fit: cover;
+
+ 
   }
 
-  
+
   .product-info {
     display: flex;
     flex-direction: column;
