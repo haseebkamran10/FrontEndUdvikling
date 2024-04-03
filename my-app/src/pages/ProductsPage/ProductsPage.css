@@ -1,0 +1,81 @@
+.product-container {
+    display: flex;
+    align-items: center; 
+    padding-left: -20px;
+    
+
+ 
+  }
+  
+  .card-items{
+    margin-right:20px;
+    margin-bottom: 300px;
+    
+
+    
+  }
+  
+  .cricket-bat-image {
+    width: min-content;
+    height: 1000px;
+    margin-right: 20px; 
+    margin-top: -120px;
+    
+  }
+
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .category-info h1 {
+    font-size: 15px;
+    color: #fffefe;
+    margin-bottom: 8px; 
+    
+}  
+  .cricket-bat-info {
+    font-size: 24px;
+    color: #ffffff;
+  }
+
+  h2 {
+    margin: 0;
+    
+  }
+  
+  .price {
+    font-size: 24px;
+    color: #fffcfc;
+    margin: 10px 0;
+    margin-top: 10px;
+  }
+  span{
+    color: #b4abab;
+  }
+  .original-price {
+    margin-left: 10px;
+    text-decoration: line-through;
+  }
+  
+  .add-to-basket-btn {
+    background: rgb(112, 99, 99);
+    color: white;
+    border: none;
+    padding: 20px 150px;
+    cursor: pointer;
+    margin-top: 10px; 
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    
+  }
+  
+  .add-to-basket-btn:hover {
+    background: #333;
+  }
+  
