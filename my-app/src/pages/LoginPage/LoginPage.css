@@ -1,36 +1,32 @@
-.login-page-cont{
+.login-page-cont {
     color: black;
     width: 100vw;
     height: 75vh;
-    display: flex;
-    margin-top: 10vh;
-}
-
-.login-page-cont .left-cont{
-    height: 75vh !important;
-       width: 50%;
-    background-color: gray;
-    margin-top: 30px;
-    padding-top: 50px;
-}
-.login-page-cont .left-cont button {
-    padding: 20px;
-    font-size: 2rem;
-    color: black;
-    background-color: gray;
-}
-.login-page-cont .left-cont img{
-    
-    width: 100%;
-    margin-top: 20px;
-}
-.login-page-cont .right-cont{
-    width: 50%;
+    display: flex; /* Use 'flex' to enable flexbox */
+    justify-content: flex-end; /* Align children (the .right-cont) to the right */
+    margin-top: 2vh;
+    /* If you want .right-cont to be vertically centered as well, add this: */
+    align-items: center;
+  }
+  
+  .login-page-cont .right-cont {
+    width: 30%;
+    max-width: 600px; /* Optional: To prevent it from becoming too wide on large screens */
     padding: 30px;
     display: flex;
     flex-direction: column;
-    /* background-color: yellow; */
-}
+    margin-left: auto;
+    background-color: white;
+    right: -600px; /* Start off-screen */
+  top: 2vh; /* Adjusted to your .login-page-cont margin-top */
+  transition: right 0.5s ease; /* Smooth transition for the 'right' property */
+    /* Add 'background-color: yellow;' if needed, or any other background color */
+    /* If you want some margin from the right edge of the viewport, you can add 'margin-right: someValue;' */
+  }
+  
+  .login-page-cont .right-cont.show {
+    right: 0; /* Slide in to be fully visible */
+  }
 
 .login-page-cont .right-cont form{
     display: flex;
