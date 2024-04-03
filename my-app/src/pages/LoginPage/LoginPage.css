@@ -39,8 +39,8 @@
     
 }
 .login-page-cont .right-cont form input{
-    padding: 25px;
-    font-size: 1.5rem;
+    padding: 20px;
+    font-size: 0.8rem;
     margin-bottom: 20px;
     background-color: rgba(128, 128, 128, 0.349);
     border: none;
@@ -53,12 +53,16 @@
     
 }
 
-.login-page-cont .right-cont .btns-cont button{
-    width: 25% ;
+.login-page-cont .right-cont .btns-cont button {
+    width: auto; /* Adjust width as needed, or keep it as 'auto' for content-width */
     color: white;
-    padding: 20px;
-    font-size: 1.1rem;
+    padding: 15px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
     border-radius: 22px;
+    border: none;
+    margin-right: 10px; /* Add some margin between buttons */
+    cursor: pointer; /* Hand cursor on hover */
+    background-color: rgba(128, 128, 128, 0.939); /* Default button background */
 }
 .login-page-cont .right-cont .btns-cont .btn1{
     background-color: rgba(128, 128, 128, 0.939);

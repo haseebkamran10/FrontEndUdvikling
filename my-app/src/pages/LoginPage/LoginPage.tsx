@@ -10,10 +10,6 @@ return(
   <div className='login-page-cont' style={{display:'flex', flexDirection:'column'}}>
      <div style={{display:'flex'}}>
         <div className='loft-cont'>
-            <div>
-                <button> Adult</button>
-                <button>kids</button>
-            </div>
             <img src={login} alt="" />
         </div>
         <div className=' right-cont'>
@@ -21,23 +17,23 @@ return(
                         <h3>Log ind</h3>
                          <CloseIcon />
                     </div>
-                    <p style={{ textAlign: "left" }} >Log ind pa din konto:</p>
+                    <p style={{ textAlign: "left" }} >Log ind på din konto:</p>
                     <form action="#">
                         <input type="email" name="" id="" placeholder='E-mail' />
-                        <input type="password" name="" id="" placeholder='Adgansadasa' />
+                        <input type="password" name="" id="" placeholder='Adgangskode' />
                     </form>
                     <div className='btns-cont' >
-                        <button className='btn1' >Glemet adgangskod</button>
+                        <button className='btn1' >Glemt adgangskode</button>
                         <button className='btn2' >Log ind</button>
                     </div>
-                    <h3 style={{ textAlign: "left", fontSize: "1.5rem" }} >Ikke medlem endnu</h3>
+                    <h3 style={{ textAlign: "left", fontSize: "1.0rem" }} >Ikke medlem endnu</h3>
                     <div className='' style={{ display: "flex", alignItems: "center" }} >
                         <SportsCricketIcon />
                         <p className='' style={{ marginLeft: "15px", color: "gray" }} >Bliv medlem</p>
                     </div>
                     <div style={{ display: "flex", alignItems: "center" }} >
                         <ErrorOutlineIcon />
-                        <p style={{ marginLeft: "15px", color: "gray" }} >Laes om alle fordele</p>
+                        <p style={{ marginLeft: "15px", color: "gray" }} >Læs om alle fordele</p>
                     </div>                  
         </div>
      </div>
