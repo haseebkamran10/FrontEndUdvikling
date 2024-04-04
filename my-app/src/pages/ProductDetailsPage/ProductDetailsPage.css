@@ -1,0 +1,37 @@
+.productdetails-page-cont {
+    display: flex;
+  }
+  
+  .left-cont {
+    background-color: #f0f0f0; /* Slightly gray background */
+    width: 60%;
+    max-height: 80vh; /* max height set to 50% of the viewport height for compactness */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    /*padding: 20px; */
+    overflow: hidden; /* Ensures that content exceeding the container's height is not visible */
+  }
+  
+  .left-cont img {
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    max-width: 100%;
+    object-fit: contain; /* Ensures the entire image is visible, may leave space if aspect ratio differs */
+  }
+  
+  .right-cont {
+    width: 40%;
+    
+  }
+  
+  
+  @media (max-width: 768px) {
+    .productdetails-page-cont {
+      flex-direction: column;
+    }
+  
+    .left-cont, .right-cont {
+      width: 100%;
+    }
+  }
+  
