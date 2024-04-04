@@ -1,8 +1,10 @@
 import React  from 'react';
 import './ProductsPage.css'; // Make sure to create this CSS file
 import kookaburraImage from '../../kookaburra-bat.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaypal, faKlarna } from '@fortawesome/free-brands-svg-icons';
+import paypal from '../../paypal.png';
+import klarna from '../../klarna.png';
+/*import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';*/
+/*import { faPaypal, faKlarna } from '@fortawesome/free-brands-svg-icons';*/
 
 const ProductsPage: React.FC = () => {
   // Function to handle adding item to the basket
@@ -32,14 +34,14 @@ const ProductsPage: React.FC = () => {
           </button>
           </div>
           <div className="payment-methods">
-            <FontAwesomeIcon icon={faPaypal}/>
-            <FontAwesomeIcon icon={faKlarna}/>
-           <i className="fab fa-paypal">Pay in 3 interest-free payments of £35.99.</i>
-            <i className="fab fa-klarna">Make 3 payments of £34.99.</i>
+          <img src={paypal}></img>
+           <img src={klarna}></img>
+            </div>
+          </div>
           </div>
         </div>
-      </div>
-    </div>
+          
+         
     
   );
 };
