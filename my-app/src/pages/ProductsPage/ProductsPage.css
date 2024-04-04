@@ -1,7 +1,10 @@
+
 .product-container {
     display: flex;
     align-items: center; 
     padding-left: -20px;
+    background-color: rgb(255, 255, 255);
+   
     
 
  
@@ -36,50 +39,73 @@
   
   .category-info h1 {
     font-size: 15px;
-    color: #fffefe;
+    color: #635d5d;
     margin-bottom: 8px; 
     
 }  
   .cricket-bat-info {
     font-size: 24px;
-    color: #ffffff;
+    color: #000000;
   }
 
   h2 {
     margin: 0;
     
   }
-  
+  .price-container{
+   display: flex;
+  flex-direction: row;
+
+  }
   .price {
     font-size: 24px;
-    color: #fffcfc;
+    color: #050505;
     margin: 10px 0;
     margin-top: 10px;
   }
   span{
-    color: #b4abab;
+    color: #8a8181;
   }
   .original-price {
     margin-left: 10px;
     text-decoration: line-through;
   }
+  .save-price{
+    color: #f70b0b;
+    margin-left: 10px;
+
+  }
   
   .add-to-basket-btn {
-    background: rgb(112, 99, 99);
-    color: white;
-    border: none;
-    padding: 20px 150px;
-    cursor: pointer;
-    margin-top: 10px; 
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 40px;
+  background: rgb(112, 99, 99);
+  color: white;
+  border: 1px solid #ccc; /* Adds a solid gray border */
+  padding: 20px 150px;
+  cursor: pointer;
+  margin-top: 10px; 
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #605454, #998d8d); /* Creates a gradient background */
+  color: white;
     
   }
   
   .add-to-basket-btn:hover {
     background: #333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   }
-  
+  .payment-methods {
+    display: flex;
+    color: #1f1e1e;
+    flex-direction: column;
+    margin-top: 10px; /* Adjust spacing as needed */
+  }
+  .payment-methods i {
+    margin-right: 10px; /* Adjust spacing between icons */
+    font-size: 20px;
+     /* Adjust icon size */
+  }

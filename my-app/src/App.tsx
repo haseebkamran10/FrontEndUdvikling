@@ -11,11 +11,7 @@ function App() {
       <Routes>
         <Route path="/basket" element={<CheckoutPage />} />
         <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/productspage" element={<ProductsPage 
-    productName="Example Product Name" 
-    productPrice={150.00} 
-    discountPrice={100.00} 
-    currency="£" />} />
+        <Route path="/productspage" element={<ProductsPage/>} />
         // ... other routes
       </Routes>
     </Router>
