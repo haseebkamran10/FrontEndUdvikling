@@ -6,6 +6,7 @@ import viaBillLogo from '../../viabill-logo.png';
 import returnIcon from '../../Return.svg';
 import shippingIcon from '../../shipping.svg';
 import rocketIcon from '../../rocket.svg';
+import expressbankLogo from '../../expressbank-logo.png'
 
 const ProductDetailsPage = () => {
   const handleAddToBasket = () => {
@@ -41,6 +42,9 @@ const ProductDetailsPage = () => {
   </div>
   <div className="logo-wrapper">
     <img src={viaBillLogo} alt="ViaBill" className="payment-logo viabill" />
+  </div>
+  <div className="logo-wrapper">
+    <img src={expressbankLogo} alt="ExpressBank" className="payment-logo express-bank" />
   </div>
           
         </div>
