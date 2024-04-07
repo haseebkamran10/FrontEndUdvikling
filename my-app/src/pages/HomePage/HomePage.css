@@ -1,0 +1,30 @@
+/* HomePage.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+  }
+  
+  .slideshow-container {
+    position: relative;
+    width: 100vw; /* Sets the container's width to be 100% of the viewport width */
+    max-height: 70vh; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* This ensures that the content dictates the height */
+  }
+  
+  .slick-slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* This maintains the aspect ratio of the images */
+    object-fit: contain; /* Ensures that the image is scaled properly */
+  }
+  

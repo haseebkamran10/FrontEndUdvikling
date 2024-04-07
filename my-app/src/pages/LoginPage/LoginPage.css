@@ -1,26 +1,31 @@
 .login-page-cont {
-    color: black;
-    width: 100vw;
-    height: 75vh;
-    display: flex; 
-    justify-content: flex-end; /* Align children (the .right-cont) to the right */
-    margin-top: 2vh;
-    align-items: center;
-  }
-  
-  .login-page-cont .right-cont {
-    width: 30%;
-    max-width: 600px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    background-color: white;
-    right: -600px; 
-  top: 2vh; 
+  color: black;
+  width: 100vw;
+  /*height: calc(100vh - 100px); Adjusted to match your header's actual height of 100px */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed; /* Changed from absolute to fixed to cover the entire viewport below the header */
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  /*top: 100px;  Adjusted to match your header's height */
+  z-index: 1000; /* Ensure this is below the header's z-index if you want clicks to pass through to header */
+  margin-top: -10;
+}
+
+.login-page-cont .right-cont {
+  width: 30%;
+  max-width: 600px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  background-color: white;
+  right: 0; /* Adjusted from -600px to start from the right edge */
+  top: 2vh;
   overflow: hidden;
   transition: transform 1.0s ease;
-  z-index: 100;
+  z-index: 100; /* This might need to be higher than 100 if there are other overlapping elements */
 }
 
 .login-page-cont .right-cont .right-cont-inner {
@@ -35,43 +40,43 @@
   transform: translateX(0); /* Slide content along with container */
 }
 
-.login-page-cont .right-cont form{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
+.login-page-cont .right-cont form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-.login-page-cont .right-cont form input{
-    padding: 20px;
-    font-size: 0.8rem;
-    margin-bottom: 20px;
-    background-color: rgba(128, 128, 128, 0.349);
-    border: none;
-    border-radius: 10px;
+
+.login-page-cont .right-cont form input {
+  padding: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  background-color: rgba(128, 128, 128, 0.349);
+  border: none;
+  border-radius: 10px;
 }
-.login-page-cont .right-cont .btns-cont{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    
+
+.login-page-cont .right-cont .btns-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .login-page-cont .right-cont .btns-cont button {
-    width: auto; 
-    color: white;
-    padding: 15px; 
-    font-size: 0.9rem; 
-    border-radius: 22px;
-    border: none;
-    margin-right: 10px; 
-    cursor: pointer; 
-    background-color: rgba(128, 128, 128, 0.939); 
-}
-.login-page-cont .right-cont .btns-cont .btn1{
-    background-color: rgba(128, 128, 128, 0.939);
+  width: auto;
+  color: white;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-radius: 22px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.939);
 }
 
+.login-page-cont .right-cont .btns-cont .btn1 {
+  background-color: rgba(128, 128, 128, 0.939);
+}
 
-.login-page-cont .right-cont .btns-cont .btn2{
-    background-color: rgb(96, 91, 91);
+.login-page-cont .right-cont .btns-cont .btn2 {
+  background-color: rgb(96, 91, 91);
 }
