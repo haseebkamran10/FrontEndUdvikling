@@ -6,6 +6,8 @@
     justify-content: flex-end; /* Align children (the .right-cont) to the right */
     margin-top: 2vh;
     align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(1px);
   }
   
   .login-page-cont .right-cont {
