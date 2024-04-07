@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './CheckoutPage2.css'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 const CheckoutPage2 = () => { 
@@ -10,6 +11,7 @@ const CheckoutPage2 = () => {
           <ShoppingCartOutlinedIcon style={{ scale: "6" }} />
           <p style={{ marginTop: "100px" }} >Der ser ud til.at din kurv er tom start ved at din Shopping ved at tilføje varer til kurven.</p>
         </div>
+       
       </div>
       <div className="right-cont">
         <h4 style={{ textAlign: "center" }} >Oversigt</h4>
