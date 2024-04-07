@@ -1,6 +1,5 @@
 .container {
     width: 100%;
-    padding-top: 100px;
   }
   
   .sort-filter {
@@ -52,11 +51,12 @@
   }
   
   .product-card img {
-    width: 100%; 
-    height: auto;
-    align-self: center; 
-    display: block; 
-    margin-bottom: 16px; 
+    width: 100px; 
+    height: 150px; 
+    object-fit: cover; 
+    align-self: center;
+    display: block;
+    margin-bottom: 16px;
   }
   
   .product-card h3 {

@@ -1,8 +1,10 @@
 import React,{ useState } from 'react';
 import './ProductsPage.css'; 
 import grayNicollsImage from '../../gray-nicolls-bat.jpg';
+import gmbat from '../../gm-bat.jpg'; 
 import sortFilter from '../../sortFilter.png';
 import SortFilterPage from '../SortFilterPage/SortFilterPage';
+import kookaburra from '../../kookaburra-bat.jpg';
 
 type Product = {
   id: number;
@@ -13,18 +15,18 @@ type Product = {
 
 const products: Product[] = [
   
-  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: gmbat },
   { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
-  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: kookaburra },
   { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: kookaburra },
+  { id: 2, name: 'Kookaburra', price: 900, imageUrl: gmbat },
   { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
+  { id: 2, name: 'Kookaburra', price: 900, imageUrl: gmbat },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: kookaburra },
   { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
-  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
-  { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
-  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
-  { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
-  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
-  { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: gmbat },
+  { id: 2, name: 'Kookaburra', price: 900, imageUrl: kookaburra },
 ];
 
 const ProductPage: React.FC = () => {

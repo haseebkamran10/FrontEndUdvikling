@@ -3,9 +3,13 @@
     width: 100vw;
     height: 75vh;
     display: flex; 
-    justify-content: flex-end; /* Align children (the .right-cont) to the right */
-    margin-top: 2vh;
+    justify-content: flex-end;
     align-items: center;
+    position:absolute;
+    background-color: transparent;
+    backdrop-filter: blur(4px); 
+    top: -100px;
+    z-index: 1000;
   }
   
   .login-page-cont .right-cont {
