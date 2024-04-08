@@ -1,108 +1,80 @@
-/* src/components/CartList/CartList.css */
-
 .cart-list {
-  max-width: 1000px; /* Adjust this to the desired width of your cart list */
+  max-width: 1000px;
   padding: 50px;
-  margin-right: 500px; /* Push the cart list more to the left */
+  margin-right: auto; /* Adjusted for centering */
+  margin-left: auto; /* Adjusted for centering */
 }
 
-.cart-list-empty {
-  text-align: center;
-  padding: 50px;
-  margin-left: 20px; /* Ensures consistency in alignment */
-}
-
-.empty-cart-header {
+.cart-list-heading {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px; /* Spacing between the heading and the first item */
   color: black;
-  font-size: 40px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  line-height: 26px;
-  word-wrap: break-word;
-}
-
-.empty-cart-icon {
-  width: 100px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Space below the icon */
-}
-
-.empty-cart-message {
-  color: black;
-  font-size: 23px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  line-height: 35px;
-  word-wrap: break-word;
+  font-size: 24px; /* Adjust the size as necessary */
 }
 
 .cart-item {
   display: flex;
-  align-items: flex;
+  align-items: center; /* Changed from 'flex' for proper alignment */
   border: 1px solid #ccc;
   background-color: #fff;
-  margin-bottom: 20px; /* Space between cart items */
-  padding: 20px; /* Adjust the padding to give more space inside the rectangle */
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .cart-item-image {
-  flex: 0 0 auto; /* Do not grow or shrink, and base size on content */
-  width: 120px; /* Fixed width */
+  width: 120px;
   height: auto;
-  margin-right: 20px; /* Space after image */
+  margin-right: 20px;
 }
 
 .cart-item-details {
   display: flex;
-  flex-grow: 1; /* Take up the remaining space */
-  justify-content: space-between; /* Space out the name, quantity, and price */
+  flex-grow: 1;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Add padding on both sides */
+  padding: 0 20px;
 }
 
 .cart-item-name {
   color: black;
-  flex: 1; /* Allow the name to take up space */
-  margin-right: 10px; /* Add some space after the name */
-  white-space: nowrap; /* Prevents the name from wrapping */
+  flex: 1;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
 .cart-item-quantity {
-  color: black;
-  flex: 0 0 auto; /* Do not grow or shrink, and base size on content */
-  margin-right: 10px; /* Add some space after the quantity */
+  margin-right: 10px;
 }
 
 .cart-item-price {
-  color: black;
-  flex: 0 0 auto; /* Do not grow or shrink, and base size on content */
-  white-space: nowrap; /* Prevents the price from wrapping */
+  white-space: nowrap;
 }
 
 .cart-item-quantity-control {
   display: flex;
   align-items: center;
-  margin-top: 10px; /* Push the quantity buttons down from the price */
+  margin-top: 10px;
 }
 
 .cart-item-quantity-control button {
-  background-color: #f5f5f5; /* Light grey background */
-  color: #333; /* Darker text color */
+  background-color: #f5f5f5;
+  color: #333;
   border: none;
-  border-radius: 100%; /* Make the buttons round */
-  width: 25px; /* Smaller width */
-  height: 25px; /* Smaller height */
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin: 0 5px; /* Spacing between quantity and buttons */
+  margin: 0 5px;
 }
 
 .cart-item-quantity-control button:hover {
-  background-color: #e0e0e0; /* Slightly darker on hover */
+  background-color: #e0e0e0;
 }
 
 .cart-item-quantity-control span {
-  padding: 0 10px; /* Spacing for the quantity number */
+  padding: 0 10px;
 }

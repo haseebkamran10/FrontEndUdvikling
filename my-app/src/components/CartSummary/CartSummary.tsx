@@ -1,44 +1,40 @@
 import React from 'react';
-import { CartItem } from '../../types/types';
 import './CartSummary.css';
-
+import paymentMethods from '../../PaymentMethods.png'
+// Assuming you pass the necessary props for total, discount, etc.
 type CartSummaryProps = {
-  cartItems: CartItem[];
-  goToPayment: () => void; // Add this prop for the goToPayment function
+  total: number;
+  discount: number;
+  onGoToPayment: () => void;
 };
 
-const CartSummary: React.FC<CartSummaryProps> = ({ cartItems, goToPayment }) => {
-  // Calculate the total price of the items in the cart
-  const totalPrice = cartItems.reduce((total, item) => {
-    return total + item.quantity * item.product.price;
-  }, 0);
-
-  // Apply a 10% discount for orders over 300 DKK
-  const discount = totalPrice > 300 ? totalPrice * 0.1 : 0;
-
-  // Final price after applying the discount
-  const finalPrice = totalPrice - discount;
+const CartSummary: React.FC<CartSummaryProps> = ({ total, discount, onGoToPayment }) => {
+  const deliveryCharge = 40; // Assuming a fixed delivery charge for simplicity
 
   return (
     <div className="cart-summary">
-      <h2 className="summary-title">Oversigt</h2>
-      <div className="summary-row">
-        <span className="summary-text">Sum</span>
-        <span className="summary-price">{totalPrice.toFixed(2)} DKK</span>
+        <h4>Oversigt</h4>
+        <hr />
+        <div className="summary-row">
+          <p>Sum</p>
+          <p>{total - discount} kr.</p>
+        </div>
+        {discount > 0 && <p className="discount">10 % discount on Total</p>}
+        
+        <div className="summary-row">
+          <p>Levering</p>
+          <p>{deliveryCharge} kr.</p>
+        </div>
+        <hr />
+        <div className="summary-row">
+          <p>Total</p>
+          <p>{total + deliveryCharge - discount} kr.</p>
+        </div>
+        <hr />
+        <p>Du kan indtaste værdikuponer og vælge din leveringsmuligheder ved kassen</p>
+        <button onClick={onGoToPayment}>Gå til kassen</button>
+        <img src={paymentMethods} alt="Payment Methods" />
       </div>
-      <div className="summary-row">
-        <span className="summary-text">Rabat</span>
-        <span className="summary-price">-{discount.toFixed(2)} DKK</span>
-      </div>
-      <div className="summary-total">
-        <span className="summary-text">Total</span>
-        <span className="summary-price">{finalPrice.toFixed(2)} DKK</span>
-      </div>
-      <button className="checkout-button" onClick={goToPayment}>
-  Gå til kassen
-</button>
-      {/* Payment method icons here */}
-    </div>
   );
 };
 
