@@ -33,6 +33,7 @@
   padding: 2px 20px; /* Adjusts the height and adds horizontal padding */
   margin: 0 0; /* Adds some vertical space around the box */
   width: 70%;
+  
 }
 
 /* Style adjustments for the input fields inside the container, if needed */
@@ -57,6 +58,11 @@
   padding: 20px;
   border: 1px solid #c1baba; /* Light grey border */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+.error-message {
+  font-size: 10px;
+  color: red; /* Style error messages in red */
 }
 
 /* If you want the right container to have a distinct background as well, add similar styles to .right-container */
