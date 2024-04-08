@@ -8,7 +8,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ContactInfo from './pages/ContactInfo/ContactInfo';
 import { CartProvider } from './CartContext'; // Import the CartProvider
-
+import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
           <Route path="/cart" element={<CheckoutPage />} />
           <Route path="/contactinfo" element={<ContactInfo />} />
           {/* ... other routes */}
+          <Route path="/delivery" element={<DeliveryPage />} />
         </Routes>
       </Router>
     </CartProvider>

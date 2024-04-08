@@ -1,0 +1,64 @@
+.contact-info-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px; /* Adds space between the containers */
+
+  }
+  
+  .left-container {
+    margin-top: 100px;
+    width: 600px; /* Increases the width to cover more of the screen */
+    min-height: 800px; /* Sets a minimum height */
+    background-color: #ffffff; /* Slightly grey color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    margin-left: 30px; /* Adds some space from the left side of the screen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(50, 50, 50, 0.15); /* Deeper greyish shadow */
+    
+  }
+  
+  .contact-info-heading {
+    margin-left: 30px;
+    margin-top: 40px;
+    font-weight: normal;
+    text-align: left;
+    margin-bottom: 20px; /* Spacing between the heading and the first item */
+    color: black;
+    font-size: 20px; /* Adjust the size as necessary */
+    
+  }
+  
+  .input-field-container {
+    height: 70px;
+    background-color: white; /* Or any color you prefer */
+    border-radius: 20px;
+    padding: 2px 20px; /* Adjusts the height and adds horizontal padding */
+    margin: 0 0; /* Adds some vertical space around the box */
+    width: 70%;
+   
+    
+  }
+  
+  /* Style adjustments for the input fields inside the container, if needed */
+  .input-field-container input {
+    width: calc(100% - 40px); /* Full width minus padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px 10px; /* Increased padding to make the input field slightly higher */
+    margin: 10px 0; /* Adds some space between multiple inputs */
+    background-color: rgb(230, 224, 225); /* Much lighter background color */
+    color: #333; /* Darker text color for contrast */
+   
+  }
+  
+  
+  
+  
+  .error-message {
+    font-size: 10px;
+    color: red; /* Style error messages in red */
+    background-color: darkblue;
+  }
+  
+  /* If you want the right container to have a distinct background as well, add similar styles to .right-container */
