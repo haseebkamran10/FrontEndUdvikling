@@ -17,7 +17,7 @@
 }
 
 .contact-info-heading {
-  margin-left: 15px;
+  margin-left: 30px;
   margin-top: 40px;
   font-weight: normal;
   text-align: left;
@@ -52,7 +52,7 @@
 
 
 .right-container {
-  flex-grow: 1;
+  flex-grow: 0;
   margin-left: 10px; /* Adjusts spacing between the containers if needed */
   padding: 20px;
   border: 1px solid #c1baba; /* Light grey border */
