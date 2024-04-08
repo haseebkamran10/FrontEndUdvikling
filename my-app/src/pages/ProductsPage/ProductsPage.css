@@ -1,5 +1,6 @@
 .container {
     width: 100%;
+    
   }
   
   .sort-filter {
@@ -10,8 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end; 
-    padding-right: 0px; 
-    padding-top: 10px;
+    
+   
   }
   
   .sort-filter-button {
@@ -23,12 +24,16 @@
     gap:0px; 
     font-size: 16px; 
     color: #000; 
+    padding-right:10px;
+  
   }
   
   .filter-icon {
     width: 30px; /* Set the size of your icon */
     height:30 px;
+    padding-right:0px;
   }
+ 
   
 
 .product-page {
@@ -72,5 +77,12 @@
     margin: 0;
     padding: 0 8px; 
     margin-bottom: 16px; 
+  }
+  .product-card .addToBasket {
+    color: #000;
+    border-top: 1px solid #ddd;
+  }
+  h1{
+    padding-left:17px;
   }
   

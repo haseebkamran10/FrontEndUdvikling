@@ -13,6 +13,7 @@ const Header: React.FC = () => {
   // Event handler to toggle the visibility of the LoginPage
   const toggleLoginPage = () => {
     setIsLoginPageVisible(!isLoginPageVisible);
+  
   };
 
   return (

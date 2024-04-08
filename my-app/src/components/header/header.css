@@ -153,4 +153,14 @@
     visibility: visible; /* Make visible */
     opacity: 1; /* Fade to semi-transparent */
   }
+  .basket-counter {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+    position: absolute; /* Adjust positioning to match your layout */
+    top: 0;
+    right: 0;
+  }
   

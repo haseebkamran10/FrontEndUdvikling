@@ -8,20 +8,22 @@ import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 
 
+
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
+      <Header/>
+       <Routes>
         <Route path="/basket" element={<CheckoutPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/productdetail" element={<ProductDetailsPage />} />
         <Route path="/productspage" element={<ProductsPage />} />
-
+    
         // ... other routes
          
       </Routes>
     </Router>
+    
   );
 }
 
