@@ -1,0 +1,50 @@
+.checkout-page-two-cont{
+    width: 100vw;
+    min-height: 90vh;
+    margin-top: 16vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+}
+
+.checkout-page-two-cont > .left-cont {
+    width: 50%;
+    min-height: 90vh;
+    padding: 0 40px; /* Removed top and bottom padding, kept left and right */
+    display: flex; /* Flexbox for alignment */
+    align-items: flex-start; /* Align child elements to top */
+  }
+  
+
+.checkout-page-two-cont > .left-cont > h3 {
+    border-bottom: 1px solid black;
+    font-size: 2rem;
+    width: 100%; /* Ensures the h3 element takes the full width */
+    padding: 12px;
+    white-space: nowrap; /* Prevent the text from wrapping */
+}
+
+.checkout-page-two-cont > .left-cont > .icon-container {
+    display: flex;
+    align-items: center;
+    height: 700px; /* Example height */
+    text-align: center; /* Center content horizontally */
+  }
+  
+
+
+
+.checkout-page-two-cont > .right-cont{
+    width: 35%;
+    min-height: 90vh;
+
+}
+
+.checkout-page-two-cont > .right-cont > h4{
+    font-weight: bolder !important;
+
+}
+.checkout-page-two-cont > .right-cont > p{
+    font-weight: bolder !important;
+}
