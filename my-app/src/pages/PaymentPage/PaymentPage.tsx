@@ -9,6 +9,7 @@ import './PaymentPage.css';
 type PaymentFormData = {
   phoneNumber: string;
   paymentMethod: 'MobilePay' | 'Card' | 'Invoice';
+  fullName?: string;
 };
 
 const PaymentPage: React.FC = () => {
@@ -25,28 +26,26 @@ const PaymentPage: React.FC = () => {
         <div className="left-container">
           <h1 className="payment-heading">Betaling</h1>
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <div>
-  <label>
-    <input
-      type="radio"
-      value="MobilePay"
-      {...register('paymentMethod', { required: true })}
-    />
-    {/* Add the 'icon-small' class to your image */}
-    <img src={mobilePayLogo} alt="MobilePay" className="icon-small" />
-  </label>
-</div>
-<div>
-  <label>
-    <input
-      type="radio"
-      value="Card"
-      {...register('paymentMethod', { required: true })}
-    />
-    {/* Add the 'icon-small' class to your image */}
-    <img src={cardLogo} alt="Card" className="icon-small" />
-  </label>
-</div>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  value="MobilePay"
+                  {...register('paymentMethod', { required: true })}
+                />
+                <img src={mobilePayLogo} alt="MobilePay" className="icon-small" />
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  value="Card"
+                  {...register('paymentMethod', { required: true })}
+                />
+                <img src={cardLogo} alt="Card" className="icon-small" />
+              </label>
+            </div>
             {selectedPaymentMethod === 'MobilePay' && (
               <div className="input-field-container">
                 <input
@@ -63,15 +62,25 @@ const PaymentPage: React.FC = () => {
               </div>
             )}
             {selectedPaymentMethod === 'Card' && (
-              <div className="input-field-container">
-                <CardElement />
-              </div>
+              <>
+                <div className="input-field-container">
+                  <input
+                    {...register('fullName', {
+                      required: 'Fuldt navn er påkrævet',
+                    })}
+                    placeholder="Fuldt navn"
+                  />
+                  {errors.fullName && <p className="error-message">{errors.fullName.message}</p>}
+                </div>
+                <div className="input-field-container">
+                  <CardElement/>
+                </div>
+              </>
             )}
             <button type="submit">Fortsæt til betaling</button>
           </form>
         </div>
         <div className="right-container">
-          {/* Make sure to pass the required props to CartSummary */}
           <CartSummary total={0} discount={0} onGoToPayment={() => {}} />
         </div>
       </div>
