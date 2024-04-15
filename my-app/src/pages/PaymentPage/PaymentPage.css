@@ -1,3 +1,4 @@
+/* PaymentPage.css */
 .payment-container {
   display: flex;
   justify-content: space-between;
@@ -64,7 +65,13 @@
 }
 
 .icon-small {
-  
-  width:30px; /* Adjust the size as you prefer */
+  width: 100px; /* Adjust the size as you prefer */
   height: auto; /* Maintain the aspect ratio */
+  vertical-align: middle; /* Aligns the icon vertically with the radio button */
+}
+
+label {
+  display: flex;
+  align-items: center; /* Ensures that the label contents are aligned center */
+  gap: 1px; /* Adds space between the radio button and the icon */
 }

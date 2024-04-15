@@ -8,10 +8,10 @@ import cardLogo from '../../Card.png'; // Replace with the correct path
 import './PaymentPage.css';
 type PaymentFormData = {
   phoneNumber: string;
-  paymentMethod: 'MobilePay' | 'Card';
+  paymentMethod: 'MobilePay' | 'Card' | 'Invoice';
 };
 
-export default function PaymentPage() {
+const PaymentPage: React.FC = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<PaymentFormData>();
   const selectedPaymentMethod = watch('paymentMethod');
 
@@ -78,3 +78,5 @@ export default function PaymentPage() {
     </Elements>
   );
 }
+
+export default PaymentPage;
