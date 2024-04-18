@@ -15,15 +15,15 @@ const SortFilterPage: React.FC<Props> = ({ show, onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
-          <h2>Filter Products</h2>
+          <h2>Filtrer produkter</h2>
           <button className="close-modal" onClick={onClose}>&times;</button>
         </div>
         <ul className="filter-options">
-          <li>Sort <span className="arrow">&gt;</span></li>
-          <li>Price Range <span className="arrow">&gt;</span></li>
+          <li> Sorter <span className="arrow">&gt;</span></li>
+          <li>Prisklasse <span className="arrow">&gt;</span></li>
           {/* ... more filter options */}
         </ul>
-        <button className="modal-button" onClick={onClose}>View Products (10)</button>
+        <button className="modal-button" onClick={onClose}>Se produkter (10)</button>
       </div>
     </div>
   );

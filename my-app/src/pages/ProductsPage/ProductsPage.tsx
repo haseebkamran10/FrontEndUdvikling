@@ -73,7 +73,7 @@ const ProductPage: React.FC = () => {
         <h1 className='title'>Produkter</h1>
         <div className="sort-filter">
           <button className="sort-filter-button" onClick={() => { setShowModal(true)}}>
-            <span>Sort & Filter</span>
+            <span>Sortér og Filtrér</span>
             <img src={sortFilter} alt="Sort & Filter" className="filter-icon"/>
           </button>
         </div>
