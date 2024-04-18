@@ -1,0 +1,38 @@
+.checkout-page-two-cont{
+    width: 100vw;
+    min-height: 90vh;
+    margin-top: 16vh;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+}
+
+.checkout-page-two-cont > .left-cont{
+    width: 50%;
+    min-height: 90vh;
+
+    padding: 40px;
+}
+
+.checkout-page-two-cont > .left-cont >h3{
+    border-bottom: 1px solid black;
+    font-size: 2rem;
+    width: fit-content;
+    padding: 12px;
+
+}
+.checkout-page-two-cont > .right-cont{
+    margin-top: 10%;
+    width: 35%;
+    min-height: 90vh;
+
+}
+
+.checkout-page-two-cont > .right-cont > h4{
+    font-weight: bolder !important;
+
+}
+.checkout-page-two-cont > .right-cont > p{
+    font-weight: bolder !important;
+}
