@@ -1,76 +1,100 @@
 .container {
-    width: 100%;
-  }
+  width: 100%;
   
-  .sort-filter {
-    position: relative;
-    height: 50px; 
-    border-bottom: 1px solid #ccc; 
-    border-top: 1px solid #ccc; 
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    padding-right: 0px; 
-    padding-top: 10px;
-  }
+}
+.title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5rem; /* Bigger font size */
+  font-weight: bold; /* Bolder font */
+  color: #333; /* Adjust the color to fit your design */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  padding-left: 17px;
+  margin-bottom: 20px; /* Space below the title */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 1.5px; /* Space between letters */
+}
+
+.sort-filter {
+  position: relative;
+  height: 50px; 
+  border-bottom: 1px solid #ccc; 
+  border-top: 1px solid #ccc; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
   
-  .sort-filter-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap:0px; 
-    font-size: 16px; 
-    color: #000; 
-  }
-  
-  .filter-icon {
-    width: 30px; /* Set the size of your icon */
-    height:30 px;
-  }
-  
+ 
+}
+
+.sort-filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap:0px; 
+  font-size: 16px; 
+  color: #000; 
+  padding-right:10px;
+
+}
+
+.filter-icon {
+  width: 30px; /* Set the size of your icon */
+  height:30 px;
+  padding-right:0px;
+}
+
+
 
 .product-page {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding-top: 30px;
-  }
-  
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    border: 1px solid #ddd;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    margin-bottom: 20px; 
-  }
-  
-  .product-card img {
-    width: 100px; 
-    height: 150px; 
-    object-fit: cover; 
-    align-self: center;
-    display: block;
-    margin-bottom: 16px;
-  }
-  
-  .product-card h3 {
-    font-size: 16px;
-    color: rgb(165, 160, 160);
-    margin: 0;
-    padding: 0 8px; 
-  }
-  
-  .product-card p {
-    font-size: 18px;
-    color: #000000;
-    margin: 0;
-    padding: 0 8px; 
-    margin-bottom: 16px; 
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin-bottom: 20px; 
+}
+
+.product-card img {
+  width: 100px; 
+  height: 150px; 
+  object-fit: cover; 
+  align-self: center;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  color: rgb(165, 160, 160);
+  margin: 0;
+  padding: 0 8px; 
+}
+
+.product-card p {
+  font-size: 18px;
+  color: #000000;
+  margin: 0;
+  padding: 0 8px; 
+  margin-bottom: 16px; 
+}
+.product-card .addToBasket {
+  color: #000;
+  border-top: 1px solid #ddd;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  font-weight: bold;
+}
+h1{
+  padding-left:17px;
+}

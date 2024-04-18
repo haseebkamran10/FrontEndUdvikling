@@ -5,6 +5,7 @@ import gmbat from '../../gm-bat.jpg';
 import sortFilter from '../../sortFilter.png';
 import SortFilterPage from '../SortFilterPage/SortFilterPage';
 import kookaburra from '../../kookaburra-bat.jpg';
+import { Button } from '@mui/material';
 
 type Product = {
   id: number;
@@ -27,6 +28,10 @@ const products: Product[] = [
   { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
   { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: gmbat },
   { id: 2, name: 'Kookaburra', price: 900, imageUrl: kookaburra },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: grayNicollsImage },
+  { id: 2, name: 'Kookaburra', price: 900, imageUrl: gmbat },
+  { id: 1, name: 'Gray Nicolls ', price: 850, imageUrl: kookaburra },
+  { id: 2, name: 'Kookaburra', price: 900, imageUrl: grayNicollsImage },
 ];
 
 const ProductPage: React.FC = () => {
@@ -34,6 +39,7 @@ const ProductPage: React.FC = () => {
 
     return (
       <div className="container">
+        <h1 className='title'>Produkter</h1>
         <div className="sort-filter">
           <button className="sort-filter-button" onClick={() => { setShowModal(true)}}>
             <span>Sort & Filter</span>
@@ -46,6 +52,7 @@ const ProductPage: React.FC = () => {
               <img src={product.imageUrl} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.price} kr.</p>
+              <Button className="addToBasket">Add to Basket</Button>
               <SortFilterPage show={showModal} onClose={() => setShowModal(false)} />
             </div>
           ))}

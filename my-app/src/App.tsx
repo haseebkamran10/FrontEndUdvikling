@@ -23,6 +23,8 @@ function App() {
           {/* ... other routes */}
           <Route path="/delivery" element={<DeliveryPage />} />
           <Route path="/paymentpage" element={<PaymentPage />} />
+          <Route path="/productspage" element={<ProductsPage />} />
+          <Route path="/productdetail" element={<ProductDetailsPage />} />
         </Routes>
       </Router>
     </CartProvider>
