@@ -4,7 +4,7 @@ export type Product = {
     id: number;
     name: string;
     price: number;
-    pictureUrl: string;
+    image_url: string;
   };
   
   /*export type CartItem = {
@@ -17,7 +17,7 @@ export type Product = {
       id: number;
       name: string;
       price: number;
-      pictureUrl: string; // This should match the Product type definition
+      image_url: string; // This should match the Product type definition
     };
     quantity: number;
   };

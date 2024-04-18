@@ -15,7 +15,7 @@ const CartList: React.FC<CartListProps> = ({ items, onQuantityChange }) => {
 
       {items.map((item) => (
         <div key={item.product.id} className="cart-item">
-          <img src={item.product.pictureUrl} alt={item.product.name} className="cart-item-image" />
+          <img src={item.product.image_url} alt={item.product.name} className="cart-item-image" />
           <div className="cart-item-details">
             <span className="cart-item-name">{item.product.name}</span>
             <div className="cart-item-pricing">
