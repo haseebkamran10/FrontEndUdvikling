@@ -80,9 +80,9 @@ const PaymentPage: React.FC = () => {
             <button type="submit">Fortsæt til betaling</button>
           </form>
         </div>
-        <div className="right-container">
+        <div >
           <CartSummary total={0} discount={0} onGoToPayment={() => {}} />
-        </div>
+        </div> 
       </div>
     </Elements>
   );
