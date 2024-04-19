@@ -12,6 +12,7 @@ const ProductPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [showModal, setShowModal] = useState(false);
   const { cartItems, setCartItems } = useCart();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -20,15 +21,15 @@ const ProductPage: React.FC = () => {
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
-      
-        // Optionally, you could handle errors by displaying a message to the user
       }
     };
 
     fetchProducts();
   }, []);
+  
 
   const handleAddToBasket = (product: Product) => {
+    addToCart(product);
     const existingItem = cartItems.find(item => item.product.id === product.id);
   
     if (existingItem) {
@@ -39,7 +40,7 @@ const ProductPage: React.FC = () => {
       setCartItems([
         ...cartItems,
         { 
-          product,  // This shorthand copies all properties of product
+          product,
           quantity: 1 
         },
       ]);
@@ -59,8 +60,8 @@ const ProductPage: React.FC = () => {
         {products.map((product) => (
           <div key={product.id} className="product-card">
             <img src={product.image_url}/>
-            <h3>{product.name}</h3> {/* Corrected from products.name to product.name */}
-            <p>{product.price} kr.</p> {/* Corrected from products.price to product.price */}
+            <h3>{product.name}</h3> 
+            <p>{product.price} kr.</p> 
             <Button className="addToBasket" onClick={() => handleAddToBasket(product)}>Add to Basket</Button>
             <SortFilterPage show={showModal} onClose={() => setShowModal(false)} />
           </div>

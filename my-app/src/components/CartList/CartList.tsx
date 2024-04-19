@@ -8,11 +8,15 @@ type CartListProps = {
 };
 
 const CartList: React.FC<CartListProps> = ({ items, onQuantityChange }) => {
+  if (items.length === 0) {
+    return (
+      <div className="cart-list">
+        <p>Your cart is empty.</p>
+      </div>
+    );
+  }
   return (
     <div className="cart-list">
-      {/* Heading added here to always show before the list of items */}
-      <h1 className="cart-list-heading">Velkommen til din indkøbskurven</h1>
-
       {items.map((item) => (
         <div key={item.product.id} className="cart-item">
           <img src={item.product.image_url} alt={item.product.name} className="cart-item-image" />

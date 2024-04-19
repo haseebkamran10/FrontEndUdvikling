@@ -1,5 +1,6 @@
-import React, { createContext, useState, useContext, ReactNode, useCallback } from 'react';
-import { CartItem } from './types/types'; // Adjust the import path if necessary
+import React, { createContext,useMemo, useState, useContext, useCallback, ReactNode } from 'react';
+import { Product,CartItem } from './types/types'; 
+
 
 interface CartContextState {
   cartItems: CartItem[];
@@ -10,9 +11,9 @@ interface CartContextState {
 interface CartContextActions {
   setCartItems: (items: CartItem[]) => void;
   handleQuantityChange: (id: number, delta: number) => void;
+  addToCart: (product: Product) => void;
 }
 
-// Create a combined type that includes state and actions
 type CartContextType = CartContextState & CartContextActions;
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -44,15 +45,26 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     );
   }, []);
 
-  // Calculate total
-  const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
-  
-  // Example discount calculation
-  const discount = total > 300 ? total * 0.1 : 0;
+  const addToCart = useCallback((product: Product) => {
+    setCartItemsState((prevItems) => {
+      const foundIndex = prevItems.findIndex(item => item.product.id === product.id);
+      if (foundIndex !== -1) {
+        const newItems = [...prevItems];
+        newItems[foundIndex].quantity += 1;
+        return newItems;
+      }
+      return [...prevItems, { product, quantity: 1 }];
+    });
+  }, []);
 
-  return (
-    <CartContext.Provider value={{ cartItems, setCartItems, handleQuantityChange, total, discount }}>
-      {children}
-    </CartContext.Provider>
-  );
+  const total = useMemo(() => cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0), [cartItems]);
+  const discount = useMemo(() => total > 300 ? total * 0.1 : 0, [total]);
+
+  const value = useMemo(() => ({
+    cartItems, setCartItems, handleQuantityChange, addToCart, total, discount
+  }), [cartItems, setCartItems, handleQuantityChange, addToCart, total, discount]);
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
+
+export default CartContext;
