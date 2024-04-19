@@ -87,3 +87,75 @@ label {
   gap: 1px; /* Adds space between the radio button and the icon */
   
 }
+
+.payment-method-cont{
+  border: 2px solid rgba(120, 113, 113, 0.648);
+  border-radius: 20px;
+  
+}
+
+.payment-cont{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(136, 131, 131);
+  height: 5vh;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+}
+
+
+.payment-cont > div{
+  display: flex;
+  /* align-items: center; */
+}
+
+.payment-cont  >img{
+  width: 10vw;
+}
+
+.choose-address-cont{
+
+}
+
+.address-options {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(135, 132, 132);
+  border-radius: 20px;
+}
+
+.address-options > div {
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  display: flex;
+}
+
+.btns-cont{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btns-cont > button{
+  border: 1px solid black;
+  background-color: rgba(27, 27, 176, 0.801);
+  color: white;
+}
+
+
+
+.gift-card-cont{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gift-card-cont > input{
+  padding: 20px;
+  width:100%;
+  margin-right: 15px;
+  font-size: 1.4rem;
+}
+
