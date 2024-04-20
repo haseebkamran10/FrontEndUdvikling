@@ -27,6 +27,10 @@ const ProductPage: React.FC = () => {
     fetchProducts();
   }, []);
   
+  useEffect(() => {
+    console.log("Updated Cart Items in ProductPage:", cartItems);
+}, [cartItems]);
+  
 
   const handleAddToBasket = (product: Product) => {
     addToCart(product);

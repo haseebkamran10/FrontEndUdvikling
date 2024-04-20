@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../CartContext'; 
 import Header from '../../components/header/header';
@@ -14,6 +14,9 @@ const CheckoutPage: React.FC = () => {
   const goToContactInfo = () => {
     navigate('/contactinfo'); 
   };
+  useEffect(() => {
+    console.log("Cart Items in CheckoutPage:", cartItems);
+}, [cartItems]);
 
   return (
     <div className="checkout-page">
