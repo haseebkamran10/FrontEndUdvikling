@@ -10,6 +10,7 @@
     backdrop-filter: blur(4px); 
     top: -100px;
     z-index: 1000;
+   
   }
   
   .login-page-cont .right-cont {
@@ -25,6 +26,8 @@
   overflow: hidden;
   transition: transform 1.0s ease;
   z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
 }
 
 .login-page-cont .right-cont .right-cont-inner {
