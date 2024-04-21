@@ -49,8 +49,8 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     setCartItemsState((prevItems) => {
       const foundIndex = prevItems.findIndex(item => item.product.id === product.id);
       if (foundIndex !== -1) {
-        const newItems = [...prevItems];
-        newItems[foundIndex].quantity += 1;
+        const newItems = prevItems.map((item, index) => 
+          index === foundIndex ? { ...item, quantity: item.quantity + 1 } : item);
         return newItems;
       }
       return [...prevItems, { product, quantity: 1 }];

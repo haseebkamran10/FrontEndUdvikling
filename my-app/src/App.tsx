@@ -4,18 +4,20 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ContactInfo from './pages/ContactInfo/ContactInfo';
-import { CartProvider } from './CartContext';
+import { CartProvider, useCart } from './CartContext';
 import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
+  const { cartItems } = useCart();
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const navigateToCart = () => {
     navigate('/cart');
   };
 
-  return <Header onCartClick={navigateToCart} />;
+  return <Header onCartClick={navigateToCart} cartItemCount={totalItems} />;
 }
 function App() {
   return (

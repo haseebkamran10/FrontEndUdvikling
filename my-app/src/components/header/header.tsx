@@ -9,8 +9,9 @@ import LoginPage from '../../pages/LoginPage/LoginPage'; // Adjust the import pa
 
 type HeaderProps = {
   onCartClick: () => void;
+  cartItemCount: number;
 };
-const Header: React.FC<HeaderProps> = ({ onCartClick }) => {
+const Header: React.FC<HeaderProps> = ({ onCartClick, cartItemCount }) => {
   const [isLoginPageVisible, setIsLoginPageVisible] = useState(false);
 
   // Event handler to toggle the visibility of the LoginPage
@@ -35,9 +36,13 @@ const Header: React.FC<HeaderProps> = ({ onCartClick }) => {
             <img src={SearchIcon} alt="Search" className="search-icon" />
             <input type="text" placeholder="Hvad leder du efter" className="search-input" />
           </div>
+          <div style={{ position: 'relative', cursor: 'pointer' }}>
           <img src={ShoppingCartIcon} alt="Shopping Cart" className="shopping-cart-icon"  onClick={onCartClick} />
-          {/* User icon now controls the visibility of LoginPage */}
-          <img src={UserIcon} alt="User" className="user-icon" onClick={toggleLoginPage} />
+          {cartItemCount > 0 && (
+              <span className="cart-counter">{cartItemCount}</span>
+            )}
+          </div>
+          <img src={UserIcon} alt="User" className="user-icon" onClick={toggleLoginPage}style={{ position: 'relative' }} />
         </div>
       </div>
       {isLoginPageVisible && (

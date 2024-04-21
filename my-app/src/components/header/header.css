@@ -161,3 +161,19 @@
     visibility: visible; /* Make visible */
     opacity: 1; /* Fade to semi-transparent */
   }
+  .cart-counter {
+    position: absolute;
+    top: -10px; /* Adjust as necessary */
+    right: 2px; /* Adjust as necessary */
+    background-color: red; /* Change to your preferred color */
+    color: white;
+    border-radius: 50%;
+    width: 18px; /* Adjust size as necessary */
+    height: 18px; /* Adjust size as necessary */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px; /* Adjust font size as necessary */
+    font-weight: bold;
+  }
+  
