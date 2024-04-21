@@ -58,28 +58,32 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 200px; /* Adjust width as necessary */
+  height: 320px; /* Added a fixed height */
   border: 1px solid #ddd;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: #fff;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
+  overflow: hidden; /* Prevent overflow */
 }
 
 .product-card img {
-  width: 100px; 
-  height: 150px; 
-  object-fit: cover; 
-  align-self: center;
-  display: block;
-  margin-bottom: 16px;
+  width: 200px;
+  height:200px;
+  object-fit:contain;
+  margin-bottom: 20px;
+  
 }
 
 .product-card h3 {
   font-size: 16px;
   color: rgb(165, 160, 160);
   margin: 0;
-  padding: 0 8px; 
+  padding: 0 8px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  
 }
 
 .product-card p {
@@ -92,9 +96,13 @@
 .product-card .addToBasket {
   color: #000;
   border-top: 1px solid #ddd;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   font-weight: bold;
+  padding: 8px 0;
+  padding-top: 9px; 
 }
+
+
 h1{
   padding-left:17px;
 }
