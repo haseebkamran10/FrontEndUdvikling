@@ -11,7 +11,7 @@ const CartList: React.FC<CartListProps> = ({ items, onQuantityChange }) => {
   if (items.length === 0) {
     return (
       <div className="cart-list">
-        <p>Your cart is empty.</p>
+        <p>Din indkøbskurv er tom.</p>
       </div>
     );
   }

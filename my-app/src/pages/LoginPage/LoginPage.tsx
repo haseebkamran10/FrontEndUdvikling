@@ -20,7 +20,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h3>Log ind</h3>
           {}
-          <CloseIcon onClick={onClose} />
+          <CloseIcon onClick={onClose} style={{ cursor: 'pointer' }} />
         </div>
         <p style={{ textAlign: "left" }}>Log ind på din konto:</p>
         <form action="#">

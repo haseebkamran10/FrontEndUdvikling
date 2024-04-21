@@ -17,7 +17,10 @@
     width: 24px;
     height: 24px;
     margin-right: 20px;
+    cursor: pointer;
   }
+
+  
   
   .left-section {
     display: flex;
@@ -34,6 +37,7 @@
     line-height: 26px;
     margin-left: 65px;
     word-wrap: break-word;
+    cursor: pointer;
   }
   
   .center-section {
@@ -53,6 +57,7 @@
   .logo {
     width: 50px;
     height: auto;
+    cursor: pointer;
   }
   
   .search-box {
@@ -86,6 +91,7 @@
     width: 16px;
     height: 16px;
     margin-left: 25px;
+    cursor: pointer;
   }
   
   .shopping-cart-icon {
@@ -93,6 +99,8 @@
     height: 24px;
     margin-left: 20px;
     margin-right: 20px;
+    cursor: pointer;
+    
   }
   
   .login-popup {
