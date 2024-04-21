@@ -7,6 +7,7 @@ import ContactInfo from './pages/ContactInfo/ContactInfo';
 import { CartProvider, useCart } from './CartContext';
 import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
+import { SearchProvider  } from'./SearchContext'; 
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function HeaderWithNavigation() {
 function App() {
   return (
     <CartProvider>
+      <SearchProvider>
       <Router>
       <HeaderWithNavigation />
         <Routes>
@@ -33,6 +35,7 @@ function App() {
           <Route path="/productdetail" element={<ProductDetailsPage />} />
         </Routes>
       </Router>
+      </SearchProvider>
     </CartProvider>
   );
 }

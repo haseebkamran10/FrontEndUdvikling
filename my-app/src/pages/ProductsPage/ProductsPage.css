@@ -4,14 +4,16 @@
 }
 .title {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 2.5rem; /* Bigger font size */
-  font-weight: bold; /* Bolder font */
-  color: #333; /* Adjust the color to fit your design */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  font-size: 2.5rem; 
+  font-weight: bold;
+  color: #333; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
   padding-left: 17px;
-  margin-bottom: 20px; /* Space below the title */
-  text-transform: uppercase; /* Uppercase letters */
-  letter-spacing: 1.5px; /* Space between letters */
+  margin-bottom: 20px; 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+  margin-top: 100px;
+ position: relative;
 }
 
 .sort-filter {
@@ -21,7 +23,7 @@
   border-top: 1px solid #ccc; 
   display: flex;
   align-items: center;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   
  
 }
@@ -53,19 +55,22 @@
   gap: 20px;
   justify-content: center;
   padding-top: 30px;
+  
+  
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
-  width: 200px; /* Adjust width as necessary */
-  height: 320px; /* Added a fixed height */
+  width: 200px; 
+  height: 320px; 
   border: 1px solid #ddd;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: #fff;
-  margin-bottom: 20px;
-  overflow: hidden; /* Prevent overflow */
+  overflow: hidden;
+ 
+  
 }
 
 .product-card img {
@@ -73,6 +78,7 @@
   height:200px;
   object-fit:contain;
   margin-bottom: 20px;
+ 
   
 }
 

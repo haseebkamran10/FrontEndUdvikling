@@ -6,13 +6,14 @@ import sortFilter from '../../sortFilter.png';
 import SortFilterPage from '../SortFilterPage/SortFilterPage';
 import { Button } from '@mui/material';
 import {Product as Product } from '../../types/types';
-
+import { useSearch } from '../../SearchContext';
 
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [showModal, setShowModal] = useState(false);
   const { cartItems, setCartItems } = useCart();
   const { addToCart } = useCart();
+  const { searchTerm } = useSearch();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,6 +27,21 @@ const ProductPage: React.FC = () => {
 
     fetchProducts();
   }, []);
+
+
+   useEffect(() => {
+    if (searchTerm !== '') { 
+      const fetchProductsBySearch = async () => {
+        try {
+          const response = await axios.get<Product[]>(`http://localhost:3000/products/search?name=${encodeURIComponent(searchTerm)}`);
+          setProducts(response.data);
+        } catch (error) {
+          console.error('Error fetching products by search:', error);
+        }
+      };
+      fetchProductsBySearch();
+    }
+  }, [searchTerm]);
   
   useEffect(() => {
     console.log("Updated Cart Items in ProductPage:", cartItems);
