@@ -112,7 +112,39 @@ label {
 }
 
 .payment-cont  >img{
-  width: 10vw;
+  width: 3vw;
+}
+
+.payment-cont > img {
+  /* Presuming you want all images to have the same height and adjust their width accordingly */
+  height: 50px; 
+  width: auto; /* This will maintain the aspect ratio */
+  object-fit: contain; /* This makes sure the image is scaled correctly within its box */
+}
+
+.mobile-pay-img {
+  height: 70px !important; /* Replace with the actual height you want */
+  width: auto;
+  object-fit: contain;
+  position: relative ;
+  top: -20px;
+  
+}
+
+.kort-img {
+  height: 40px; 
+  width: auto;
+  object-fit: contain;
+}
+
+.klarna-img {
+  scale: 0.8 !important;
+
+}
+
+.viabill-img {
+  width: 100px !important;
+  height: auto;
 }
 
 .choose-address-cont{

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Elements, CardElement } from '@stripe/react-stripe-js';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { stripePromise } from '../../utils/stripeClient'; // Replace with the correct path
+import { useNavigate } from 'react-router-dom';
 
 import './PaymentPage.css';
 type PaymentFormData = {
@@ -11,7 +12,8 @@ type PaymentFormData = {
   fullName?: string;
 };
 
-const PaymentPage: React.FC = () => {
+const PaymentPage: React.FC = () => { 
+  const navigate = useNavigate();
   const { register, handleSubmit, watch, formState: { errors } } = useForm<PaymentFormData>();
   const selectedPaymentMethod = watch('paymentMethod');
 
@@ -32,28 +34,28 @@ const PaymentPage: React.FC = () => {
                 <input type="radio" name="paymentmethod" id="" />
                 <label htmlFor="">Mobile</label>
               </div>
-              <img src="/images/mobilePay.png" alt="" />
+              <img src="/images/mobilePay.png" alt="" className="mobile-pay-img" />
             </div>
             <div className='payment-cont'>
               <div>
                 <input type="radio" name="paymentmethod" id="" />
                 <label htmlFor="">Kort</label>
               </div>
-              <img src="/images/Kort.png" alt="" />
+              <img src="/images/Kort.png" alt="" className="kort-img"  />
             </div >
             <div className='payment-cont'>
               <div>
                 <input type="radio" name="paymentmethod" id="" />
                 <label htmlFor="">Klarna</label>
               </div>
-              <img src="/images/Klarna.png" alt="" />
+              <img src="/images/Klarna.png" alt="" className="klarna-img"/>
             </div>
             <div className='payment-cont' style={{ borderBottom: "none" }}>
               <div>
                 <input type="radio" name="paymentmethod" id="" />
                 <label htmlFor="">ViaBill</label>
               </div>
-              <img src="/images/Viabill.png" alt="" />
+              <img src="/images/Viabill.png" alt="" className="viabill-img" />
             </div>
 
           </div>
@@ -73,7 +75,7 @@ const PaymentPage: React.FC = () => {
               <div className='' style={{ borderBottom: "none" }}  ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress">Brug en anden faktureringsadresse</label></div>
             </div>
             <div className='btns-cont' >
-              <button  style={{ background: "none", color: "black" }} >Tibage til levering</button>
+              <button  style={{ background: "none", color: "black" }} onClick={()=>{ navigate("/delivery")}} >Tibage til levering</button>
               <button>Betal nu</button>
             </div>
           </div>
