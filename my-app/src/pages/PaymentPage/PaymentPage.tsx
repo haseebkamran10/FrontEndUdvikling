@@ -12,6 +12,7 @@ type PaymentFormData = {
   fullName?: string;
 };
 
+
 const PaymentPage: React.FC = () => { 
   const navigate = useNavigate();
   const { register, handleSubmit, watch, formState: { errors } } = useForm<PaymentFormData>();
