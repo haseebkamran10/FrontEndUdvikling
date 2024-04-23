@@ -26,7 +26,7 @@ const PaymentPage: React.FC = () => {
     <Elements stripe={stripePromise}>
       <div className="payment-container">
         <div className="left-container">
-          <h1 className="payment-heading">Betaling</h1>
+          <h1 className="payment-heading">Betalingsoplysninger</h1>
           <p>Vælg betalingsMetode</p>
 
           <div className='payment-method-cont' >
@@ -77,7 +77,6 @@ const PaymentPage: React.FC = () => {
             </div>
             <div className='btns-cont' >
               <button  style={{ background: "none", color: "black" }} onClick={()=>{ navigate("/delivery")}} >Tibage til levering</button>
-              <button>Betal nu</button>
             </div>
           </div>
 
