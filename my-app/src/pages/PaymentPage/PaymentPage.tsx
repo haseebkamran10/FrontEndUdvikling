@@ -19,10 +19,9 @@ interface PaymentFormData {
 }
 
 const PaymentPage: React.FC = () => {
-  const [showCardInput, setShowCardInput] = useState(false);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<PaymentFormData>();
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
+  const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
-  const selectedPaymentMethod = watch('paymentMethod');
 
 
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
@@ -30,7 +29,10 @@ const PaymentPage: React.FC = () => {
   };
 
   const handlePaymentMethodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setShowCardInput(event.target.value === 'Card');
+    setSelectedPaymentMethod(event.target.value);
+
+    
+
   };
   
 
@@ -54,12 +56,13 @@ const PaymentPage: React.FC = () => {
     <label htmlFor="paymentMethodCard">Kort</label>
     <img src="/images/Kort.png" alt="" className="kort-img"  />
     </div>
-            {showCardInput && (
-              <div className="card-inputs">
-                <CardElement/>
-              </div>
-            )}
-            <div className='payment-cont'>
+    {selectedPaymentMethod === 'Card' && (
+                <div className="card-inputs">
+                  <CardElement />
+                </div>
+              )}
+           
+            <div className={`payment-cont ${selectedPaymentMethod === 'MobilePay' ? 'selected' : ''}`}>
               <input
                 type="radio"
                 value="MobilePay"
@@ -70,6 +73,22 @@ const PaymentPage: React.FC = () => {
               <label htmlFor="paymentMethodMobilePay">MobilePay</label>
               <img src="/images/mobilePay.png" alt="" className="mobile-pay-img" />
             </div>
+            {selectedPaymentMethod === 'MobilePay' && (
+              <div className="input-mobilpay">
+                <input
+                  {...register('phoneNumber', {
+                    required: 'Telefonnummer er påkrævet',
+                    pattern: {
+                      value: /^\d{8}$/,
+                      message: "Telefonnummer skal være 8 cifre"
+            
+                    }
+                  })}
+                  placeholder="Telefonnummer for MobilePay"
+                />
+                {errors.phoneNumber && <p className="error-message">{errors.phoneNumber.message}style={backgroundColor='none'}</p>}
+              </div>
+            )}
 
             <div className='payment-cont'>
               <input
