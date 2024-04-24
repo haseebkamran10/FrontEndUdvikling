@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
         </Slider>
       </div>
       <div className="title-container">
-        <div><h1>Anbefaling til dig </h1></div>
+        <div>Anbefaling til dig </div>
       </div> 
       <div className="additional-image-container">
         {products.map((product, index) => (

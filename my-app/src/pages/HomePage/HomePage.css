@@ -8,6 +8,7 @@ html, body {
 }
 
 .slideshow-container {
+  margin-top: 50px;
   position: relative;
   width: 100vw; 
   max-height: 70vh;
@@ -28,12 +29,25 @@ html, body {
   object-fit: contain; 
 }
 
-.title-container h1 {
+.title-container {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
   text-transform: uppercase; 
-  font-family: 'Arial', sans-serif; 
-  font-size: 48px; 
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 35px; 
   text-align: center; 
   margin: 20px 0; 
+}
+
+.title-container-subheading {
+  /*margin-left: 10px;*/
+  margin-top: 15px;
+  font-weight: normal;
+  text-align: left;
+  text-transform: uppercase; 
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 35px; 
 }
 
 .additional-image-container {
