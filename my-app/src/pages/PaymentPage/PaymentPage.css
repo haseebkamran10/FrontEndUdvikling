@@ -119,9 +119,10 @@ label {
 }
 
 .payment-cont > img {
-  height: 50px; 
-  width: auto; 
+  height: 45px; 
+  width: 150px; 
   object-fit: contain;
+  float: left;
 
 }
 
@@ -134,7 +135,7 @@ label {
   
 }
 
-.kort-img {
+/*.kort-img {
   height: 40px; 
   width: auto;
   object-fit: contain;
@@ -149,7 +150,7 @@ label {
   width: 100px !important;
   height: auto;
 }
-
+*/
 .choose-address-cont{
 
 }
@@ -246,9 +247,9 @@ label {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust as necessary */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 10px;
-  margin-top: 10px; /* Adjust the margin as needed */
+  margin-top: 10px; 
   margin-right: 5px;
   
 }
@@ -267,7 +268,7 @@ label {
   width: 100%;
   padding-left:200px;
 
-  margin-right: 10px; /* Spacing between elements */
+  margin-right: 10px; 
 }
 
 .input-field {
@@ -282,27 +283,26 @@ label {
 }
 
 .card-details-inputs {
-  border-top: none; /* Removes the border-top if it was inherited from .payment-cont styles */
-  padding: 20px; /* Match padding of .payment-cont */
+  border-top: none; 
+  padding: 20px; 
   border-left: 2px solid rgba(120, 113, 113, 0.648);
   border-right: 2px solid rgba(120, 113, 113, 0.648);
   border-bottom: 2px solid rgba(120, 113, 113, 0.648);
-  border-radius: 0 0 20px 20px; /* Rounded corners on the bottom to continue the style from .payment-method-cont */
-  background-color: white; /* Match background color */
+  border-radius: 0 0 20px 20px; 
+  background-color: white; 
   
  
 }
 
-/* This ensures that the CardElement input fields match the rest of your input fields */
 .StripeElement {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 10px 14px;
   margin: 10px 0;
-  width: calc(100% - 28px); /* Adjust width based on padding */
+  width: calc(100% - 28px);
   background-color: white;
-  height: 40px; /* Match the height of your other inputs */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  height: 40px; 
+  box-sizing: border-box; 
   
 }
 .card-inputs {
