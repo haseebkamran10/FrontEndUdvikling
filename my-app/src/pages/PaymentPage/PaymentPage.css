@@ -1,3 +1,4 @@
+/* PaymentPage.css */
 .payment-container {
   display: flex;
   justify-content: space-between;
@@ -20,7 +21,7 @@
 
 .payment-heading {
   margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 40px;
   font-weight: normal;
   text-align: left;
   margin-bottom: 20px;
@@ -74,15 +75,16 @@
 }
 
 .icon-small {
-  width: 100px; 
-  height: auto; 
-  vertical-align: middle; 
+  width: 100px; /* Adjust the size as you prefer */
+  height: auto; /* Maintain the aspect ratio */
+  vertical-align: middle; /* Aligns the icon vertically with the radio button */
+  
 }
 
 label {
   display: flex;
-  align-items: center; 
-  gap: 1px; 
+  align-items: center; /* Ensures that the label contents are aligned center */
+  gap: 1px; /* Adds space between the radio button and the icon */
   
 }
 
@@ -96,7 +98,7 @@ label {
   display: flex;
   flex-direction: row; 
   justify-content: space-between;
-  border-bottom: 1px solid rgb(136, 131, 131); /* Consider removing or adjusting this if it's causing visual issues */
+  border-bottom: 1px solid rgb(136, 131, 131);
   height: 5vh;
   padding: 20px;
   font-size: 1.2rem;
@@ -106,6 +108,7 @@ label {
 
 .payment-cont > div{
   display: flex;
+  /* align-items: center; */
 }
 
 .payment-cont  >img{
@@ -113,13 +116,14 @@ label {
 }
 
 .payment-cont > img {
+  /* Presuming you want all images to have the same height and adjust their width accordingly */
   height: 50px; 
-  width: auto; 
-  object-fit: contain; 
+  width: auto; /* This will maintain the aspect ratio */
+  object-fit: contain; /* This makes sure the image is scaled correctly within its box */
 }
 
 .mobile-pay-img {
-  height: 70px !important; 
+  height: 70px !important; /* Replace with the actual height you want */
   width: auto;
   object-fit: contain;
   position: relative ;
@@ -160,133 +164,85 @@ label {
   display: flex;
 }
 
-.btns-cont {
+.btns-cont{
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.btns-cont > button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: black;
-  background-color: transparent;
+.btns-cont > button{
   border: 1px solid black;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: box-shadow 0.3s, border 0.3s, background-color 0.3s; 
-  outline: none;
-}
-
-.btns-cont > button:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-  border: 1px solid black; 
-  background-color: transparent; 
-}
-
-.btns-cont > button:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset; 
-  border: 1px solid black; 
-  background-color: transparent; 
+  background-color: rgba(27, 27, 176, 0.801);
+  color: white;
 }
 
 
-.gift-card-cont {
+
+.gift-card-cont{
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-  border: 2px solid rgba(120, 113, 113, 0.648);
-  border-radius: 20px;
-  align-items: center;
-  background-color: #fff; 
 }
 
-.gift-card-cont > input {
-  flex-grow: 1; 
-  padding: 20px; 
-  font-size: 1.4rem; 
-  border: none; 
-  outline: none; 
-  border-radius: 18px 0 0 18px; 
-  background-color: #fff; 
-}
-
-.gift-card-cont > button {
-  padding: 10px 20px;
-  font-size: 1rem; 
-  border: 2px solid rgba(120, 113, 113, 0.648); 
-  border-radius: 20px; 
-  background-color: #fff;
-  cursor: pointer;
-  margin-right: 15px; 
-}
-
-.gift-card-cont > button:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-  border: 1px solid black; 
-  background-color: transparent;
-}
-
-.gift-card-cont > button:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset; 
-  border: 1px solid black; 
-  background-color: transparent;
-}
-
-.card-details-inputs {
-  background: #fff;
+.gift-card-cont > input{
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust as necessary */
-  gap: 10px;
-  margin-top: 10px; /* Adjust the margin as needed */
-  margin-right: 5px;
-
+  width:100%;
+  margin-right: 15px;
+  font-size: 1.4rem;
 }
 
-.stripe-input-group {
+
+
+.mobile-pay-cont{
+  width: 100%;
+  min-height: max-content;
+  /* background-color: red; */
+  padding: 25px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  
+}
+
+.mobile-num-cont{
   display: flex;
-  justify-content: space-between;
-}
-
-.stripe-input {
-  background: #fff;
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   width: 100%;
-  margin-right: 10px; /* Spacing between elements */
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+
 }
 
-.input-field {
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.mobile-num-cont > p{
+  margin-right: 10px;
+  border: 1px solid  grey;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+
+.mobile-num-cont > input{
+  height: max-content;
+  width: 100%;
+  font-size: 1.2rem;
   padding: 10px;
+} 
+
+.mobile-pay-cont > button{
+  margin-top: 20px;
   width: 100%;
-  margin-bottom: 10px;
+  background-color: blue;
+  color: white;
 }
 
-.card-details-inputs {
-  border-top: none; /* Removes the border-top if it was inherited from .payment-cont styles */
-  padding: 20px; /* Match padding of .payment-cont */
-  border-left: 2px solid rgba(120, 113, 113, 0.648);
-  border-right: 2px solid rgba(120, 113, 113, 0.648);
-  border-bottom: 2px solid rgba(120, 113, 113, 0.648);
-  border-radius: 0 0 20px 20px; /* Rounded corners on the bottom to continue the style from .payment-method-cont */
-  background-color: white; /* Match background color */
-}
 
-/* This ensures that the CardElement input fields match the rest of your input fields */
-.StripeElement {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px 14px;
-  margin: 10px 0;
-  width: calc(100% - 28px); /* Adjust width based on padding */
-  background-color: white;
-  height: 40px; /* Match the height of your other inputs */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+.kort-pay{
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 20px;
 }
