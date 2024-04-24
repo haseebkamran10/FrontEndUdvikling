@@ -101,6 +101,7 @@ label {
   padding: 20px;
   font-size: 1.2rem;
   border-collapse: collapse;
+  border-bottom: 2px;
 }
 
 
@@ -282,6 +283,7 @@ label {
   border-bottom: 2px solid rgba(120, 113, 113, 0.648);
   border-radius: 0 0 20px 20px; /* Rounded corners on the bottom to continue the style from .payment-method-cont */
   background-color: white; /* Match background color */
+  
  
 }
 
@@ -295,6 +297,14 @@ label {
   background-color: white;
   height: 40px; /* Match the height of your other inputs */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
- 
+  
 }
+.card-inputs {
+  transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  padding-left: 20px;
+  border-bottom: 1px solid rgb(136, 131, 131);
+  padding-bottom: 10px;
 
+  
+  
+}

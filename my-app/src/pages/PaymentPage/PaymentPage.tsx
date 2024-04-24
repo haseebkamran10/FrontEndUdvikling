@@ -6,6 +6,7 @@ import CartSummary from '../../components/CartSummary/CartSummary';
 import { useNavigate } from 'react-router-dom';
 
 import './PaymentPage.css';
+import { BorderTop } from '@mui/icons-material';
 
 
 const stripePromise = loadStripe('your-public-key'); // Replace with your actual public key
@@ -23,6 +24,7 @@ const PaymentPage: React.FC = () => {
   const navigate = useNavigate();
   const selectedPaymentMethod = watch('paymentMethod');
 
+
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
     console.log(data);
   };
@@ -30,6 +32,8 @@ const PaymentPage: React.FC = () => {
   const handlePaymentMethodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setShowCardInput(event.target.value === 'Card');
   };
+  
+
 
   return (
     <Elements stripe={stripePromise}>
@@ -49,13 +53,12 @@ const PaymentPage: React.FC = () => {
     />
     <label htmlFor="paymentMethodCard">Kort</label>
     <img src="/images/Kort.png" alt="" className="kort-img"  />
-  </div>
+    </div>
             {showCardInput && (
               <div className="card-inputs">
-                <CardElement />
+                <CardElement/>
               </div>
             )}
-
             <div className='payment-cont'>
               <input
                 type="radio"
