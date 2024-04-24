@@ -96,7 +96,7 @@ label {
   display: flex;
   flex-direction: row; 
   justify-content: space-between;
-  border-bottom: 1px solid rgb(136, 131, 131);
+  border-bottom: 1px solid rgb(136, 131, 131); /* Consider removing or adjusting this if it's causing visual issues */
   height: 5vh;
   padding: 20px;
   font-size: 1.2rem;
@@ -231,4 +231,62 @@ label {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset; 
   border: 1px solid black; 
   background-color: transparent;
+}
+
+.card-details-inputs {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust as necessary */
+  gap: 10px;
+  margin-top: 10px; /* Adjust the margin as needed */
+  margin-right: 5px;
+
+}
+
+.stripe-input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stripe-input {
+  background: #fff;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-right: 10px; /* Spacing between elements */
+}
+
+.input-field {
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card-details-inputs {
+  border-top: none; /* Removes the border-top if it was inherited from .payment-cont styles */
+  padding: 20px; /* Match padding of .payment-cont */
+  border-left: 2px solid rgba(120, 113, 113, 0.648);
+  border-right: 2px solid rgba(120, 113, 113, 0.648);
+  border-bottom: 2px solid rgba(120, 113, 113, 0.648);
+  border-radius: 0 0 20px 20px; /* Rounded corners on the bottom to continue the style from .payment-method-cont */
+  background-color: white; /* Match background color */
+}
+
+/* This ensures that the CardElement input fields match the rest of your input fields */
+.StripeElement {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  width: calc(100% - 28px); /* Adjust width based on padding */
+  background-color: white;
+  height: 40px; /* Match the height of your other inputs */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
