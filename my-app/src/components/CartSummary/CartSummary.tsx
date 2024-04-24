@@ -32,7 +32,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ total, discount, onGoToPaymen
         </div>
         <hr />
         <p>Du kan indtaste værdikuponer og vælge din leveringsmuligheder ved kassen</p>
-        <button onClick={onGoToPayment}>Gå til kassen</button>
+        
         <img src={paymentMethods} alt="Payment Methods" />
       </div>
   );

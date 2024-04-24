@@ -24,3 +24,28 @@
   display: flex;
   justify-content: space-between;
 }
+
+.checkout-button {
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Aligns buttons to the center */
+  padding: 10px;
+  margin-right: 20px auto; /* Controls the margin around the entire container */
+  margin-left: 20px auto;
+  margin-top: 0px;
+  margin-bottom:5px;
+  cursor: pointer;
+}
+
+.checkout-button button {
+  margin: 0 150px; /* Large horizontal margin, no vertical margin */
+}
+
+.checkout-button button:first-child {
+  margin-right: 150px; /* Ensures right margin on the first button */
+  margin-left: 0; /* No left margin on the first button */
+}
+
+.checkout-button button:last-child {
+  margin-left: 150px; /* Ensures left margin on the last button */
+  margin-right: 0; /* No right margin on the last button */
+}
