@@ -3,6 +3,7 @@ import Header from './components/header/header';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 import Footer from './components/Footer/Footer';
+import Categories from './components/Categories/Categories';
 // import LoginPage from './pages/LoginPage/LoginPage';
 import HomePage from './pages/HomePage/HomePage';
 
@@ -18,6 +19,7 @@ function App() {
           {/* ... other routes */}
         </Routes>
       </div>
+      <Categories/>
       <Footer />
     </Router>
   );
