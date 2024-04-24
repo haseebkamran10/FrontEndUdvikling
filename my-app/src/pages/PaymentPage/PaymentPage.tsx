@@ -46,6 +46,7 @@ const PaymentPage: React.FC = () => {
 
           <div className='payment-method-cont'>
   <div className={`payment-cont ${selectedPaymentMethod === 'Card' ? 'selected' : ''}`}>
+    <div>
     <input
       type="radio"
       value="Card"
@@ -54,6 +55,8 @@ const PaymentPage: React.FC = () => {
       onChange={handlePaymentMethodChange}
     />
     <label htmlFor="paymentMethodCard">Kort</label>
+    </div>
+    
     <img src="/images/Kort.png" alt="" className="kort-img"  />
     </div>
     {selectedPaymentMethod === 'Card' && (
@@ -63,7 +66,8 @@ const PaymentPage: React.FC = () => {
               )}
            
             <div className={`payment-cont ${selectedPaymentMethod === 'MobilePay' ? 'selected' : ''}`}>
-              <input
+             <div>
+             <input
                 type="radio"
                 value="MobilePay"
                 id="paymentMethodMobilePay"
@@ -71,10 +75,14 @@ const PaymentPage: React.FC = () => {
                 onChange={handlePaymentMethodChange}
               />
               <label htmlFor="paymentMethodMobilePay">MobilePay</label>
+             </div>
+             
+              
               <img src="/images/mobilePay.png" alt="" className="mobile-pay-img" />
             </div>
             {selectedPaymentMethod === 'MobilePay' && (
               <div className="input-mobilpay">
+                
                 <input
                   {...register('phoneNumber', {
                     required: 'Telefonnummer er påkrævet',
@@ -91,6 +99,7 @@ const PaymentPage: React.FC = () => {
             )}
 
             <div className='payment-cont'>
+              <div>
               <input
                 type="radio"
                 value="Invoice"
@@ -99,10 +108,13 @@ const PaymentPage: React.FC = () => {
                 onChange={handlePaymentMethodChange}
               />
               <label htmlFor="paymentMethodInvoice">Invoice</label>
+              </div>
+              
               <img src="/images/invoice.png" alt="Invoice" className="payment-img" />
             </div>
 
             <div className='payment-cont'>
+              <div>
               <input
                 type="radio"
                 value="ViaBill"
@@ -111,6 +123,8 @@ const PaymentPage: React.FC = () => {
                 onChange={handlePaymentMethodChange}
               />
               <label htmlFor="paymentMethodViaBill">ViaBill</label>
+              </div>
+              
               <img src="/images/Viabill.png" alt="" className="viabill-img" />
             </div>
           </div>

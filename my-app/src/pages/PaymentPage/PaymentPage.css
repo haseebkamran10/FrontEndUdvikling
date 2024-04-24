@@ -1,8 +1,9 @@
 .payment-container {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
-  gap: 20px;
+  padding: 50px;
+  gap: 40px;
+  margin-left: 30px;
   
 }
 
@@ -86,6 +87,7 @@ label {
   display: flex;
   align-items: center; 
   gap: 1px; 
+  padding: 7px;
   
  
   
