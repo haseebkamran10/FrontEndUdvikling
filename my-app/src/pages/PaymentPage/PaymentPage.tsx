@@ -41,7 +41,7 @@ const PaymentPage: React.FC = () => {
     <Elements stripe={stripePromise}>
       <form className="payment-container" onSubmit={handleSubmit(onSubmit)}>
         <div className="left-container">
-          <h1 className="payment-heading">Betalingsoplysninger</h1>
+          <h2 className="choose-address-cont">Betalingsoplysninger</h2>
           <p>Vælg betalingsmetode</p>
 
           <div className='payment-method-cont'>
