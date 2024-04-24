@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: white; 
+  color: #333;
+  padding: 20px;
+  font-size: 16px;
+  flex-wrap: wrap; 
+}
+
+.footer-column {
+  flex: 1;  
+  max-width: 20%; 
+  padding: 0 10px;
+  box-sizing: border-box; 
+}
+
+@media (max-width: 1024px) {
+  .footer-column {
+    max-width: 25%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    justify-content: center;
+  }
+  
+  .footer-column {
+    max-width: 50%;
+    margin-bottom: 30px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-column {
+    max-width: 100%; 
+  }
+}
