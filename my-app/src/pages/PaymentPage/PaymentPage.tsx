@@ -41,7 +41,7 @@ const PaymentPage: React.FC = () => {
     <Elements stripe={stripePromise}>
       <form className="payment-container" onSubmit={handleSubmit(onSubmit)}>
         <div className="left-container">
-          <h2 className="choose-address-cont">Betalingsoplysninger</h2>
+          <p className="payment-heading">Betalingsoplysninger</p>
           <p>Vælg betalingsmetode</p>
 
           <div className='payment-method-cont'>
@@ -137,7 +137,7 @@ const PaymentPage: React.FC = () => {
 
           <div className='choose-address-cont ' >
             <h3>Faktureringsadresse </h3>
-            <p>vælg faktureringsadresse</p>
+            <p>Vælg faktureringsadresse</p>
             <div className='address-options  ' >
               <div className='' ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress"> Samme adresses leveringsadressen </label></div>
               <div className='' style={{ borderBottom: "none" }}  ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress">Brug en anden faktureringsadresse</label></div>
