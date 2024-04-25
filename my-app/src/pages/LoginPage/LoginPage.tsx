@@ -75,7 +75,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
       <div className='right-cont'>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h3>Log ind</h3>
-          <CloseIcon onClick={onClose} />
+          <CloseIcon onClick={onClose}  style={{ cursor: 'pointer' }}/>
         </div>
 
         {/* Success message pop-up */}

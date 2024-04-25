@@ -18,8 +18,11 @@ function HeaderWithNavigation() {
   const navigateToCart = () => {
     navigate('/cart');
   };
+  const navigateToHomePage = () => {
+    navigate('/');
+  };
 
-  return <Header onCartClick={navigateToCart} cartItemCount={totalItems} />;
+  return <Header onCartClick={navigateToCart}  onLogoClick={navigateToHomePage} cartItemCount={totalItems} />;
 }
 function App() {
   return (
@@ -29,14 +32,14 @@ function App() {
          <HeaderWithNavigation/>
        
           <Routes>
-           <Route path="/" element={<HomePage />} />
+           
            <Route path="/cart" element={<CheckoutPage />} />
            <Route path="/contactinfo" element={<ContactInfo />} />
            <Route path="/delivery" element={<DeliveryPage />} />
            <Route path="/paymentpage" element={<PaymentPage />} />
            <Route path="/productspage" element={<ProductsPage />} />
            <Route path="/productdetail" element={<ProductDetailsPage />} />
-          
+           <Route path="/" element={<HomePage />} />
           
           </Routes>
           

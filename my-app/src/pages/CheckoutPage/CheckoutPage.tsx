@@ -17,6 +17,9 @@ const CheckoutPage: React.FC = () => {
   const goToProductsPage = () => {
     navigate('/productspage');
   };
+  const navigateToHomePage = () => {
+    navigate('/');
+  };
 
   useEffect(() => {
     console.log("Cart Items in CheckoutPage:", cartItems);
@@ -24,7 +27,7 @@ const CheckoutPage: React.FC = () => {
 
   return (
     <div className="checkout-page">
-      <Header onCartClick={function (): void { } } cartItemCount={0}/>
+      <Header onCartClick={function (): void { } }  onLogoClick={navigateToHomePage}cartItemCount={0}/>
       <h1 className="checkout-heading">Velkommen til din indkøbskurv</h1>
       <div className="checkout-content">
         <CartList items={cartItems} onQuantityChange={handleQuantityChange} />

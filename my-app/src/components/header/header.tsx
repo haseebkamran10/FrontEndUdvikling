@@ -10,9 +10,11 @@ import { useSearch } from'../../SearchContext';
 
 type HeaderProps = {
   onCartClick: () => void;
+  onLogoClick: () => void;
   cartItemCount: number;
 };
-const Header: React.FC<HeaderProps> = ({ onCartClick, cartItemCount }) => {
+
+const Header: React.FC<HeaderProps> = ({ onCartClick, onLogoClick,cartItemCount }) => {
   const { setSearchTerm } = useSearch();
   const [inputValue, setInputValue] = useState(''); 
   const [isLoginPageVisible, setIsLoginPageVisible] = useState(false);
@@ -47,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ onCartClick, cartItemCount }) => {
           <span className="page-title">Udstyr</span>
         </div>
         <div className="center-section">
-          <img src={Logo} alt="Logo" className="logo" />
+          <img src={Logo} alt="Logo" className="logo" onClick={onLogoClick}/>
         </div>
         <div className="right-section">
           <div className="search-box">
