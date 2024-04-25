@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductDetailsPage.css';
-import img from '../../kookaburra-placeholder.png';
+import img from '../../images/kookaburra-placeholder.png';
 import klarnaLogo from '../../klarna-logo.svg';
 import viaBillLogo from '../../viabill-logo.png';
 import returnIcon from '../../Return.svg';

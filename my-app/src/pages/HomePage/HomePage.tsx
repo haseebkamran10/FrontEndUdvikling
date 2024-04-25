@@ -4,15 +4,15 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../HomePage/HomePage.css';
-import image1 from '../../kookaburra-placeholder.png';
-import image2 from '../../kookaburra-placeholder.png';
-import image3 from '../../kookaburra-placeholder.png';
-import image4 from '../../kookaburra-placeholder.png';
-import image5 from '../../kookaburra-placeholder.png';
-import imageP_1 from '../../kookaburra-placeholder.png'; 
-import imageP_2 from '../../kookaburra-placeholder.png'; 
-import imageP_3 from '../../kookaburra-bat.jpg'; 
-import imageP_4 from '../../kookaburra-placeholder.png'; 
+import image1 from '../../images/kookaburra-placeholder.png';
+import image2 from '../../images/Ben-Stokes-Cover.jpg';
+import image3 from '../../images/SS-cover.png';
+import image4 from '../../images/Bat-Cover.jpg';
+import image5 from '../../images/Cover-2024.png';
+import imageP_1 from '../../images/gm-bat.jpg'; 
+import imageP_2 from '../../images/sg-bat.jpg'; 
+import imageP_3 from '../../images/kookaburra-bat.jpg'; 
+import imageP_4 from '../../images/GG-bat.png'; 
 
 const products = [
   { image: imageP_1, price: "DKK 1.250", name: "GM Bat" },

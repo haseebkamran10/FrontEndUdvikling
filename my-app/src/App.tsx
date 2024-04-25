@@ -29,7 +29,7 @@ function App() {
       <SearchProvider>
       <Router>
       <HeaderWithNavigation />
-       <div className="main-content">
+       
         <Routes>
           <Route path="/cart" element={<CheckoutPage />} />
           <Route path="/contactinfo" element={<ContactInfo />} />
@@ -38,8 +38,9 @@ function App() {
           <Route path="/productspage" element={<ProductsPage />} />
           <Route path="/productdetail" element={<ProductDetailsPage />} />
           <Route path="/" element={<HomePage />} />
+          
         </Routes>
-       </div>
+    
        <Categories/>
        <Footer />
       </Router>

@@ -1,7 +1,7 @@
 import '../Categories/Categories.css';
-import image1 from '../../Categories-bats.png';
-import image2 from '../../Categories-gear.png';
-import image3 from '../../Categories-shoes.png'
+import image1 from '../../images/category1.png';
+import image2 from '../../images/category2.png';
+import image3 from '../../images/category3.png';
 
 const categories = [
   { 
