@@ -9,6 +9,8 @@ import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 import { SearchProvider  } from'./SearchContext'; 
 import HomePage from './pages/HomePage/HomePage'
+import SignUpPage from './pages/SignUpPage/SignUpPage'
+
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
@@ -39,6 +41,8 @@ function App() {
            <Route path="/paymentpage" element={<PaymentPage />} />
            <Route path="/productspage" element={<ProductsPage />} />
            <Route path="/productdetail" element={<ProductDetailsPage />} />
+           <Route path="/signup" element={<SignUpPage/>} />
+
            <Route path="/" element={<HomePage />} />
           
           </Routes>

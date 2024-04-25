@@ -1,0 +1,6 @@
+.contact-info-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+  }
