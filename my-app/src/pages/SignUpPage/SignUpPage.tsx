@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './SignUpPage.css'
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState(''); // State to store messages from the server
+  const [message, setMessage] = useState(''); 
 
   const handleSignUp = async (event: React.FormEvent) => {
     event.preventDefault();
-    setMessage(''); // Clear any previous messages
+    setMessage(''); 
 
     try {
       const response = await axios.post('http://localhost:3000/auth/signup', {
@@ -27,9 +28,13 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: 'white' }}>
-      <form onSubmit={handleSignUp} style={{ width: '100%', maxWidth: '400px' }}>
-        <div className="contact-info-container">
+ <div className="container-main">
+    <div className="signup-container">
+  
+      <h2>Opret Bruger</h2>
+      <form onSubmit={handleSignUp}className="signup-form">
+     
+        <div className="signup-input-container">
           <label htmlFor="email">Email</label>
           <input
             id="email"
@@ -39,7 +44,7 @@ const SignUp: React.FC = () => {
             required
           />
         </div>
-        <div className="contact-info-container">
+        <div className="signup-input-container">
           <label htmlFor="password">Password</label>
           <input
             id="password"
@@ -49,10 +54,12 @@ const SignUp: React.FC = () => {
             required
           />
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="signup-button">Sign Up</button>
         {message && <p style={{ color: message.startsWith('Signup failed') ? 'red' : 'green' }}>{message}</p>} {/* Display the message below the button */}
       </form>
     </div>
+  </div> 
+    
   );
 };
 

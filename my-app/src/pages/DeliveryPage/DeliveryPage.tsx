@@ -17,11 +17,7 @@ type FormData = {
   companyVat?: string;
 };
 
-/**
- * Renders the contact information form for the delivery page.
- * This component is responsible for collecting the user's contact details such as name, email, phone, and address.
- * The form data is managed using the `useForm` hook from the `react-hook-form` library.
- */
+
 const DeliveryPage: React.FC = () => {
   const navigate = useNavigate();
   const goToPaymentPage = () => {

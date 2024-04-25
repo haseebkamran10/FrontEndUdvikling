@@ -4,7 +4,6 @@ import { Elements, CardElement } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { useNavigate } from 'react-router-dom';
-
 import './PaymentPage.css';
 
 
@@ -114,7 +113,7 @@ const PaymentPage: React.FC = () => {
             </div>
           </div>
 
-          <h3>Tilføj rabatkode (optional)</h3>
+          <h3>Tilføj rabatkode</h3>
           <div className='gift-card-cont' >
             <input type="text" name="" id="" className='' />
             <button>Indløs</button>
@@ -127,8 +126,8 @@ const PaymentPage: React.FC = () => {
               <div className='' ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress"> Samme adresses leveringsadressen </label></div>
               <div className='' style={{ borderBottom: "none" }}  ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress">Brug en anden faktureringsadresse</label></div>
             </div>
-            <div className='btns-cont' >
-              <button  style={{ background: "none", color: "black" }} onClick={()=>{ navigate("/delivery")}} >Tibage til levering</button>
+            <div className='btns-cont'>
+              <button onClick={()=>{ navigate("/delivery")}} >Tibage til levering</button>
             </div>
           </div>
 

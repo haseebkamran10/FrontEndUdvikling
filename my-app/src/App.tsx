@@ -34,14 +34,14 @@ function App() {
          <HeaderWithNavigation/>
        
           <Routes>
-           
+          <Route path="/signup" element={<SignUpPage/>} />
            <Route path="/cart" element={<CheckoutPage />} />
            <Route path="/contactinfo" element={<ContactInfo />} />
            <Route path="/delivery" element={<DeliveryPage />} />
            <Route path="/paymentpage" element={<PaymentPage />} />
            <Route path="/productspage" element={<ProductsPage />} />
            <Route path="/productdetail" element={<ProductDetailsPage />} />
-           <Route path="/signup" element={<SignUpPage/>} />
+           
 
            <Route path="/" element={<HomePage />} />
           
