@@ -37,15 +37,15 @@
 }
 
 .checkout-button button {
-  margin: 0 150px; /* Large horizontal margin, no vertical margin */
+  margin: 0px; /* Large horizontal margin, no vertical margin */
 }
 
 .checkout-button button:first-child {
-  margin-right: 150px; /* Ensures right margin on the first button */
+  margin-right: 0;/*10px;  Ensures right margin on the first button */
   margin-left: 0; /* No left margin on the first button */
 }
 
 .checkout-button button:last-child {
-  margin-left: 150px; /* Ensures left margin on the last button */
+  margin-left: 0;/*10px;  Ensures left margin on the last button */
   margin-right: 0; /* No right margin on the last button */
 }

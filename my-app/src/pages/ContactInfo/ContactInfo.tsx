@@ -3,6 +3,8 @@ import './ContactInfo.css';
 import { useForm } from 'react-hook-form';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { useCart } from '../../CartContext';
+import { useNavigate } from 'react-router-dom';
+
 
 type FormData = {
   email: string;
@@ -16,7 +18,17 @@ type FormData = {
   companyVat?: string;
 };
 
+
+
 const ContactInfo: React.FC = () => {
+  const navigate = useNavigate();
+  const goToDeliveryPage = () => {
+    navigate('/delivery'); 
+  };
+
+  const goToProductsPage = () => {
+    navigate('/productspage');
+  };
   const { register, handleSubmit, setValue, watch, trigger, formState: { errors } } = useForm<FormData>();
   const { total, discount } = useCart();
 
@@ -30,7 +42,10 @@ const ContactInfo: React.FC = () => {
     }
   }, [watch, setValue]);
 
-  const onSubmit = data => console.log(data);
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+  };
+  
 
   const handleGoToPayment = async () => {
     const isValid = await trigger();
@@ -44,45 +59,53 @@ const ContactInfo: React.FC = () => {
       <div className="left-container">
         <h1 className="contact-info-heading">Kontaktoplysninger</h1>
         <form noValidate>
-          <div className="input-field-container">
+          <div className="input-field-box-email">
             <input {...register('email', { required: 'E-mail er påkrævet' })} placeholder="Email" />
             {errors.email && <p className="error-message">{errors.email.message}</p>}
           </div>
-          <div className="input-field-container">
+          <div className="input-field-box-phone">
             <input {...register('phone', { required: 'Telefonnummer er påkrævet', pattern: /^\d+$/ })} placeholder="Telefonnummer" />
             {errors.phone && <p className="error-message">{errors.phone.message}</p>}
           </div>
           <h1 className="contact-info-heading">Leveringsadresse</h1>
-          <div className="input-field-container">
+          <div className="input-field-box-firstName">
             <input {...register('firstName', { required: 'Fornavn er påkrævet' })} placeholder="Fornavn" />
             {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
           </div>
-          <div className="input-field-container">
+          <div className="input-field-box-lastName">
             <input {...register('lastName', { required: 'Efternavn er påkrævet' })} placeholder="Efternavn" />
             {errors.lastName && <p className="error-message">{errors.lastName.message}</p>}
           </div>
-          <div className="input-field-container">
+          <div className="input-field-box-address">
             <input {...register('address', { required: 'Adresse er påkrævet' })} placeholder="Vejnavn og husnummer" />
             {errors.address && <p className="error-message">{errors.address.message}</p>}
           </div>
-          <div className="input-field-container">
+          <div className="input-field-box-zipCode">
             <input {...register('zipCode', { required: 'Postnummer er påkrævet', pattern: /^\d{4}$/ })} placeholder="Postnummer" />
             {errors.zipCode && <p className="error-message">{errors.zipCode.message}</p>}
           </div>
-          <div className="input-field-container">
+          <div className="input-field-box-city">
             <input {...register('city')} placeholder="By" readOnly />
           </div>
-          <div className="input-field-container">
+          <div className="input-field-box-companyName">
             <input {...register('companyName')} placeholder="Firmanavn (valgfrit)" />
           </div>
-          <div className="input-field-container">
+          
+          <div className="input-field-box-CVR">
             <input {...register('companyVat')} placeholder="CVR-nummer (valgfrit)" />
           </div>
         </form>
+        <div className="checkout-button">
+        <button onClick={goToProductsPage}>Tilbage</button>
+        <button onClick={goToDeliveryPage}>Fortsæt</button>
       </div>
-      <div className="right-container">
+      </div>
+      
+
+      <div>
         <CartSummary total={total} discount={discount} onGoToPayment={handleGoToPayment} />
       </div>
+      
     </div>
   );
 };
