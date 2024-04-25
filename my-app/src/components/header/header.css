@@ -105,15 +105,16 @@
     margin-left: 20px;
     margin-right: 20px;
     cursor: pointer;
+    padding-top: 5px;
     
   }
   
   .login-popup {
-    position: fixed;.login-popup {
+  position: fixed; 
   position: fixed;
   top: 0;
   right: 0;
-  width: 100%; /* Or the width of the login form */
+  width: 100%; 
   height: 100%;
   background: white;
   z-index: 1500;
@@ -125,27 +126,27 @@
   box-sizing: border-box;
 }
 
-/* When the login is shown, slide it in from the right */
+
 .header-container .login-popup.show {
   transform: translateX(0);
-}
+
     top: 0;
-    right: -100%; /* Start hidden off the right side of the screen */
-    width: 100%; /* Adjust width as necessary */
-    height: 100%; /* Full height to cover the screen */
+    right: -100%; 
+    width: 100%; 
+    height: 100%; 
     background: white;
-    z-index: 1500; /* Higher than the backdrop */
-    display: flex; /* Using flex to align inner content */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    transition: right 0.3s ease-in-out; /* Smooth transition for sliding effect */
-    padding: 20px; /* Padding around the content */
-    box-sizing: border-box; /* Include padding in the box size */
+    z-index: 1500; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    transition: right 0.3s ease-in-out; 
+    padding: 20px; 
+    box-sizing: border-box; 
   }
   
-  /* This class should be toggled in conjunction with the React state */
+
   .header-container .login-popup.show {
-    right: 0; /* Slide in to be fully visible */
+    right: 0; 
   }
   
   .backdrop {
@@ -155,30 +156,30 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1400; /* Lower than the login popup but higher than content */
-    transition: visibility 0s, opacity 0.3s ease-in-out; /* Transition for fade effect */
-    visibility: hidden; /* Start hidden */
-    opacity: 0; /* Start transparent */
+    z-index: 1400;
+    transition: visibility 0s, opacity 0.3s ease-in-out; 
+    visibility: hidden; 
+    opacity: 0; 
   }
   
-  /* Show the backdrop when triggered */
+  
   .backdrop.show {
-    visibility: visible; /* Make visible */
-    opacity: 1; /* Fade to semi-transparent */
+    visibility: visible;
+    opacity: 1; 
   }
   .cart-counter {
     position: absolute;
-    top: -10px; /* Adjust as necessary */
-    right: 2px; /* Adjust as necessary */
-    background-color: red; /* Change to your preferred color */
+    top: -3px; 
+    right: 5px; 
+    background-color: red; 
     color: white;
     border-radius: 50%;
-    width: 18px; /* Adjust size as necessary */
-    height: 18px; /* Adjust size as necessary */
+    width: 18px; 
+    height: 18px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px; /* Adjust font size as necessary */
+    font-size: 12px; 
     font-weight: bold;
   }
   

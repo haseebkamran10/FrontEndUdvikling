@@ -13,6 +13,8 @@ import imageP_1 from '../../images/gm-bat.jpg';
 import imageP_2 from '../../images/sg-bat.jpg'; 
 import imageP_3 from '../../images/kookaburra-bat.jpg'; 
 import imageP_4 from '../../images/GG-bat.png'; 
+import Footer from '../../components/Footer/Footer'
+import Categories from '../../components/Categories/Categories';
 
 const products = [
   { image: imageP_1, price: "DKK 1.250", name: "GM Bat" },
@@ -54,7 +56,10 @@ const HomePage: React.FC = () => {
             <button className="product-button">Læs mere</button>
           </div>
         ))}
+          <Categories/>
+      <Footer/>
       </div>
+    
     </>
   );
 };

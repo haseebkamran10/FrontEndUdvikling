@@ -9,8 +9,7 @@ import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 import { SearchProvider  } from'./SearchContext'; 
 import HomePage from './pages/HomePage/HomePage';
-import Footer from './components/Footer/Footer'
-import Categories from './components/Categories/Categories';
+
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
@@ -27,23 +26,25 @@ function App() {
   return (
     <CartProvider>
       <SearchProvider>
-      <Router>
-      <HeaderWithNavigation />
+        <Router>
+         <HeaderWithNavigation/>
        
-        <Routes>
-          <Route path="/cart" element={<CheckoutPage />} />
-          <Route path="/contactinfo" element={<ContactInfo />} />
-          <Route path="/delivery" element={<DeliveryPage />} />
-          <Route path="/paymentpage" element={<PaymentPage />} />
-          <Route path="/productspage" element={<ProductsPage />} />
-          <Route path="/productdetail" element={<ProductDetailsPage />} />
-          <Route path="/" element={<HomePage />} />
+          <Routes>
+           <Route path="/" element={<HomePage />} />
+           <Route path="/cart" element={<CheckoutPage />} />
+           <Route path="/contactinfo" element={<ContactInfo />} />
+           <Route path="/delivery" element={<DeliveryPage />} />
+           <Route path="/paymentpage" element={<PaymentPage />} />
+           <Route path="/productspage" element={<ProductsPage />} />
+           <Route path="/productdetail" element={<ProductDetailsPage />} />
           
-        </Routes>
+          
+          </Routes>
+          
     
-       <Categories/>
-       <Footer />
-      </Router>
+         
+        </Router>
+       
       </SearchProvider>
     </CartProvider>
   );
