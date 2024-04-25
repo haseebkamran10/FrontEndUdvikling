@@ -15,6 +15,8 @@ import imageP_3 from '../../images/kookaburra-bat.jpg';
 import imageP_4 from '../../images/GG-bat.png'; 
 import Footer from '../../components/Footer/Footer'
 import Categories from '../../components/Categories/Categories';
+import { useNavigate } from 'react-router-dom';
+
 
 const products = [
   { image: imageP_1, price: "DKK 1.250", name: "GM Bat" },
@@ -24,6 +26,13 @@ const products = [
 ];
 
 const HomePage: React.FC = () => {
+
+  const navigate = useNavigate();
+  const goToProductsPage = () => {
+    navigate('/productspage'); 
+  };
+
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -53,7 +62,7 @@ const HomePage: React.FC = () => {
           <div key={index} className="product-container">
             <img src={product.image} alt="Additional Product" />
             <p className="product-price">{product.price}</p>
-            <button className="product-button">Læs mere</button>
+            <button className="product-button" onClick={goToProductsPage}>Læs mere</button>
           </div>
         ))}
           <Categories/>

@@ -8,8 +8,7 @@ import { CartProvider, useCart } from './CartContext';
 import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
 import PaymentPage from './pages/PaymentPage/PaymentPage';
 import { SearchProvider  } from'./SearchContext'; 
-import HomePage from './pages/HomePage/HomePage';
-
+import HomePage from './pages/HomePage/HomePage'
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
