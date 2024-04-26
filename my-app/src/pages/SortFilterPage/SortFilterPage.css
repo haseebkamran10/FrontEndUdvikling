@@ -64,5 +64,28 @@
   cursor: pointer;
   margin-top: 20px;
 }
+@media (max-width: 1200px) {
+  .modal-content {
+    width: 100%; 
+    margin-top: 160px;
+  }
 
+  .modal-header h2 {
+    font-size: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%; 
+  }
+
+  .modal-button {
+    padding: 15px 20px; 
+  }
+
+  .close-modal {
+    font-size: 30px;
+  }
+}
 

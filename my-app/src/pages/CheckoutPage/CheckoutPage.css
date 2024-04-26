@@ -1,11 +1,10 @@
-
 .checkout-page {
-  width: 100%; 
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: normal; 
-  background-color: white; 
-  padding-top: 20px; 
+  align-items: center;
+  background-color: white;
+  padding-top: 20px;
 }
 
 .checkout-heading {
@@ -13,56 +12,70 @@
   font-size: 40px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  line-height: 48px; 
+  line-height: 48px;
   word-wrap: break-word;
-  text-align: left;
-  margin-left: 20px; 
-  margin-bottom: 20px; 
+  text-align: center;
+  margin: 20px;
 }
 
 .checkout-content {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
 .checkout-button {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   padding: 10px;
-  margin-right: 20px auto; 
-  margin-left: 20px auto;
-  margin-top: 0px;
-  margin-bottom:5px;
-  cursor: pointer;
+  width: 100%;
+  gap: 20px;
 }
 
-.checkout-button-1 {
-  margin-left: 50xpx; 
-  margin-top: 10px;
-  border-radius: 20px;
-  background-color: grey;
-  color: white;
-  border: 1px solid transparent; 
-  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
-
-   
-}
-.checkout-button-1:hover {
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); 
-  border: 1px solid black;
-  background-color: #cf3c3c;
-}
-
+.checkout-button-1,
 .checkout-button-2 {
-  margin-left: 250px;
-  margin-top: 10px;
   border-radius: 20px;
   background-color: grey;
   color: white;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
   transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+  padding: 10px;
+  flex-grow: 1;
 }
 
+.checkout-button-1:hover,
 .checkout-button-2:hover {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
   background-color: #cf3c3c;
+}
+
+@media (max-width: 768px) {
+  .checkout-heading {
+    font-size: 30px;
+    margin: 15px;
+  }
+  .checkout-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-heading {
+    font-size: 24px;
+    
+  }
+
+  .checkout-content {
+    flex-direction: column-reverse;
+    
+  }
+
+  .checkout-button {
+    flex-direction: column-reverse;
+  
+  }
+
 }

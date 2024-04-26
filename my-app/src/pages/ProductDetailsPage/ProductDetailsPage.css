@@ -4,7 +4,7 @@
   }
   
   .left-cont {
-    background-color: #f0f0f0; /* Slightly gray background */
+    background-color: #f0f0f0; 
     width: 60%;
     max-height: 120vh; 
     display: flex;
@@ -14,9 +14,9 @@
   }
   
   .left-cont img {
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    max-height: 100%; 
     max-width: 100%;
-    object-fit: contain; /* Ensures the entire image is visible, may leave space if aspect ratio differs */
+    object-fit: contain; 
   }
   
   .right-cont {
@@ -222,4 +222,16 @@
     }
   
   }
+  @media (max-width: 1200px) {
+    .left-cont{
+      margin-top: 100px;
+      margin-bottom: -80px;
 
+    }
+    .category-info h1{
+      margin-top:50px;
+
+    }
+  
+
+}
