@@ -95,10 +95,10 @@ const ContactInfo: React.FC = () => {
             <input {...register('companyVat')} placeholder="CVR-nummer (valgfrit)" />
           </div>
         </form>
-      
+        <div className="checkout-button">
         <button className="checkout-button-1" onClick={goToProductsPage}>Tilbage</button>
         <button className="checkout-button-2" onClick={goToDeliveryPage}>Fortsæt</button>
-      
+        </div>
       </div>
       
 
