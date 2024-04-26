@@ -4,6 +4,7 @@ import './LoginPage.css';
 import CloseIcon from '@mui/icons-material/Close';
 import SportsCricketIcon from '@mui/icons-material/SportsCricket';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { Link } from 'react-router-dom';
 
 interface LoginPageProps {
   isVisible: boolean;
@@ -75,7 +76,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
       <div className='right-cont'>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h3>Log ind</h3>
-          <CloseIcon onClick={onClose} />
+          <CloseIcon onClick={onClose}  style={{ cursor: 'pointer' }}/>
         </div>
 
         {/* Success message pop-up */}
@@ -107,9 +108,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         </form>
         <h3 style={{ textAlign: "left", fontSize: "1.0rem" }}>Ikke medlem endnu</h3>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <SportsCricketIcon />
-          <p style={{ marginLeft: "15px", color: "gray" }}>Bliv medlem</p>
-        </div>
+  <SportsCricketIcon />
+  <Link to="/signup" style={{ marginLeft: "15px", color: "gray", textDecoration: "none" }}>
+    Bliv medlem
+  </Link>
+</div>
+
         <div style={{ display: "flex", alignItems: "center" }}>
           <ErrorOutlineIcon />
           <p style={{ marginLeft: "15px", color: "gray" }}>Læs om alle fordele</p>

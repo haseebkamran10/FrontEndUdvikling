@@ -1,11 +1,11 @@
 .cart-summary {
-  width: 35%; /* Adjust width as necessary */
-  margin-top: 5%; /* Adjust for desired height */
-  margin-right: 20px; /* Aligns to the right */
-  min-height: 120vh;
-  text-align: center;
-  position: absolute; /* Makes the div position relative to the nearest positioned ancestor */
-  right: 0; /* Aligns the div to the right edge of the ancestor element */
+  width: 35%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 5%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .cart-summary h4 {
@@ -19,13 +19,13 @@
 }
 
 .cart-summary .discount {
-  text-align: right; 
+  text-align: right;
   color: green;
 }
 
 .cart-summary button {
-  display: block; /* Make the button full width */
-  margin: 20px auto; /* Center button horizontally */
+  display: block;
+  margin: 20px auto;
   padding: 10px;
   background: #80808070;
   color: black;
@@ -34,8 +34,50 @@
 }
 
 .cart-summary img {
-  width: 50%; /* Adjust to your preference, e.g., 50% of the container width or a fixed width like 200px */
+  width: 50%;
   margin-top: 20px;
-  margin-bottom: 20px; /* Optional: Adds some space below the image */
-  height: auto; /* Maintains the aspect ratio */
+  margin-bottom: 20px;
+  height: auto;
+}
+@media (max-width: 1024px) {
+  .cart-summary {
+    width: 40%;
+  }
+}
+@media (max-width: 768px) {
+  .cart-summary {
+    width: 50%;
+    min-height: auto;
+    position: static; 
+    margin-top: 20px; 
+    margin-top: 2%;
+    right: auto; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+
+  .cart-summary img {
+    width: 75%; 
+  }
+  .cart-summary{
+    width: 100%; 
+    margin-top: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-summary {
+    width: 100%; 
+    margin-top: 100px;
+    padding: 1px;
+    position: static;
+  }
+
+  .cart-summary button {
+    padding: 12px 20px; 
+  }
+
+  .cart-summary img {
+    width: 100%; 
+  }
 }

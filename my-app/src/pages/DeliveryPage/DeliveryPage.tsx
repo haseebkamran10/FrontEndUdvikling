@@ -17,11 +17,7 @@ type FormData = {
   companyVat?: string;
 };
 
-/**
- * Renders the contact information form for the delivery page.
- * This component is responsible for collecting the user's contact details such as name, email, phone, and address.
- * The form data is managed using the `useForm` hook from the `react-hook-form` library.
- */
+
 const DeliveryPage: React.FC = () => {
   const navigate = useNavigate();
   const goToPaymentPage = () => {
@@ -56,9 +52,9 @@ const DeliveryPage: React.FC = () => {
 
   return (
     <div className="contact-info-container">
-      <div className="left-container">
+      <div className="left-container-delivery">
         <form noValidate>
-          <h1 className="contact-info-heading">Leveringsadresse</h1>
+          <h2 className="contact-info-heading">Leveringsadresse</h2>
           <div className="input-field-container-firstname">
             <input {...register('firstName', { required: 'Fornavn er påkrævet' })} placeholder="Fornavn" />
             {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
@@ -85,9 +81,9 @@ const DeliveryPage: React.FC = () => {
             <input {...register('companyVat')} placeholder="CVR-nummer (valgfrit)" />
           </div>
         </form>
-        <div className="checkout-button">
-        <button onClick={goToContactInfo}>Tilbage</button>
-        <button onClick={goToPaymentPage}>Fortsæt</button>
+        <div>
+        <button className="checkout-button-1" onClick={goToContactInfo}>Tilbage</button>
+        <button className="checkout-button-2"onClick={goToPaymentPage}>Fortsæt</button>
       </div>
       </div>
       <div>

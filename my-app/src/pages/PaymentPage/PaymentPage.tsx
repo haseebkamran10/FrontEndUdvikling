@@ -1,59 +1,94 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { Elements, CardElement } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import CartSummary from '../../components/CartSummary/CartSummary';
-import {stripePromise} from '../../utils/stripeClient'; // Replace with the correct path
-import mobilePayLogo from '../../MobilePay-logo.png'; // Replace with the correct path
-import cardLogo from '../../Card.png'; // Replace with the correct path
+import { useNavigate } from 'react-router-dom';
 import './PaymentPage.css';
-type PaymentFormData = {
+
+
+
+const stripePromise = loadStripe('your-public-key'); // Replace with your actual public key
+
+interface PaymentFormData {
   phoneNumber: string;
   paymentMethod: 'MobilePay' | 'Card' | 'Invoice';
   fullName?: string;
-};
+  cardholderName?: string;
+}
 
 const PaymentPage: React.FC = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<PaymentFormData>();
-  const selectedPaymentMethod = watch('paymentMethod');
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
+  const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
+  const navigate = useNavigate();
 
-  const onSubmit = (data: PaymentFormData) => {
+
+  const onSubmit: SubmitHandler<PaymentFormData> = data => {
     console.log(data);
   };
 
+  const handlePaymentMethodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedPaymentMethod(event.target.value);
+
+    
+
+  };
+  
+
+
   return (
     <Elements stripe={stripePromise}>
-      <div className="payment-container">
+      <form className="payment-container" onSubmit={handleSubmit(onSubmit)}>
         <div className="left-container">
-          <h1 className="payment-heading">Betaling</h1>
-          <form onSubmit={handleSubmit(onSubmit)} noValidate>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  value="MobilePay"
-                  {...register('paymentMethod', { required: true })}
-                />
-                <img src={mobilePayLogo} alt="MobilePay" className="icon-small" />
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  value="Card"
-                  {...register('paymentMethod', { required: true })}
-                />
-                <img src={cardLogo} alt="Card" className="icon-small" />
-              </label>
+          <p className="payment-heading">Betalingsoplysninger</p>
+          <p>Vælg betalingsmetode</p>
+
+          <div className='payment-method-cont'>
+  <div className={`payment-cont ${selectedPaymentMethod === 'Card' ? 'selected' : ''}`}>
+    <div>
+    <input
+      type="radio"
+      value="Card"
+      id="paymentMethodCard"
+      {...register("paymentMethod", { required: true })}
+      onChange={handlePaymentMethodChange}
+    />
+    <label htmlFor="paymentMethodCard">Kort</label>
+    </div>
+    
+    <img src="src/images/Kort.png" alt="" className="kort-img"  />
+    </div>
+    {selectedPaymentMethod === 'Card' && (
+                <div className="card-inputs">
+                  <CardElement />
+                </div>
+              )}
+           
+            <div className={`payment-cont ${selectedPaymentMethod === 'MobilePay' ? 'selected' : ''}`}>
+             <div>
+             <input
+                type="radio"
+                value="MobilePay"
+                id="paymentMethodMobilePay"
+                {...register("paymentMethod")}
+                onChange={handlePaymentMethodChange}
+              />
+              <label htmlFor="paymentMethodMobilePay">MobilePay</label>
+             </div>
+             
+              
+              <img src="src/images/MobilePay-logo.png" alt="" className="mobile-pay-img" />
             </div>
             {selectedPaymentMethod === 'MobilePay' && (
-              <div className="input-field-container">
+              <div className="input-mobilpay">
+                
                 <input
                   {...register('phoneNumber', {
                     required: 'Telefonnummer er påkrævet',
                     pattern: {
                       value: /^\d{8}$/,
                       message: "Telefonnummer skal være 8 cifre"
+            
                     }
                   })}
                   placeholder="Telefonnummer for MobilePay"
@@ -61,31 +96,50 @@ const PaymentPage: React.FC = () => {
                 {errors.phoneNumber && <p className="error-message">{errors.phoneNumber.message}</p>}
               </div>
             )}
-            {selectedPaymentMethod === 'Card' && (
-              <>
-                <div className="input-field-container">
-                  <input
-                    {...register('fullName', {
-                      required: 'Fuldt navn er påkrævet',
-                    })}
-                    placeholder="Fuldt navn"
-                  />
-                  {errors.fullName && <p className="error-message">{errors.fullName.message}</p>}
-                </div>
-                <div className="input-field-container">
-                  <CardElement/>
-                </div>
-              </>
-            )}
-            <button type="submit">Fortsæt til betaling</button>
-          </form>
+
+            <div className='payment-cont'>
+              <div>
+              <input
+                type="radio"
+                value="Invoice"
+                id="paymentMethodInvoice"
+                {...register("paymentMethod")}
+                onChange={handlePaymentMethodChange}
+              />
+              <label htmlFor="paymentMethodInvoice">Invoice</label>
+              </div>
+              
+              <img src="src/images/invoice.png" alt="Invoice" className="payment-img" />
+            </div>
+          </div>
+
+          <h3>Tilføj rabatkode</h3>
+          <div className='gift-card-cont' >
+            <input type="text" name="" id="" className='' />
+            <button>Indløs</button>
+          </div>
+
+          <div className='choose-address-cont ' >
+            <h3>Faktureringsadresse </h3>
+            <p>Vælg faktureringsadresse</p>
+            <div className='address-options  ' >
+              <div className='' ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress"> Samme adresses leveringsadressen </label></div>
+              <div className='' style={{ borderBottom: "none" }}  ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress">Brug en anden faktureringsadresse</label></div>
+            </div>
+            <div className='btns-cont'>
+              <button onClick={()=>{ navigate("/delivery")}} >Tibage til levering</button>
+            </div>
+          </div>
+
+
         </div>
-        <div >
-          <CartSummary total={0} discount={0} onGoToPayment={() => {}} />
-        </div> 
-      </div>
+
+        <div>
+          <CartSummary total={0} discount={0} onGoToPayment={() => { }} />
+        </div>
+      </form>
     </Elements>
   );
-}
+};
 
 export default PaymentPage;

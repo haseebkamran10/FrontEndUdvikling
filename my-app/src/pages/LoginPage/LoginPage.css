@@ -5,11 +5,13 @@
     display: flex; 
     justify-content: flex-end;
     align-items: center;
-    position:absolute;
+    position:fixed;
     background-color: transparent;
     backdrop-filter: blur(4px); 
     top: -100px;
     z-index: 1000;
+    border: 100% transparent;
+    
    
   }
   
@@ -22,11 +24,11 @@
     margin-left: auto;
     background-color: white;
     right: -600px; 
-  top: 2vh; 
-  overflow: hidden;
-  transition: transform 1.0s ease;
-  z-index: 100;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 2vh; 
+    overflow: hidden;
+    transition: transform 1.0s ease;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  
 }
 
@@ -35,11 +37,11 @@
 }
 
 .login-page-cont .right-cont.show {
-  transform: translateX(0); /* Slide container in */
+  transform: translateX(0); 
 }
 
 .login-page-cont .right-cont.show .right-cont-inner {
-  transform: translateX(0); /* Slide content along with container */
+  transform: translateX(0); 
 }
 
 .login-page-cont .right-cont form{
@@ -81,4 +83,37 @@
 
 .login-page-cont .right-cont .btns-cont .btn2{
     background-color: rgb(96, 91, 91);
+}
+@media (max-width: 1024px) {
+  .login-page-cont .right-cont {
+      max-width: 100%;
+      
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page-cont .right-cont {
+      max-width: 100%;
+  }
+
+  .login-page-cont .right-cont form input,
+  .login-page-cont .right-cont .btns-cont button {
+      padding: 15px;
+      
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page-cont .right-cont {
+      width: 90%;
+      max-width: none;
+    
+    
+      
+  }
+
+  .login-page-cont .right-cont form input,
+  .login-page-cont .right-cont .btns-cont button {
+      padding: 12px 20px;
+  }
 }
