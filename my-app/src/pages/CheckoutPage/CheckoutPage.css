@@ -26,26 +26,43 @@
 }
 
 .checkout-button {
-  display: flex; /* Enables flexbox */
-  justify-content: center; /* Aligns buttons to the center */
+  display: flex; 
+  justify-content: center; 
   padding: 10px;
-  margin-right: 20px auto; /* Controls the margin around the entire container */
+  margin-right: 20px auto; 
   margin-left: 20px auto;
   margin-top: 0px;
   margin-bottom:5px;
   cursor: pointer;
 }
 
-.checkout-button button {
-  margin: 0px; /* Large horizontal margin, no vertical margin */
+.checkout-button-1 {
+  margin-left: 50xpx; 
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+  border: 1px solid transparent; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+
+   
+}
+.checkout-button-1:hover {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); 
+  border: 1px solid black;
+  background-color: #cf3c3c;
 }
 
-.checkout-button button:first-child {
-  margin-right: 0;/*10px;  Ensures right margin on the first button */
-  margin-left: 0; /* No left margin on the first button */
+.checkout-button-2 {
+  margin-left: 250px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+  border: 1px solid transparent; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
-.checkout-button button:last-child {
-  margin-left: 0;/*10px;  Ensures left margin on the last button */
-  margin-right: 0; /* No right margin on the last button */
+.checkout-button-2:hover {
+  background-color: #cf3c3c;
 }

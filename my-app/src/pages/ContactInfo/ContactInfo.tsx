@@ -55,9 +55,9 @@ const ContactInfo: React.FC = () => {
   };
 
   return (
-    <div className="contact-info-container">
+    <div className="contact-info">
       <div className="left-container">
-        <h1 className="contact-info-heading">Kontaktoplysninger</h1>
+        <h2 className="contact-info-heading">Kontaktoplysninger</h2>
         <form noValidate>
           <div className="input-field-box-email">
             <input {...register('email', { required: 'E-mail er påkrævet' })} placeholder="Email" />
@@ -67,7 +67,7 @@ const ContactInfo: React.FC = () => {
             <input {...register('phone', { required: 'Telefonnummer er påkrævet', pattern: /^\d+$/ })} placeholder="Telefonnummer" />
             {errors.phone && <p className="error-message">{errors.phone.message}</p>}
           </div>
-          <h1 className="contact-info-heading">Leveringsadresse</h1>
+          <h2 className="contact-info-heading">Leveringsadresse</h2>
           <div className="input-field-box-firstName">
             <input {...register('firstName', { required: 'Fornavn er påkrævet' })} placeholder="Fornavn" />
             {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
@@ -95,10 +95,10 @@ const ContactInfo: React.FC = () => {
             <input {...register('companyVat')} placeholder="CVR-nummer (valgfrit)" />
           </div>
         </form>
-        <div className="checkout-button">
-        <button onClick={goToProductsPage}>Tilbage</button>
-        <button onClick={goToDeliveryPage}>Fortsæt</button>
-      </div>
+      
+        <button className="checkout-button-1" onClick={goToProductsPage}>Tilbage</button>
+        <button className="checkout-button-2" onClick={goToDeliveryPage}>Fortsæt</button>
+      
       </div>
       
 

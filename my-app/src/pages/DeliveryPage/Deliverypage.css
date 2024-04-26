@@ -1,21 +1,25 @@
 .contact-info-container {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  gap: 20px; 
+  justify-content: center;
+  gap: 40px;
+  margin-left: 80px;
+  width: 100vh;
+  padding-right: 20px;
+
 
 }
 
-.left-container {
+.left-container-delivery {
   margin-top: 100px;
-  width: 600px; 
-  min-height: 800px; 
+  max-width: 800px;
   background-color: #ffffff; 
   border-radius: 10px; 
-  padding: 20px;
   margin-left: 30px; 
+  padding: 50px;
+  padding-left: 20px;
+  margin-left: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(50, 50, 50, 0.15); 
-  
+  scale: 1.1;
 }
 
 .contact-info-heading {
@@ -25,7 +29,8 @@
   text-align: left;
   margin-bottom: 20px; 
   color: black;
-  font-size: 20px; 
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
   
 }
 
@@ -155,16 +160,33 @@
   background-color: darkblue;
 }
 
-.checkout-button button {
-  margin: 0 150px; 
+.checkout-button-1 {
+  margin-left: 50xpx; 
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+  border: 1px solid transparent; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+
+   
+}
+.checkout-button-1:hover {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); 
+  border: 1px solid black;
+  background-color: #cf3c3c;
 }
 
-.checkout-button button:first-child {
-  margin-right: 150px; 
-  margin-left: 0; 
+.checkout-button-2 {
+  margin-left: 250px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+  border: 1px solid transparent; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
-.checkout-button button:last-child {
-  margin-left: 150px;
-  margin-right: 0; 
+.checkout-button-2:hover {
+  background-color: #cf3c3c;
 }

@@ -34,8 +34,8 @@ const CheckoutPage: React.FC = () => {
         <CartSummary total={total} discount={discount} onGoToPayment={goToContactInfo} />
       </div>
       <div className="checkout-button">
-        <button onClick={goToProductsPage}>Tilbage</button>
-        <button onClick={goToContactInfo}>Fortsæt</button>
+        <button  className="checkout-button-1" onClick={goToProductsPage}>Tilbage</button>
+        <button className="checkout-button-2"onClick={goToContactInfo}>Fortsæt</button>
       </div>
     </div>
   );

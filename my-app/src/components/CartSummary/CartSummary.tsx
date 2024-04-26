@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartSummary.css';
 import paymentMethods from '../../PaymentMethods.png'
-// Assuming you pass the necessary props for total, discount, etc.
+
 type CartSummaryProps = {
   total: number;
   discount: number;
@@ -9,7 +9,7 @@ type CartSummaryProps = {
 };
 
 const CartSummary: React.FC<CartSummaryProps> = ({ total, discount, onGoToPayment }) => {
-  const deliveryCharge = 40; // Assuming a fixed delivery charge for simplicity
+  const deliveryCharge = 40; 
 
   return (
     <div className="cart-summary">
