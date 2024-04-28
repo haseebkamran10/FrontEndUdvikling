@@ -22,7 +22,7 @@ const PaymentPage: React.FC = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
-  const { cartItems, handleQuantityChange, total, discount } = useCart();
+  const { cartItems, total, discount } = useCart();
 
 
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
