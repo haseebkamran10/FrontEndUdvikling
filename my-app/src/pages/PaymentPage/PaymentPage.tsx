@@ -143,7 +143,7 @@ const PaymentPage: React.FC = () => {
               <div className='' style={{ borderBottom: "none" }}  ><input type="radio" name="addressCode" id="adress" /> <label htmlFor="adress">Brug en anden faktureringsadresse</label></div>
             </div>
             <div className='btns-cont' >
-              <button  style={{ background: "none", color: "black" }} onClick={()=>{ navigate("/delivery")}} >Tibage til levering</button>
+              <button  style={{ background: "none", color: "black" }} onClick={()=>{ navigate("/deliverypage")}} >Tibage til levering</button>
             </div>
           </div>
 
