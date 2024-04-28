@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Elements, CardElement } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { useNavigate } from 'react-router-dom';
 import './PaymentPage.css';
+import { useCart } from '../../CartContext';
 
 
 
@@ -21,11 +22,15 @@ const PaymentPage: React.FC = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
+  const { cartItems, handleQuantityChange, total, discount } = useCart();
 
 
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
     console.log(data);
   };
+  useEffect(() => {
+    console.log("Cart Items in CheckoutPage:", cartItems);
+  }, [cartItems]);
 
   const handlePaymentMethodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedPaymentMethod(event.target.value);
@@ -135,7 +140,7 @@ const PaymentPage: React.FC = () => {
         </div>
 
         <div>
-          <CartSummary total={0} discount={0} onGoToPayment={() => { }} />
+          <CartSummary total={total} discount={discount} onGoToPayment={() => { }} />
         </div>
       </form>
     </Elements>
