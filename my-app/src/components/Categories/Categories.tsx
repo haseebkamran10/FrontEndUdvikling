@@ -21,7 +21,7 @@ const categories = [
   },
 ];
 
-const Categories = () => {
+const Categories: React.FC = () => {
   return (
     <div className="categories-container">
       {categories.map((category) => (

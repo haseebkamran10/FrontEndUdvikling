@@ -6,6 +6,7 @@ import CartSummary from '../../components/CartSummary/CartSummary';
 import { useNavigate } from 'react-router-dom';
 import './PaymentPage.css';
 import { useCart } from '../../CartContext';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 
 
 
@@ -19,6 +20,7 @@ interface PaymentFormData {
 }
 
 const PaymentPage: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
@@ -38,11 +40,19 @@ const PaymentPage: React.FC = () => {
     
 
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, []);
   
 
 
   return (
     <Elements stripe={stripePromise}>
+      {loading && <LoadingIndicator />}
       <form className="payment-container" onSubmit={handleSubmit(onSubmit)}>
         <div className="left-container">
           <p className="payment-heading">Betalingsoplysninger</p>

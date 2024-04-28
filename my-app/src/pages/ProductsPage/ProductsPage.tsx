@@ -7,6 +7,7 @@ import SortFilterPage from '../SortFilterPage/SortFilterPage';
 import { Button } from '@mui/material';
 import {Product as Product } from '../../types/types';
 import { useSearch } from '../../SearchContext';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -14,14 +15,17 @@ const ProductPage: React.FC = () => {
   const { cartItems, setCartItems } = useCart();
   const { addToCart } = useCart();
   const { searchTerm } = useSearch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get<Product[]>('http://localhost:3000/products');
         setProducts(response.data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching products:', error);
+        setLoading(false);
       }
     };
 
@@ -46,6 +50,13 @@ const ProductPage: React.FC = () => {
   useEffect(() => {
     console.log("Updated Cart Items in ProductPage:", cartItems);
 }, [cartItems]);
+useEffect(() => {
+  const timeout = setTimeout(() => {
+    setLoading(false);
+  }, 250);
+
+  return () => clearTimeout(timeout);
+}, []);
   
 
   const handleAddToBasket = (product: Product) => {
@@ -70,6 +81,7 @@ const ProductPage: React.FC = () => {
   return (
     <div className="container">
       <h1 className='title'>Produkter</h1>
+      {loading && <LoadingIndicator />}
       <div className="sort-filter">
         <button className="sort-filter-button" onClick={() => setShowModal(true)}>
           <span>Sortér og Filtrér</span>

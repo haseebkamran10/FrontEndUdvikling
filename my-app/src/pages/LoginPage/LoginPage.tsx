@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect  } from 'react';
 import axios from 'axios';
 import './LoginPage.css';
 import CloseIcon from '@mui/icons-material/Close';
 import SportsCricketIcon from '@mui/icons-material/SportsCricket';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { Link } from 'react-router-dom';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 
 interface LoginPageProps {
   isVisible: boolean;
@@ -12,10 +13,11 @@ interface LoginPageProps {
 }
 
 const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
+  const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState(''); // State to hold the success message
+  const [successMessage, setSuccessMessage] = useState(''); 
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -27,8 +29,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
 
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorMessage(''); // Clear any existing error messages
-    setSuccessMessage(''); // Clear any existing success messages
+    setErrorMessage(''); 
+    setSuccessMessage(''); 
 
     try {
       const response = await axios.post('http://localhost:3000/auth/signin', {
@@ -40,39 +42,44 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         }
       });
 
-      // Set the success message to be displayed
+      
       setSuccessMessage('Sign in successful!');
 
-      // Clear the form fields
+     
       setEmail('');
       setPassword('');
 
       
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        // Axios error
+       
         if (error.response) {
-          // The server responded with a status code outside the range of 2xx
           setErrorMessage(error.response.data.error || 'An error occurred during sign-in');
         } else if (error.request) {
-          // The request was made but no response was received
           setErrorMessage('The server did not respond');
         } else {
-          // Something else caused the error
           setErrorMessage(error.message);
         }
       } else {
-        // Non-Axios error
         setErrorMessage('An unexpected error occurred');
       }
       console.error('Login error:', error);
     }
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, []);
+  
 
   const containerClasses = `login-page-cont${isVisible ? ' show' : ''}`;
 
   return (
     <div className={containerClasses} style={{ display: 'flex', flexDirection: 'column' }}>
+      {loading && <LoadingIndicator />}
       <div className='right-cont'>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h3>Log ind</h3>
