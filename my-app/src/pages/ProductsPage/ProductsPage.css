@@ -144,3 +144,8 @@
   box-sizing: border-box; 
   margin-top: auto;
 }
+
+.product-card img {
+  cursor: pointer;
+
+}

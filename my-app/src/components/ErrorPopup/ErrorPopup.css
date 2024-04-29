@@ -1,0 +1,94 @@
+.error-popup {
+    position: fixed;
+    top: 5%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 10001;
+    background-color: #ffdddd;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  .error-popup .error-message {
+   
+    margin-right: 12px; 
+  }
+  
+  .error-popup .close-icon {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem; 
+    color: #ca0d00;
+    padding: 0 12px;
+  }
+  
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      top: 40%;
+    }
+    30% {
+      opacity: 1;
+      top: 50%;
+    }
+    70% {
+      opacity: 1;
+      top: 50%;
+    }
+    100% {
+      opacity: 0;
+      top: 60%;
+    }
+  }
+  
+  .error-popup {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .close-icon {
+    color: #ca473e;
+    margin-left: auto;
+  }
+  .error-popup  {
+    display: flex;
+  align-items: center;
+  }
+  .check-icon {
+    color: #28a745; 
+    margin-right: 8px; 
+  }
+
+  .message-content {
+    color: #333; 
+
+  }
+  
+  @media (max-width: 412px) {
+    .error-popup {
+      top: 5; 
+      width: calc(100% - 20px);
+      margin: 0 auto; 
+      flex-direction: row; 
+      padding: 5px;
+      box-sizing: border-box; 
+    }
+  
+   
+  
+    .message-content {
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+  
+    .close-icon {
+      font-size: 1.2rem; 
+      margin-top: 5px; 
+    }
+  }
+  
+  

@@ -1,4 +1,5 @@
-import React, { useEffect ,useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect ,useState,useCallback } from 'react';
 import './Deliverypage.css';
 import { useForm } from 'react-hook-form';
 import CartSummary from '../../components/CartSummary/CartSummary';
@@ -42,14 +43,13 @@ const DeliveryPage: React.FC = () => {
         setValue('city', data.navn);
       } catch (error) {
         console.error('Error fetching city name:', error);
-        setValue('city', ''); // Optionally clear the city input on error
+        setValue('city', ''); 
       }
     } else {
-      setValue('city', ''); // Clear city if ZIP is not complete
+      setValue('city', '');
     }
   };
 
-  // Watching zip code changes
   const zipCodeValue = watch('zipCode');
   useEffect(() => {
     handleZipCodeChange(zipCodeValue);
@@ -62,15 +62,6 @@ const DeliveryPage: React.FC = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
-  const handleGoToPayment = async () => {
-    const isValid = await trigger();
-    if (isValid) {
-      handleSubmit(onSubmit)();
-    }
-  };
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -78,16 +69,42 @@ const DeliveryPage: React.FC = () => {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      Object.keys(parsedData).forEach(key => {
+        setValue(key as keyof FormData, parsedData[key]);
+      });
+    }
+    setLoading(false);
+  }, [setValue]);
+
+  const onSubmit = useCallback((data: FormData) => {
+    console.log('Form Data:', data);
+    localStorage.setItem('formData', JSON.stringify(data));
+  }, []);
+
+  const handleGoToPayment = async () => {
+    const isValid = await trigger();
+    if (isValid) {
+      handleSubmit(onSubmit)();
+    }
+  };
   
 
   return (
     <div className="contact-info-container">
       {loading && <LoadingIndicator />}
       <div className="left-container-delivery">
-        <form noValidate>
+        <form onSubmit={handleSubmit(onSubmit)}noValidate>
           <h2 className="contact-info-heading">Leveringsadresse</h2>
           <div className="input-field-container-firstname">
-            <input {...register('firstName', { required: 'Fornavn er påkrævet' })} placeholder="Fornavn" />
+            <input type="text" {...register('firstName', { required: 'Fornavn er påkrævet',  pattern: {
+                value: /^[A-Za-z\s]+$/,
+                message: 'Fornavn må kun indeholde bogstaver'
+              }})} placeholder="Fornavn" />
             {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
           </div>
           <div className="input-field-container-lastname">

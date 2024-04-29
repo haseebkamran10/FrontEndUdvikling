@@ -1,4 +1,4 @@
-import React,{ useState, useEffect  } from 'react';
+import React,{ useState, useEffect } from 'react';
 import axios from 'axios';
 import { useCart } from '../../CartContext';
 import './ProductsPage.css'; 
@@ -8,6 +8,7 @@ import { Button } from '@mui/material';
 import {Product as Product } from '../../types/types';
 import { useSearch } from '../../SearchContext';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
+import { useNavigate } from 'react-router-dom';
 
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,6 +17,9 @@ const ProductPage: React.FC = () => {
   const { addToCart } = useCart();
   const { searchTerm } = useSearch();
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,6 +29,7 @@ const ProductPage: React.FC = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching products:', error);
+        setError('Failed to load products.');
         setLoading(false);
       }
     };
@@ -32,15 +37,20 @@ const ProductPage: React.FC = () => {
     fetchProducts();
   }, []);
 
+  const navigateToProductDetail = (id: number) => {
+    navigate(`/productspage/${id}`); 
+  };
+
 
    useEffect(() => {
     if (searchTerm !== '') { 
       const fetchProductsBySearch = async () => {
         try {
-          const response = await axios.get<Product[]>(`https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/search?name=${encodeURIComponent(searchTerm)}`);
+          const response = await axios.get<Product[]>(`https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/products/search?name=${encodeURIComponent(searchTerm)}`);
           setProducts(response.data);
         } catch (error) {
           console.error('Error fetching products by search:', error);
+          setError('Failed to load search results.');
         }
       };
       fetchProductsBySearch();
@@ -82,6 +92,7 @@ useEffect(() => {
     <div className="container">
       <h1 className='title'>Produkter</h1>
       {loading && <LoadingIndicator />}
+      {error && <div className="error">{error}</div>}
       <div className="sort-filter">
         <button className="sort-filter-button" onClick={() => setShowModal(true)}>
           <span>Sortér og Filtrér</span>
@@ -90,8 +101,8 @@ useEffect(() => {
       </div>
       <div className="product-page">
         {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <img src={product.image_url}/>
+          <div key={product.id} className="product-card" >
+            <img src={product.image_url} onClick={() => navigateToProductDetail(product.id)}/>
             <h3>{product.name}</h3> 
             <p>{product.price} kr.</p> 
             <Button className="addToBasket" onClick={() => handleAddToBasket(product)}>Add to Basket</Button>

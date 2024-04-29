@@ -1,6 +1,5 @@
-import React, { createContext,useMemo, useState, useContext, useCallback, ReactNode } from 'react';
-import { Product,CartItem } from './types/types'; 
-
+import React, { createContext, useMemo, useState, useContext, useCallback, useEffect, ReactNode } from 'react';
+import { Product, CartItem } from './types/types';
 
 interface CartContextState {
   cartItems: CartItem[];
@@ -31,18 +30,34 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [cartItems, setCartItemsState] = useState<CartItem[]>([]);
+  const [cartItems, setCartItemsState] = useState<CartItem[]>(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
+
+  useEffect(() => {
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const setCartItems = useCallback((items: CartItem[]) => {
     setCartItemsState(items);
   }, []);
 
   const handleQuantityChange = useCallback((id: number, delta: number) => {
-    setCartItemsState((currentItems) =>
-      currentItems.map((item) =>
-        item.product.id === id ? { ...item, quantity: Math.max(0, item.quantity + delta) } : item,
-      ),
-    );
+    setCartItemsState((currentItems) => {
+      return currentItems.reduce((accumulatedItems, item) => {
+        if (item.product.id === id) {
+          const newQuantity = item.quantity + delta;
+          if (newQuantity > 0) {
+            accumulatedItems.push({ ...item, quantity: newQuantity });
+          }
+        } else {
+          accumulatedItems.push(item);
+        }
+        return accumulatedItems;
+      }, [] as CartItem[]);
+    });
   }, []);
 
   const addToCart = useCallback((product: Product) => {
