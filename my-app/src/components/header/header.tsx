@@ -5,7 +5,7 @@ import Logo from '../../logo.svg';
 import SearchIcon from '../../search-icon.svg';
 import ShoppingCartIcon from '../../shopping-cart-icon.svg';
 import UserIcon from '../../user-icon.svg';
-import LoginPage from '../../pages/LoginPage/LoginPage'; // Adjust the import path as necessary
+import LoginPage from '../../pages/LoginPage/LoginPage'; 
 import { useSearch } from'../../SearchContext'; 
 
 type HeaderProps = {
