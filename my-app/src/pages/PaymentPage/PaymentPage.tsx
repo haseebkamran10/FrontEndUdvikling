@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import './PaymentPage.css';
 import { useCart } from '../../CartContext';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
-import OrderConfirmation from '../../components/OrderConfirmation/OrderConfirmation';
 
 
 const stripePromise = loadStripe('your-public-key'); // Replace with your actual public key

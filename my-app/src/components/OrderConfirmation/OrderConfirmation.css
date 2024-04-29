@@ -1,26 +1,14 @@
 .confirmation-page {
-    max-width: 600px;
-    margin: 0 auto;
     padding: 2rem;
     text-align: center;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+
   }
   
   .confirmation-page h1 {
     color: #4caf50;
     margin-bottom: 1rem;
   }
-  
-  .order-details {
-    margin-top: 2rem;
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-  
-  .order-details p {
-    margin: 0.5rem 0;
-  }
-  
