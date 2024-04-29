@@ -1,5 +1,6 @@
-import '../Footer/Footer.css'
-const Footer : React.FC= () => {
+import './Footer.css'; 
+
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-column">
@@ -36,7 +37,6 @@ const Footer : React.FC= () => {
         <p>Hjælp til log ind </p>
         <p>Om Nordic Cricket </p>
       </div>
-      <div className="site-footer">NordicCricket - Lautrupvang 15, 2750 Ballerup - CVR: 2233223322 | OBS! Din bestilling er først bindende, når vi har bekræftet din ordre.</div>
     </footer>
   );
 };

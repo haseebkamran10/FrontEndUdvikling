@@ -1,5 +1,5 @@
 import React from 'react';
-import './LoadingIndicator.css'; // Style for the loading indicator
+import './LoadingIndicator.css'; 
 
 const LoadingIndicator: React.FC = () => {
   return (
