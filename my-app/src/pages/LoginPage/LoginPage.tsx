@@ -33,7 +33,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
     setSuccessMessage(''); 
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/signin', {
+      const response = await axios.post('https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/auth/signin', {
         email,
         password,
       }, {

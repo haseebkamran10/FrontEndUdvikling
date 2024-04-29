@@ -15,7 +15,7 @@ const SignUp: React.FC = () => {
     setMessage(''); 
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/signup', {
+      const response = await axios.post('https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/auth/signup', {
         email,
         password,
       });
