@@ -76,10 +76,7 @@
       flex-direction: row; 
       padding: 5px;
       box-sizing: border-box; 
-    }
-  
-   
-  
+    } 
     .message-content {
       font-size: 0.9rem;
       margin-top: 5px;
