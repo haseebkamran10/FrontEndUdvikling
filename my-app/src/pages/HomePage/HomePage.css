@@ -79,14 +79,14 @@ html, body {
   background-color: #555; 
 }
 
-/* Ensure responsiveness */
+
 @media (max-width: 768px) {
   .slick-slide, .slick-slide img {
-    height: 50vh; /* Adjust height for mobile devices */
+    height: 50vh; 
   }
   
   .product-container {
-    width: 100%; /* Full width for mobile devices */
-    margin-bottom: 10px; /* Space between products */
+    width: 100%; 
+    margin-bottom: 10px; 
   }
 }
