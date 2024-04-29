@@ -10,7 +10,8 @@ import PaymentPage from './pages/PaymentPage/PaymentPage';
 import { SearchProvider  } from'./SearchContext'; 
 import HomePage from './pages/HomePage/HomePage'
 import SignUpPage from './pages/SignUpPage/SignUpPage'
-
+import { useState } from 'react';
+import LoadingIndicator from './components/LoadingIndicator/LoadingIndicator';
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
@@ -26,12 +27,19 @@ function HeaderWithNavigation() {
 
   return <Header onCartClick={navigateToCart}  onLogoClick={navigateToHomePage} cartItemCount={totalItems} />;
 }
+
 function App() {
+  const [loading, setLoading] = useState(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 250);
+
   return (
     <CartProvider>
       <SearchProvider>
         <Router>
          <HeaderWithNavigation/>
+         {loading && <LoadingIndicator/>}
        
           <Routes>
           <Route path="/signup" element={<SignUpPage/>} />

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect  } from 'react';
 import axios from 'axios';
-import './SignUpPage.css'
+import './SignUpPage.css';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
+
 
 const SignUp: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(''); 
@@ -12,7 +15,7 @@ const SignUp: React.FC = () => {
     setMessage(''); 
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/signup', {
+      const response = await axios.post('https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/auth/signup', {
         email,
         password,
       });
@@ -26,9 +29,17 @@ const SignUp: React.FC = () => {
       setMessage(`Signup failed: ${error.response?.data?.error || error.message}`);
     }
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
  <div className="container-main">
+  {loading && <LoadingIndicator />}
     <div className="signup-container">
   
       <h2>Opret Bruger</h2>

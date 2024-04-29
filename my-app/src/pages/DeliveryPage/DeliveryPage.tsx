@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect ,useState } from 'react';
 import './Deliverypage.css';
 import { useForm } from 'react-hook-form';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { useCart } from '../../CartContext';
 import { useNavigate } from 'react-router-dom';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
+
 
 type FormData = {
   email: string;
@@ -19,6 +21,7 @@ type FormData = {
 
 
 const DeliveryPage: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const goToPaymentPage = () => {
     navigate('/paymentpage'); 
@@ -49,9 +52,18 @@ const DeliveryPage: React.FC = () => {
       handleSubmit(onSubmit)();
     }
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, []);
+  
 
   return (
     <div className="contact-info-container">
+      {loading && <LoadingIndicator />}
       <div className="left-container-delivery">
         <form noValidate>
           <h2 className="contact-info-heading">Leveringsadresse</h2>

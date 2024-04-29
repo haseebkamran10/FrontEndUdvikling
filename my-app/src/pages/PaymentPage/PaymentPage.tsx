@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Elements, CardElement } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { useNavigate } from 'react-router-dom';
 import './PaymentPage.css';
+import { useCart } from '../../CartContext';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 
 
 
@@ -18,14 +20,19 @@ interface PaymentFormData {
 }
 
 const PaymentPage: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
+  const { cartItems, total, discount } = useCart();
 
 
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
     console.log(data);
   };
+  useEffect(() => {
+    console.log("Cart Items in CheckoutPage:", cartItems);
+  }, [cartItems]);
 
   const handlePaymentMethodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedPaymentMethod(event.target.value);
@@ -33,11 +40,19 @@ const PaymentPage: React.FC = () => {
     
 
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, []);
   
 
 
   return (
     <Elements stripe={stripePromise}>
+      {loading && <LoadingIndicator />}
       <form className="payment-container" onSubmit={handleSubmit(onSubmit)}>
         <div className="left-container">
           <p className="payment-heading">Betalingsoplysninger</p>
@@ -135,7 +150,7 @@ const PaymentPage: React.FC = () => {
         </div>
 
         <div>
-          <CartSummary total={0} discount={0} onGoToPayment={() => { }} />
+          <CartSummary total={total} discount={discount} onGoToPayment={() => { }} />
         </div>
       </form>
     </Elements>

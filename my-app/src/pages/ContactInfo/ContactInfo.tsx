@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import './ContactInfo.css';
 import { useForm } from 'react-hook-form';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { useCart } from '../../CartContext';
 import { useNavigate } from 'react-router-dom';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 
 
 type FormData = {
@@ -21,6 +22,7 @@ type FormData = {
 
 
 const ContactInfo: React.FC = () => {
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const goToDeliveryPage = () => {
     navigate('/delivery'); 
@@ -42,6 +44,13 @@ const ContactInfo: React.FC = () => {
     }
   }, [watch, setValue]);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timeout);
+  }, []);
   const onSubmit = (data: FormData) => {
     console.log(data);
   };
@@ -56,6 +65,7 @@ const ContactInfo: React.FC = () => {
 
   return (
     <div className="contact-info">
+      {loading && <LoadingIndicator />}
       <div className="left-container">
         <h2 className="contact-info-heading">Kontaktoplysninger</h2>
         <form noValidate>
@@ -95,10 +105,10 @@ const ContactInfo: React.FC = () => {
             <input {...register('companyVat')} placeholder="CVR-nummer (valgfrit)" />
           </div>
         </form>
-      
+        <div className="checkout-button">
         <button className="checkout-button-1" onClick={goToProductsPage}>Tilbage</button>
         <button className="checkout-button-2" onClick={goToDeliveryPage}>Fortsæt</button>
-      
+        </div>
       </div>
       
 

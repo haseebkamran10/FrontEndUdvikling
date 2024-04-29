@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React ,{ useState, useEffect  }from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -16,6 +16,7 @@ import imageP_4 from '../../images/GG-bat.png';
 import Footer from '../../components/Footer/Footer'
 import Categories from '../../components/Categories/Categories';
 import { useNavigate } from 'react-router-dom';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 
 
 const products = [
@@ -27,11 +28,19 @@ const products = [
 
 const HomePage: React.FC = () => {
 
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const goToProductsPage = () => {
     navigate('/productspage'); 
   };
+  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
 
+    return () => clearTimeout(timeout);
+  }, []);
   
   const settings = {
     dots: true,
@@ -45,6 +54,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+    {loading && <LoadingIndicator />}
       <div className="slideshow-container">
         <Slider {...settings}>
           <div><img src={image1} alt="Slide 1" /></div>

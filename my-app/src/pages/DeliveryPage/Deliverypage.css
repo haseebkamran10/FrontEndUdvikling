@@ -178,7 +178,7 @@
 }
 
 .checkout-button-2 {
-  margin-left: 250px;
+  margin-left: 230px;
   margin-top: 10px;
   border-radius: 20px;
   background-color: grey;
@@ -189,4 +189,28 @@
 
 .checkout-button-2:hover {
   background-color: #cf3c3c;
+}
+
+@media (max-width: 1200px) {
+  .contact-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+
+  } 
+}
+
+@media (max-width: 480px) {
+  .contact-info-container{
+    display: flex;
+    flex-direction: column;
+    scale: 0.8;
+    margin-left: -50px;
+    margin-top: -50px;
+
+  } 
+
+  
+
 }
