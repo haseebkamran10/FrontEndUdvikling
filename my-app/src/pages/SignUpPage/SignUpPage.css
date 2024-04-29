@@ -21,7 +21,7 @@ h2 {
   font-size: 33px;
   line-height: 26px;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif; 
+  font-family: var(--primary-font); 
 }
 
 .signup-container {

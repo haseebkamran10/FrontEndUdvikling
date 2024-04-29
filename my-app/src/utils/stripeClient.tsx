@@ -6,13 +6,14 @@ import { Elements } from '@stripe/react-stripe-js';
 const PUBLISHABLE_KEY = "pk_live_51Oiyy5FgRV0MG2KqkANwblXojmNBHGcwEG3H8vNbjnflPSFUbRn2Rz1xxNnqVwDw9jFq7Li9m4nUJkC70k1z0DLm00Qj5dZ8BD";
 
 // Load the Stripe script
+// eslint-disable-next-line react-refresh/only-export-components
 export const stripePromise = loadStripe(PUBLISHABLE_KEY);
 
 
-// Create a context
+
 const StripeContext = createContext<ReturnType<typeof loadStripe> | null>(null);
 
-// Create a provider component
+
 export const StripeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <StripeContext.Provider value={stripePromise}>
@@ -23,7 +24,7 @@ export const StripeProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   );
 };
 
-// Custom hook to use the stripe context
+// eslint-disable-next-line react-refresh/only-export-components
 export const useStripeClient = () => {
   const context = useContext(StripeContext);
   if (context === null) {

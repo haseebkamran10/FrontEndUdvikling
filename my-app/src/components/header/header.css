@@ -30,7 +30,7 @@
 .page-title {
   color: #06050F;
   font-size: .875rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--secondary-font);
   font-weight: 400;
   line-height: 26px;
   margin-left: 65px;
@@ -149,9 +149,7 @@
     width: 100%;
   }
 
-  .menu-icon, .search-icon, .user-icon, .shopping-cart-icon {
-   
-  }
+
   /*.left-section {
     align-self: first baseline;
    

@@ -1,5 +1,6 @@
 import React from 'react';
 import './TermsPage.css';
+import Footer from '../../components/Footer/Footer'
 
 const TermsPage: React.FC = () => {
   return (
@@ -58,6 +59,7 @@ const TermsPage: React.FC = () => {
       <p>
         "Jeg meddeler herved, at jeg ønsker at fortryde mit køb af følgende varer/tjenesteydelser."
       </p>
+      <Footer/>
       
     </div>
   );
