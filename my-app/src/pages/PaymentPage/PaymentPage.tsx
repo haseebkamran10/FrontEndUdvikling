@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import './PaymentPage.css';
 import { useCart } from '../../CartContext';
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
-
+import OrderConfirmation from '../../components/OrderConfirmation/OrderConfirmation';
 
 
 const stripePromise = loadStripe('your-public-key'); // Replace with your actual public key
@@ -25,6 +25,10 @@ const PaymentPage: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
   const { cartItems, total, discount } = useCart();
+  const goToOrderConfirmation = () => {
+    navigate('/orderConfirmation'); 
+  };
+  
 
 
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
@@ -37,7 +41,7 @@ const PaymentPage: React.FC = () => {
   const handlePaymentMethodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedPaymentMethod(event.target.value);
 
-    
+ 
 
   };
   useEffect(() => {
@@ -47,8 +51,6 @@ const PaymentPage: React.FC = () => {
 
     return () => clearTimeout(timeout);
   }, []);
-  
-
 
   return (
     <Elements stripe={stripePromise}>
@@ -151,6 +153,7 @@ const PaymentPage: React.FC = () => {
 
         <div>
           <CartSummary total={total} discount={discount} onGoToPayment={() => { }} />
+          <button type="submit" className="checkout-button-2" onClick={goToOrderConfirmation}>Betal</button>
         </div>
       </form>
     </Elements>
