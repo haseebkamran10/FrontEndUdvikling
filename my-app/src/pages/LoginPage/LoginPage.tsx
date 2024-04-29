@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState ,useEffect  } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> PaymentPage
 import axios from 'axios';
 import './LoginPage.css';
 import CloseIcon from '@mui/icons-material/Close';
@@ -13,11 +17,18 @@ interface LoginPageProps {
 }
 
 const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
+<<<<<<< HEAD
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState(''); 
+=======
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // State to hold the success message
+>>>>>>> PaymentPage
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -29,11 +40,19 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
 
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+<<<<<<< HEAD
     setErrorMessage(''); 
     setSuccessMessage(''); 
 
     try {
       const response = await axios.post('https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/auth/signin', {
+=======
+    setErrorMessage(''); // Clear any existing error messages
+    setSuccessMessage(''); // Clear any existing success messages
+
+    try {
+      const response = await axios.post('http://localhost:3000/auth/signin', {
+>>>>>>> PaymentPage
         email,
         password,
       }, {
@@ -42,6 +61,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         }
       });
 
+<<<<<<< HEAD
       
       setSuccessMessage('Sign in successful!');
 
@@ -61,11 +81,39 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
           setErrorMessage(error.message);
         }
       } else {
+=======
+      // Set the success message to be displayed
+      setSuccessMessage('Sign in successful!');
+
+      // Clear the form fields
+      setEmail('');
+      setPassword('');
+
+      // TODO: Handle further logic after successful login, like redirecting to a dashboard
+      // ...
+      
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Axios error
+        if (error.response) {
+          // The server responded with a status code outside the range of 2xx
+          setErrorMessage(error.response.data.error || 'An error occurred during sign-in');
+        } else if (error.request) {
+          // The request was made but no response was received
+          setErrorMessage('The server did not respond');
+        } else {
+          // Something else caused the error
+          setErrorMessage(error.message);
+        }
+      } else {
+        // Non-Axios error
+>>>>>>> PaymentPage
         setErrorMessage('An unexpected error occurred');
       }
       console.error('Login error:', error);
     }
   };
+<<<<<<< HEAD
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -74,6 +122,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
     return () => clearTimeout(timeout);
   }, []);
   
+=======
+>>>>>>> PaymentPage
 
   const containerClasses = `login-page-cont${isVisible ? ' show' : ''}`;
 
@@ -83,7 +133,11 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
       <div className='right-cont'>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h3>Log ind</h3>
+<<<<<<< HEAD
           <CloseIcon onClick={onClose}  style={{ cursor: 'pointer' }}/>
+=======
+          <CloseIcon onClick={onClose} />
+>>>>>>> PaymentPage
         </div>
 
         {/* Success message pop-up */}

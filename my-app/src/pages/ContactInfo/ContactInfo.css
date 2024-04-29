@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .contact-info {
   display: flex;
   justify-content: center;
@@ -23,9 +24,196 @@
 }
 
 
+=======
+.input-field-box-CVR{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-CVR input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
 
-.input-field-container {
+.input-field-box-companyName{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-companyName input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-city{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-city input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-zipCode{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-zipCode input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-address{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-address input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-lastName{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-lastName input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-firstName{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-firstName input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9;/* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-phone{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-phone input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.input-field-box-email{
+  width: 400px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+ }
+ .input-field-box-email input {
+  width: calc(100%); /* Subtract the left margin from the width to fill the container */
+  height: calc(100%); /* Subtract the top and bottom padding from the height to fill the container */
+  background-color: #D9D9D9; /* Set the background color to match the container's background */
+  padding: 10px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+
+
+/*.contact-info-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px; /* Adds space between the containers 
+}*/
+
+
+
+/*.left-container {
+  margin-top: 100px;
+  width: 600px; /* Increases the width to cover more of the screen */
+ /* min-height: 00px; /* Sets a minimum height */
+  /*background-color: #ffffff; /* Slightly grey color */
+  /*border-radius: 10px; /* Rounded corners */
+  /*padding: 20px;
+  margin-left: 30px; /* Adds some space from the left side of the screen */
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(50, 50, 50, 0.15); /* Deeper greyish shadow */
+/*}*/
+
+/*.contact-info-heading {
+  margin-left: 30px;
+  margin-top: 40px;
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 20px; /* Spacing between the heading and the first item */
+ /* color: black;
+  font-size: 20px; /* Adjust the size as necessary */
+/*}*/
+>>>>>>> PaymentPage
+
+/*.input-field-container {
   height: 70px;
+<<<<<<< HEAD
   background-color: white; 
   border-radius: 20px;
   padding: 2px 20px; 
@@ -45,10 +233,33 @@
   color: #333; 
 
   }
+=======
+  background-color: white; /* Or any color you prefer */
+ /* border-radius: 20px;
+  padding: 2px 20px; /* Adjusts the height and adds horizontal padding */
+ /* margin: 0 0; /* Adds some vertical space around the box */
+  /*width: 70%;
+  
+}
+
+/* Style adjustments for the input fields inside the container, if needed */
+/*.input-field-container input {
+  width: calc(100% - 40px); /* Full width minus padding */
+ /* border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px 10px; /* Increased padding to make the input field slightly higher */
+ /* margin: 10px 0; /* Adds some space between multiple inputs */
+ /* background-color: rgb(230, 224, 225); /* Much lighter background color */
+ /* color: #333; /* Darker text color for contrast */
+ /* ::placeholder {
+    color: #777; /* Placeholder color for better readability */
+  /*}
+>>>>>>> PaymentPage
 
 
 .right-container {
   flex-grow: 0;
+<<<<<<< HEAD
   margin-left: 10px; 
   padding: 20px;
   border: 1px solid #c1baba; 
@@ -222,6 +433,18 @@
   font-size: 10px;
   color: red;
 }
+=======
+  margin-left: 10px; /* Adjusts spacing between the containers if needed */
+  /*padding: 20px;
+  border: 1px solid #c1baba; /* Light grey border */
+  /*box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+/*}
+
+.error-message {
+  font-size: 10px;
+  color: red; /* Style error messages in red */
+/*}
+>>>>>>> PaymentPage
 
 .checkout-button-1, .checkout-button-2 {
   border-radius: 20px;

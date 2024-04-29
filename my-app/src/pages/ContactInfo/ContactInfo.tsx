@@ -18,6 +18,8 @@ type FormData = {
   companyVat?: string;
 };
 
+
+
 const ContactInfo: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -89,13 +91,19 @@ const ContactInfo: React.FC = () => {
     <div className="contact-info">
       {loading && <LoadingIndicator />}
       <div className="left-container">
+<<<<<<< HEAD
         <h2 className="contact-info-heading">Kontaktoplysninger</h2>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
+=======
+        <h1 className="contact-info-heading">Kontaktoplysninger</h1>
+        <form noValidate>
+>>>>>>> PaymentPage
           <div className="input-field-box-email">
             <input {...register('email', { required: 'E-mail er påkrævet' })} placeholder="Email" />
             {errors.email && <p className="error-message">{errors.email.message}</p>}
           </div>
           <div className="input-field-box-phone">
+<<<<<<< HEAD
             <input type="tel"{...register('phone', { required: 'Telefonnummer er påkrævet', pattern: {
               value: /^[0-9]+$/,
               message: 'Ugyldig telefonnummer'
@@ -103,6 +111,12 @@ const ContactInfo: React.FC = () => {
             {errors.phone && <p className="error-message">{errors.phone.message}</p>}
           </div>
           <h2 className="contact-info-heading">Leveringsadresse</h2>
+=======
+            <input {...register('phone', { required: 'Telefonnummer er påkrævet', pattern: /^\d+$/ })} placeholder="Telefonnummer" />
+            {errors.phone && <p className="error-message">{errors.phone.message}</p>}
+          </div>
+          <h1 className="contact-info-heading">Leveringsadresse</h1>
+>>>>>>> PaymentPage
           <div className="input-field-box-firstName">
             <input {...register('firstName', { required: 'Fornavn er påkrævet' })} placeholder="Fornavn" />
             {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
@@ -137,9 +151,13 @@ const ContactInfo: React.FC = () => {
       </form>
       
       </div>
+<<<<<<< HEAD
       
 
      
+=======
+      <div>
+>>>>>>> PaymentPage
         <CartSummary total={total} discount={discount} onGoToPayment={handleGoToPayment} />
       
       

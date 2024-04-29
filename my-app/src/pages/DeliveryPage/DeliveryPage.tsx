@@ -96,6 +96,7 @@ const DeliveryPage: React.FC = () => {
 
   return (
     <div className="contact-info-container">
+<<<<<<< HEAD
       {loading && <LoadingIndicator />}
       <div className="left-container-delivery">
         <form onSubmit={handleSubmit(onSubmit)}noValidate>
@@ -105,6 +106,13 @@ const DeliveryPage: React.FC = () => {
                 value: /^[A-Za-z\s]+$/,
                 message: 'Fornavn må kun indeholde bogstaver'
               }})} placeholder="Fornavn" />
+=======
+      <div className="left-container">
+        <form noValidate>
+          <h1 className="contact-info-heading">Leveringsadresse</h1>
+          <div className="input-field-container-firstname">
+            <input {...register('firstName', { required: 'Fornavn er påkrævet' })} placeholder="Fornavn" />
+>>>>>>> PaymentPage
             {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
           </div>
           <div className="input-field-container-lastname">
@@ -133,7 +141,10 @@ const DeliveryPage: React.FC = () => {
         <button className="checkout-button-1" onClick={goToContactInfo}>Tilbage</button>
         <button className="checkout-button-2"onClick={goToPaymentPage}>Fortsæt</button>
       </div>
+<<<<<<< HEAD
       </div>
+=======
+>>>>>>> PaymentPage
       <div>
         <CartSummary total={total} discount={discount} onGoToPayment={handleGoToPayment} />
       </div>

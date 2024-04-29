@@ -37,6 +37,7 @@ function App() {
   }, 250);
 
   return (
+<<<<<<< HEAD
     <CartProvider>
       <SearchProvider>
         <Router>
@@ -62,6 +63,19 @@ function App() {
         </Router>
        
       </SearchProvider>
+=======
+    <CartProvider> {/* Wrap your routes with CartProvider */}
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/cart" element={<CheckoutPage />} />
+          <Route path="/contactinfo" element={<ContactInfo />} />
+          {/* ... other routes */}
+          <Route path="/deliverypage" element={<DeliveryPage />} />
+          <Route path="/paymentpage" element={<PaymentPage />} />
+        </Routes>
+      </Router>
+>>>>>>> PaymentPage
     </CartProvider>
   );
 }

@@ -1,5 +1,6 @@
 .payment-container {
   display: flex;
+<<<<<<< HEAD
   flex-direction: column; 
   align-items: center; 
   margin: 0; 
@@ -7,6 +8,12 @@
   width: 100%;
   margin-top: 40px; 
 
+=======
+  justify-content: space-between;
+  gap: 40px;
+  margin-left: 30px;
+  
+>>>>>>> PaymentPage
 }
 
 
@@ -14,11 +21,19 @@
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+<<<<<<< HEAD
   /*width: 800px;*/
   width:auto;
   min-height: auto;
   background-color: #ffffff;
   border-radius: 12px;
+=======
+  width: 800px;
+  min-height: 100px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 50px;
+>>>>>>> PaymentPage
   margin-left: 30px;
   box-shadow: 1px 2px 4px 8px 2px rgba(8, 8, 8, 0.15),  1px 1px 6px 20px rgba(50, 50, 50, 0.15);
   
@@ -95,6 +110,7 @@ label {
   padding: 7px;
   
  
+<<<<<<< HEAD
   
 }
 
@@ -357,5 +373,258 @@ label {
   
   
   }
+=======
+>>>>>>> PaymentPage
   
+}
+
+.payment-method-cont{
+  border: 2px solid rgba(120, 113, 113, 0.648);
+  border-radius: 20px;
+ 
+  
+}
+
+.payment-cont{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  height: 5vh;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-collapse: collapse;
+ 
+ 
+  
+}
+
+
+.payment-cont > div{
+  display: flex;
+}
+
+.payment-cont  >img{
+  width: 3vw;
+  vertical-align: middle;
+}
+
+.payment-cont > img {
+  height: 45px; 
+  width: 150px; 
+  object-fit: contain;
+  margin-right: -20px;
+
+ 
+  
+
+}
+
+.mobile-pay-img {
+  height: 70px !important; 
+  width: auto;
+  object-fit: contain;
+  position: relative ;
+  top: -20px;
+  
+}
+
+/*.kort-img {
+  height: 40px; 
+  width: auto;
+  object-fit: contain;
+}
+
+.klarna-img {
+  scale: 0.8 !important;
+
+}
+
+.viabill-img {
+  width: 100px !important;
+  height: auto;
+}
+*/
+
+.choose-address-cont {
+  
+
+}
+
+.address-options {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(135, 132, 132);
+  border-radius: 20px;
+}
+
+.address-options > div {
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  display: flex;
+}
+
+.btns-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btns-cont > button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border 0.3s, background-color 0.3s; 
+  outline: none;
+}
+
+.btns-cont > button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  border: 1px solid black; 
+  background-color: transparent; 
+}
+
+.btns-cont > button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset; 
+  border: 1px solid black; 
+  background-color: transparent; 
+}
+
+
+.gift-card-cont {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgba(120, 113, 113, 0.648);
+  border-radius: 20px;
+  align-items: center;
+  background-color: #fff; 
+  
+}
+
+.gift-card-cont > input {
+  flex-grow: 1; 
+  padding: 20px; 
+  font-size: 1.4rem; 
+  border: none; 
+  outline: none; 
+  border-radius: 18px 0 0 18px; 
+  background-color: #fff; 
+  
+}
+
+.gift-card-cont > button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: grey;
+  cursor: pointer;
+  margin-right: 15px;
+  color: white;
+  border: 1px solid transparent; 
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s; /
+}
+
+.gift-card-cont > button:hover {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); 
+  border: 1px solid black; 
+  
+}
+
+.gift-card-cont > button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+  border: 1px solid black; 
+  
+}
+
+.card-details-inputs {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+  margin-top: 10px; 
+  margin-right: 5px;
+  
+}
+
+.stripe-input-group {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.stripe-input {
+  background: #fff;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding-left:200px;
+
+  margin-right: 10px; 
+}
+
+.input-field {
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+ 
+  
+}
+
+.card-details-inputs {
+  border-top: none; 
+  padding: 20px; 
+  border-left: 2px solid rgba(120, 113, 113, 0.648);
+  border-right: 2px solid rgba(120, 113, 113, 0.648);
+  border-bottom: 2px solid rgba(120, 113, 113, 0.648);
+  border-radius: 0 0 20px 20px; 
+  background-color: white; 
+  
+ 
+}
+
+.StripeElement {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  width: calc(100% - 28px);
+  background-color: white;
+  height: 40px; 
+  box-sizing: border-box; 
+  
+}
+.card-inputs {
+  transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  padding-left: 20px;
+  /*border-bottom: 1px solid rgb(136, 131, 131);*/
+  padding-bottom: 10px;
+}
+.input-mobilpay {
+  padding-left: 20px;
+  color: #000000;
+  /*border-bottom: 1px solid rgb(136, 131, 131);*/
+  padding-bottom: 20px;
+  
+}
+.input-mobilpay input {
+  width: 89%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 10px;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  padding-left: 20px;
+  padding-bottom: 10px;
+ 
 }
