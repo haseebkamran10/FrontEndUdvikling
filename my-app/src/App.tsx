@@ -14,6 +14,8 @@ import SignUpPage from './pages/SignUpPage/SignUpPage'
 import { useState } from 'react';
 import LoadingIndicator from './components/LoadingIndicator/LoadingIndicator';
 import TermsPage from './pages/TermsPage/TermsPage';
+import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
+
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
@@ -52,6 +54,8 @@ function App() {
            <Route path="/productspage" element={<ProductsPage />} />
            <Route path="/productspage/:id" Component={ProductDetailsPage}/>
            <Route path="/terms" element={<TermsPage />} />
+           <Route path="/orderConfirmation" element={<OrderConfirmation/>}/>
+
 
            <Route path="/" element={<HomePage />} />
           

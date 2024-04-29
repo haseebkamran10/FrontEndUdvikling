@@ -25,7 +25,9 @@ const PaymentPage: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormData>();
   const navigate = useNavigate();
   const { cartItems, total, discount } = useCart();
-
+  const goToOrderConfirmation = () => {
+    navigate('/orderConfirmation'); 
+  };
 
   const onSubmit: SubmitHandler<PaymentFormData> = data => {
     console.log(data);
@@ -146,11 +148,12 @@ const PaymentPage: React.FC = () => {
             </div>
           </div>
 
-
+          <button type="submit" className="checkout-button-2" onClick={goToOrderConfirmation}>Betal</button>
         </div>
 
         <div>
           <CartSummary total={total} discount={discount} onGoToPayment={() => { }} />
+          
         </div>
       </form>
     </Elements>
