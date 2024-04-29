@@ -10,7 +10,7 @@ import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator
 
 
 
-const stripePromise = loadStripe('your-public-key'); // Replace with your actual public key
+const stripePromise = loadStripe('your-public-key'); 
 
 interface PaymentFormData {
   phoneNumber: string;
