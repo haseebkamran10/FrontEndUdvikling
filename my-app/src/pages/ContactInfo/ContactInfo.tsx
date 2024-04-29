@@ -21,7 +21,8 @@ type FormData = {
 const ContactInfo: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const { register, handleSubmit, setValue, watch, trigger, formState: { errors } } = useForm<FormData>();
+  const formMethods = useForm<FormData>();
+  const { register, handleSubmit, setValue, watch, trigger, formState: { errors } } = formMethods;
   const { total, discount } = useCart();
   const goToProductsPage = () => {
     navigate('/productspage');
@@ -29,6 +30,7 @@ const ContactInfo: React.FC = () => {
   const goToDeliveryPage = () => {
     navigate('/delivery'); 
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleZipCodeChange = async (zipCode: string) => {
     if (zipCode.length === 4) {
       try {
@@ -38,10 +40,10 @@ const ContactInfo: React.FC = () => {
         setValue('city', data.navn);
       } catch (error) {
         console.error('Error fetching city name:', error);
-        setValue('city', ''); // Optionally clear the city input on error
+        setValue('city', ''); 
       }
     } else {
-      setValue('city', ''); // Clear city if ZIP is not complete
+      setValue('city', '');
     }
   };
 
@@ -58,9 +60,21 @@ const ContactInfo: React.FC = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
+  useEffect(() => {
+    const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      Object.keys(parsedData).forEach(key => {
+        setValue(key as keyof FormData, parsedData[key]);
+      });
+    }
+    setLoading(false);
+  }, [setValue]);
+
+  const onSubmit = useCallback((data: FormData) => {
+    console.log('Form Data:', data);
+    localStorage.setItem('formData', JSON.stringify(data));
+  }, []);
 
   const handleGoToPayment = async () => {
     const isValid = await trigger();
@@ -69,18 +83,23 @@ const ContactInfo: React.FC = () => {
     }
   };
 
+
+
   return (
     <div className="contact-info">
       {loading && <LoadingIndicator />}
       <div className="left-container">
         <h2 className="contact-info-heading">Kontaktoplysninger</h2>
-        <form noValidate>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="input-field-box-email">
             <input {...register('email', { required: 'E-mail er påkrævet' })} placeholder="Email" />
             {errors.email && <p className="error-message">{errors.email.message}</p>}
           </div>
           <div className="input-field-box-phone">
-            <input {...register('phone', { required: 'Telefonnummer er påkrævet', pattern: /^\d+$/ })} placeholder="Telefonnummer" />
+            <input type="tel"{...register('phone', { required: 'Telefonnummer er påkrævet', pattern: {
+              value: /^[0-9]+$/,
+              message: 'Ugyldig telefonnummer'
+            }})} placeholder="Telefonnummer" />
             {errors.phone && <p className="error-message">{errors.phone.message}</p>}
           </div>
           <h2 className="contact-info-heading">Leveringsadresse</h2>
@@ -110,17 +129,19 @@ const ContactInfo: React.FC = () => {
           <div className="input-field-box-CVR">
             <input {...register('companyVat')} placeholder="CVR-nummer (valgfrit)" />
           </div>
-        </form>
+       
         <div className="checkout-button">
-        <button className="checkout-button-1" onClick={goToProductsPage}>Tilbage</button>
-        <button className="checkout-button-2" onClick={goToDeliveryPage}>Fortsæt</button>
+        <button type="submit" className="checkout-button-1" onClick={goToProductsPage}>Tilbage</button>
+        <button type="submit" className="checkout-button-2" onClick={goToDeliveryPage}>Fortsæt</button>
         </div>
+      </form>
+      
       </div>
       
 
-      <div>
+     
         <CartSummary total={total} discount={discount} onGoToPayment={handleGoToPayment} />
-      </div>
+      
       
     </div>
   );

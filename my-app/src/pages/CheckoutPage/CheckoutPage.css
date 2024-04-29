@@ -78,3 +78,19 @@
   }
 
 }
+.terms-container {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 5px;
+}
+.terms-container input[type="checkbox"] {
+  margin-right: 0.555452rem;
+}
+.terms-container label {
+  margin: 0;
+}
+.error-message {
+  color: red;
+  text-align: center;
+}

@@ -16,7 +16,8 @@
   .left-cont img {
     max-height: 100%; 
     max-width: 100%;
-    object-fit: contain; 
+    object-fit: contain;
+     
   }
   
   .right-cont {
@@ -222,10 +223,11 @@
     }
   
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 600px) {
     .left-cont{
-      margin-top: 100px;
+      margin-top: 200px;
       margin-bottom: -80px;
+     
 
     }
     .category-info h1{

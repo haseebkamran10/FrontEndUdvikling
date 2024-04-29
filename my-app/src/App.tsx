@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route , useNavigate} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route ,useNavigate} from 'react-router-dom';
 import Header from './components/header/header';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage/HomePage'
 import SignUpPage from './pages/SignUpPage/SignUpPage'
 import { useState } from 'react';
 import LoadingIndicator from './components/LoadingIndicator/LoadingIndicator';
+import TermsPage from './pages/TermsPage/TermsPage';
 
 function HeaderWithNavigation() {
   const navigate = useNavigate();
@@ -48,8 +49,8 @@ function App() {
            <Route path="/delivery" element={<DeliveryPage />} />
            <Route path="/paymentpage" element={<PaymentPage />} />
            <Route path="/productspage" element={<ProductsPage />} />
-           <Route path="/productdetail" element={<ProductDetailsPage />} />
-           
+           <Route path="/productspage/:id" Component={ProductDetailsPage}/>
+           <Route path="/terms" element={<TermsPage />} />
 
            <Route path="/" element={<HomePage />} />
           

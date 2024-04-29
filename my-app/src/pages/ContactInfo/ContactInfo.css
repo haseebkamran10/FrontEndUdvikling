@@ -78,6 +78,7 @@
   margin-left: 20px;
   margin-bottom: 20px;
  }
+
  .input-field-box-companyName input {
   width: calc(100%); 
   height: calc(100%); 
@@ -128,6 +129,7 @@
   margin-left: 20px;
   margin-bottom: 20px;
  }
+ 
  .input-field-box-address input {
   width: calc(100%); 
   height: calc(100%); 
