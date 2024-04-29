@@ -30,7 +30,7 @@ function HeaderWithNavigation() {
   return <Header onCartClick={navigateToCart}  onLogoClick={navigateToHomePage} cartItemCount={totalItems} />;
 }
 
-function App() {
+const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   setTimeout(() => {
     setLoading(false);
@@ -52,7 +52,6 @@ function App() {
            <Route path="/productspage" element={<ProductsPage />} />
            <Route path="/productspage/:id" Component={ProductDetailsPage}/>
            <Route path="/terms" element={<TermsPage />} />
-
            <Route path="/" element={<HomePage />} />
           
           </Routes>

@@ -42,13 +42,15 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         }
       });
 
-      
+      if (response.data) {
       setSuccessMessage('Sign in successful!');
-
-     
       setEmail('');
       setPassword('');
 
+    }
+
+     
+    
       
     } catch (error) {
       if (axios.isAxiosError(error)) {

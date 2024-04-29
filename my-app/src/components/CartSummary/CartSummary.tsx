@@ -6,7 +6,7 @@ type CartSummaryProps = {
   onGoToPayment: () => void;
 };
 
-const CartSummary: React.FC<CartSummaryProps> = ({ total, discount, onGoToPayment }) => {
+const CartSummary: React.FC<CartSummaryProps> = ({ total, discount}) => {
   const deliveryCharge = 40; 
 
   return (

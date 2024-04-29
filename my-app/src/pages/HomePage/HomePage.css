@@ -25,12 +25,14 @@ html, body {
   object-fit: cover; 
 }
 
-.title-container h1 {
-  text-transform: uppercase; 
-  font-family: 'Arial', sans-serif; 
-  font-size: 48px; 
-  text-align: center; 
-  margin: 20px 0; 
+.title-container {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--primary-font);
+  font-size: 35px;
+  margin: 20px 0;
 }
 
 .additional-image-container {

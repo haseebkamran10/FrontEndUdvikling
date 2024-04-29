@@ -1,6 +1,5 @@
 import React ,{useEffect,useState}from 'react';
 import './ProductDetailsPage.css';
-import img from '../../images/kookaburra-placeholder.png';
 import klarnaLogo from '../../klarna-logo.svg';
 import viaBillLogo from '../../viabill-logo.png';
 import returnIcon from '../../Return.svg';

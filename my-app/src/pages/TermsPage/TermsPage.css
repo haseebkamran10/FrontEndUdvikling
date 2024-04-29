@@ -1,4 +1,6 @@
 .terms-page {
+  display: flex;
+  flex-direction: column;
  
     margin: 57px auto; 
     padding: 20px;
@@ -13,7 +15,7 @@
     color: #333; 
     font-size: 2em; 
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--primary-font);
   }
   
   .terms-page h2 {

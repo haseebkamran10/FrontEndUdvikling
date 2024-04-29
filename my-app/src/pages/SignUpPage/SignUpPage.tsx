@@ -25,6 +25,7 @@ const SignUp: React.FC = () => {
       } else {
         setMessage('An unexpected error occurred.');
       }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setMessage(`Signup failed: ${error.response?.data?.error || error.message}`);
     }
