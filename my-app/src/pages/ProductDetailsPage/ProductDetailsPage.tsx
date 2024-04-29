@@ -1,17 +1,19 @@
 import React ,{useEffect,useState}from 'react';
 import './ProductDetailsPage.css';
+
 import img from '../../images/kookaburra-placeholder.png';
-import klarnaLogo from '../../klarna-logo.svg';
-import viaBillLogo from '../../viabill-logo.png';
+import klarnaLogo from '../../MobilePay-logo.png';
+import viaBillLogo from '../../Card.png';
 import returnIcon from '../../Return.svg';
 import shippingIcon from '../../shipping.svg';
 import rocketIcon from '../../rocket.svg';
-import expressbankLogo from '../../expressbank-logo.png'
+
 import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import {Product as Product } from '../../types/types';
 import { useCart } from '../../CartContext';
+
 
 const ProductDetailsPage: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
@@ -90,9 +92,7 @@ const ProductDetailsPage: React.FC = () => {
                 <div className="logo-wrapper">
                   <img src={viaBillLogo} alt="ViaBill" className="payment-logo viabill" />
                 </div>
-                <div className="logo-wrapper">
-                  <img src={expressbankLogo} alt="ExpressBank" className="payment-logo express-bank" />
-                </div>
+               
 
               </div>
               <div className="return-policy-container">
