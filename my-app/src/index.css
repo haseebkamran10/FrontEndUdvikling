@@ -1,6 +1,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --primary-font: 'Open Sans', sans-serif;
+  --secondary-font: 'Inter', sans-serif;
   /*line-height: 1.5;*/
   font-weight: 400;
 
