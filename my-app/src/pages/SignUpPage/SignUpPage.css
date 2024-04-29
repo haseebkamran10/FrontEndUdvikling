@@ -1,10 +1,3 @@
-/* .container-main Need adjustment for responsiveness*/
-/*  margin-left: 750px;
-  margin-top: -200px; 
-  This is not a proper way to style in css, but was necessary becaue we couldn't
-  find the problem
-  */
-
 .container-main {
   display: flex;
   justify-content: center;
