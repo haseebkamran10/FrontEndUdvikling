@@ -33,15 +33,34 @@ const DeliveryPage: React.FC = () => {
   const { register, handleSubmit, setValue, watch, trigger, formState: { errors } } = useForm<FormData>();
   const { total, discount } = useCart();
 
-  useEffect(() => {
-    const zipCode = watch('zipCode');
-    if (zipCode && zipCode.length === 4) {
-      fetch(`https://api.dataforsyningen.dk/postnumre/${zipCode}`)
-        .then(response => response.json())
-        .then(data => setValue('city', data.navn))
-        .catch(error => console.error('Error fetching city name:', error));
+  const handleZipCodeChange = async (zipCode: string) => {
+    if (zipCode.length === 4) {
+      try {
+        const response = await fetch(`https://api.dataforsyningen.dk/postnumre/${zipCode}`);
+        if (!response.ok) throw new Error('Invalid ZIP code');
+        const data = await response.json();
+        setValue('city', data.navn);
+      } catch (error) {
+        console.error('Error fetching city name:', error);
+        setValue('city', ''); // Optionally clear the city input on error
+      }
+    } else {
+      setValue('city', ''); // Clear city if ZIP is not complete
     }
-  }, [watch, setValue]);
+  };
+
+  // Watching zip code changes
+  const zipCodeValue = watch('zipCode');
+  useEffect(() => {
+    handleZipCodeChange(zipCodeValue);
+  }, [zipCodeValue, handleZipCodeChange]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 250);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const onSubmit = (data: FormData) => {
     console.log(data);
