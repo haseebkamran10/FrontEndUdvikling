@@ -105,7 +105,7 @@ useEffect(() => {
             <img src={product.image_url} onClick={() => navigateToProductDetail(product.id)}/>
             <h3>{product.name}</h3> 
             <p>{product.price} kr.</p> 
-            <Button className="addToBasket" onClick={() => handleAddToBasket(product)}>Add to Basket</Button>
+            <Button className="addToBasket" onClick={() => handleAddToBasket(product)}>Tilføj til kurv</Button>
             <SortFilterPage show={showModal} onClose={() => setShowModal(false)} />
           </div>
         ))}
