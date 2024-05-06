@@ -1,4 +1,4 @@
-import React, { useState ,useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './LoginPage.css';
 import CloseIcon from '@mui/icons-material/Close';
@@ -17,7 +17,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState(''); 
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -29,8 +29,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
 
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorMessage(''); 
-    setSuccessMessage(''); 
+    setErrorMessage('');
+    setSuccessMessage('');
 
     try {
       const response = await axios.post('https://nordiccricketdtu-3b6acaa15a99.herokuapp.com/auth/signin', {
@@ -42,17 +42,17 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         }
       });
 
-      
+
       setSuccessMessage('Sign in successful!');
 
-     
+
       setEmail('');
       setPassword('');
 
-      
+
     } catch (error) {
       if (axios.isAxiosError(error)) {
-       
+
         if (error.response) {
           setErrorMessage(error.response.data.error || 'An error occurred during sign-in');
         } else if (error.request) {
@@ -73,17 +73,17 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
 
     return () => clearTimeout(timeout);
   }, []);
-  
+
 
   const containerClasses = `login-page-cont${isVisible ? ' show' : ''}`;
 
   return (
-    <div className={containerClasses} style={{ display: 'flex', flexDirection: 'column' }}>
+    <div className={containerClasses} >
       {loading && <LoadingIndicator />}
       <div className='right-cont'>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <h3>Log ind</h3>
-          <CloseIcon onClick={onClose}  style={{ cursor: 'pointer' }}/>
+        <div className='upperDiv1'  >
+          <h3 style={{fontSize:"1.5rem" , fontFamily:"monospace"}} >Log ind</h3>
+          <CloseIcon onClick={onClose} style={{ cursor: 'pointer' }} />
         </div>
 
         {/* Success message pop-up */}
@@ -92,7 +92,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
         {/* Error message pop-up */}
         {errorMessage && <div className="error-message">{errorMessage}</div>}
 
-        <p style={{ textAlign: "left" }}>Log ind på din konto:</p>
+        <p className='para1' >Log ind på din konto:</p>
         <form onSubmit={handleSignIn}>
           <input
             type="email"
@@ -113,15 +113,16 @@ const LoginPage: React.FC<LoginPageProps> = ({ isVisible, onClose }) => {
             <button type="submit" className='btn2'>Log ind</button>
           </div>
         </form>
-        <h3 style={{ textAlign: "left", fontSize: "1.0rem" }}>Ikke medlem endnu</h3>
-        <div style={{ display: "flex", alignItems: "center" }}>
-  <SportsCricketIcon />
-  <Link to="/signup" style={{ marginLeft: "15px", color: "gray", textDecoration: "none" }}>
-    Bliv medlem
-  </Link>
-</div>
+        <h3 style={{ textAlign: "left", fontSize: "1.0rem", width: "100%" }}>Ikke medlem endnu</h3>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div className='lowerDiv2'>
+          <SportsCricketIcon />
+          <Link to="/signup" style={{ marginLeft: "15px", color: "gray", textDecoration: "none" }}>
+            Bliv medlem
+          </Link>
+        </div>
+
+        <div className='lowerDiv2'>
           <ErrorOutlineIcon />
           <p style={{ marginLeft: "15px", color: "gray" }}>Læs om alle fordele</p>
         </div>
